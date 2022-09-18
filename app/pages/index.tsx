@@ -9,17 +9,27 @@ import SimpleForm from '@components/SimpleForm'
 
 
 
-const HomePage: IPage = () => {
+const HomePage = ({ pageData }: IPage) => {
+
   return (
     <PageLayout metaData={{ pageTitle: 'Home' }}>
-      <Hero/>
-      <Carousel/>
-      <ContentGrid/>
-      <SimpleForm/>
-
-      <ContactForm/>
+      <Hero />
+      <Carousel />
+      <ContentGrid />
+      <SimpleForm />
+      <ContactForm />
     </PageLayout>
   )
 }
 
 export default HomePage
+
+
+export default async function getStaticProps() {
+
+  return {
+    props: {
+      pageData: []
+    }
+  }
+}

@@ -25,7 +25,7 @@ const HomePage = ({ pageData }: IPage) => {
 export default HomePage
 
 
-export default async function getStaticProps() {
+export async function getStaticProps() {
 
   return {
     props: {

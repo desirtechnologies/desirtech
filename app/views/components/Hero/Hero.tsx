@@ -1,9 +1,9 @@
 const Hero = () => {
 
     return (
-        <section className="py-26 bg-white">
+        <section className="py-26">
             <div className="container px-4 mx-auto">
-                <div className="flex flex-wrap items-center bg-white border-3 border-indigo-900 rounded-2xl shadow-md overflow-hidden">
+                <div className="flex flex-wrap items-center border-3 border-indigo-900 rounded-2xl shadow-md overflow-hidden">
                     <img
                         className="block w-full md:w-2/5 h-128 md:h-156 object-cover"
                         src="https://static.shuffle.dev/uploads/files/4f/4fe644700e31070019e6907843ca9db3bf339751/LOGO.png"

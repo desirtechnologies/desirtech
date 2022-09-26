@@ -1,7 +1,7 @@
 const ContactForm = () => {
 
     return (
-        <section className="py-26 bg-white relative overflow-hidden">
+        <section className="py-26  relative overflow-hidden">
             <img
                 className="absolute top-0 md:h-full left-0 w-1/2"
                 src="nigodo-assets/background-elements/pattern-circle-big-indigo-light-left.svg"
@@ -38,7 +38,7 @@ const ContactForm = () => {
                                 Open positions
                             </a>
                             <a
-                                className="inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold bg-white hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
+                                className="inline-block w-full md:w-auto py-4 px-6 text-center leading-6 text-lg text-indigo-900 hover:text-white font-extrabold  hover:bg-indigo-800 border-3 border-indigo-900 shadow rounded transition duration-200"
                                 href="#"
                             >
                                 About Us
@@ -50,7 +50,7 @@ const ContactForm = () => {
                     <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
                         <div className="flex flex-wrap -mx-4">
                             <div className="w-full sm:w-1/2 px-4 mb-12">
-                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center bg-white text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
+                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center  text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
                                     <svg
                                         width={32}
                                         height={32}
@@ -70,7 +70,7 @@ const ContactForm = () => {
                                 </p>
                             </div>
                             <div className="w-full sm:w-1/2 px-4 mb-12">
-                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center bg-white text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
+                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center  text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
                                     <svg
                                         width={32}
                                         height={32}
@@ -90,7 +90,7 @@ const ContactForm = () => {
                                 </p>
                             </div>
                             <div className="w-full sm:w-1/2 px-4 mb-12 sm:mb-0">
-                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center bg-white text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
+                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center  text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
                                     <svg
                                         width={24}
                                         height={28}
@@ -113,7 +113,7 @@ const ContactForm = () => {
                                 </p>
                             </div>
                             <div className="w-full sm:w-1/2 px-4">
-                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center bg-white text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
+                                <div className="inline-flex mb-8 w-20 h-20 items-center justify-center  text-indigo-900 border-3 border-indigo-900 rounded-full shadow-md">
                                     <svg
                                         width={28}
                                         height={28}
@@ -208,7 +208,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 px-4">
-                        <div className="px-6 py-12 md:px-12 bg-white border-3 border-indigo-900 rounded-2xl shadow-md">
+                        <div className="px-6 py-12 md:px-12  border-3 border-indigo-900 rounded-2xl shadow-md">
                             <form action="">
                                 <div className="mb-8">
                                     <label className="block mb-2 font-extrabold" htmlFor="">

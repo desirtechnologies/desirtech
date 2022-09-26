@@ -3,7 +3,7 @@ const SimpleForm = () => {
     return (
         <section className="py-26 bg-orange-200">
   <div className="container px-4 mx-auto">
-    <div className="p-8 md:p-16 bg-white border-3 border-indigo-900 rounded-2xl shadow">
+    <div className="p-8 md:p-16  border-3 border-indigo-900 rounded-2xl shadow">
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-lg font-extrabold text-orange-500">
           Newsletter

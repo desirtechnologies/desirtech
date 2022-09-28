@@ -20,6 +20,7 @@
       "@models/*":["models/*"],
       "@controllers/*":["controllers/*"],
       "@layouts/*":["views/layouts/*"],
+      "@services/*":["views/controllers/services/*"],
       "@includes/*":["views/includes/*"],
       "@components/*":["views/components/*"],
       "@pages/*":["models/data/db/pages/*"],

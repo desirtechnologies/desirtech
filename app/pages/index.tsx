@@ -1,23 +1,20 @@
-import type { NextPage } from 'next'
+import Hero from "@components/Hero"
 import PageLayout from '@layouts/PageLayout'
 import type { IPage } from "@typings/Page"
-import Hero from "@components/Hero"
-import Carousel from "@components/Carousel"
-import ContactForm from "@components/ContactForm"
-import ContentGrid from "@components/ContentGrid"
-import SimpleForm from '@components/SimpleForm'
 
+import PageService from '@services/page'
 
+import { useEffect } from "react"
 
-const HomePage = ({ pageData }: IPage) => {
+const HomePage = ({ page }: IPage) => {
+
+  useEffect(() => {
+    console.log(`Page data: ${JSON.stringify(page)}`)
+  }, [page])
 
   return (
-    <PageLayout metaData={{ pageTitle: 'Home' }}>
+    <PageLayout {...page.layout}>
       <Hero />
-      <Carousel />
-      <ContentGrid />
-      <SimpleForm />
-      <ContactForm />
     </PageLayout>
   )
 }
@@ -27,9 +24,13 @@ export default HomePage
 
 export async function getStaticProps() {
 
+  const { getPage } = PageService
+
+  const page = await getPage('home')
+
   return {
     props: {
-      pageData: []
+      page
     }
   }
 }

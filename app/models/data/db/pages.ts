@@ -1,15 +1,7 @@
-const pages = {
+const pages = (pageKey, store) => {
 
 
-    pages: {
-
-        home: {
-            data: {
-                component: 'home',
-                props: {}
-            }
-        }
-    }
 }
 
-export default pages 
+
+export default pages

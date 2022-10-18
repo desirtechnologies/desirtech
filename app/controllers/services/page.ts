@@ -20,8 +20,8 @@ const PageService = {
         const page = {
             id: 'natures-secret-pages',
             db: id,
-            version: version,
-            layout: layout,
+            version,
+            layout,
             ...data,
         }
 

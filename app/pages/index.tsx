@@ -8,10 +8,6 @@ import { useEffect } from "react"
 
 const HomePage = ({ page }: IPage) => {
 
-  useEffect(() => {
-    console.log(`Page data: ${JSON.stringify(page)}`)
-  }, [page])
-
   return (
     <PageLayout {...page.layout}>
       <Hero />

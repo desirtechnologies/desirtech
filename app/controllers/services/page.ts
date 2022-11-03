@@ -1,34 +1,32 @@
-import pages from "@db/pages"
+import pages from "@pages/index"
 import NotionService from '@services/notion'
 
-const PageService = {
+const PageService = () => {
 
-    loadDataPage: (store?: any, pageKey?: string) => {
-        return pages(store, pageKey)
-    },
-
-    getPage: async (pageKey: string) => {
-
-        const { loadDataPage } = PageService
-        const { loadCentralDogma } = NotionService
-
-        const centralDogma = (await loadCentralDogma()).results
-
-        const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
+    const serviceObject = {
 
 
-        const page = {
-            id: 'natures-secret-pages',
-            db: id,
-            version,
-            layout,
-            ...data,
+        getPage: async (pageKey: string) => {
+
+            const { getCentralDogma } = NotionService()
+
+            const centralDogma = (await getCentralDogma())
+
+            const { layout, data } = pages({
+                store: centralDogma,
+                key: pageKey
+            })
+
+            const page = {
+                layout,
+                data,
+            }
+            
+            return page
         }
+    }
 
-        return page
-
-    },
-
+    return { ...serviceObject }
 }
 
 

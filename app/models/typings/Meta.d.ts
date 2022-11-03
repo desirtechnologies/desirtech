@@ -1,3 +1,3 @@
 export type MetaProps = {
-    pageTitle: string
+    pageTitle?: string
 }

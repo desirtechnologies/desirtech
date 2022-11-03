@@ -1,8 +1,27 @@
-import type { AppProps } from 'next/app'
-import "@libs/tailwind.css"
-import "@libs/globals.css"
 
-export default function Application({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import "@libs/globals.css"
+import "@libs/scrollbar.css"
+import "@libs/tailwind.css"
+
+import PageService from '@controllers/services/page'
+import PageLayout from "@layouts/PageLayout"
+
+import type { ApplicationProps } from "@typings/Application"
+
+export default function Application({ Component, pageProps, layout }: ApplicationProps) {
+  return (
+    <PageLayout {...layout}>
+      <Component {...pageProps} />
+    </PageLayout>
+  )
 }
 
+
+Application.getInitialProps = async () => {
+
+  const { getPage } = PageService()
+
+  const { layout } = (await getPage("home"))
+
+  return { ...layout }
+}

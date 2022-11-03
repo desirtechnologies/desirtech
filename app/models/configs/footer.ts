@@ -1,6 +1,11 @@
-import type { IConfiguration } from "@typings/Configuration"
+import type { FooterProps } from "@typings/Footer"
 
-const footer: IConfiguration<any> = () => {
+
+const footer = ({ links, favicon, copyright }: FooterProps) => {
+
+    const deafultObject = {
+
+    }
 
     const footerObject = {
 

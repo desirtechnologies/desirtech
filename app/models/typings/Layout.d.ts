@@ -1,11 +1,10 @@
 import type { MetaProps } from "@typings/Meta";
-
-export interface ILayout {
-    children: any;
-    metaData: MetaProps
-}
+import type { FooterProps } from "@typings/Footer"
 
 export type LayoutProps = {
     header?: any,
-    footer?: any,
+    children?: any,
+    metaData?: MetaProps,
+    footer?: FooterProps,
+    menu?: any
 }

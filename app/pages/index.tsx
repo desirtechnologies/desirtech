@@ -1,17 +1,25 @@
 import Hero from "@components/Hero"
 import PageLayout from '@layouts/PageLayout'
-import type { IPage } from "@typings/Page"
-
 import PageService from '@services/page'
+import type { IPage } from "@typings/Page"
+import ContentGrid from "@views/components/ContentGrid"
+import SimpleForm from "@views/components/SimpleForm"
+import ContactForm from "@views/components/ContactForm"
+import Carousel from "@components/Carousel"
+import LogoCloud from "@components/LogoCloud"
+const HomePage = ({ page: { data } }: IPage) => {
 
-import { useEffect } from "react"
-
-const HomePage = ({ page }: IPage) => {
+  const { hero, contentGrid, simpleForm } = data
 
   return (
-    <PageLayout {...page.layout}>
+    <>
       <Hero />
-    </PageLayout>
+      <Carousel />
+      <ContentGrid />
+      <LogoCloud />
+      <SimpleForm />
+      <ContactForm />
+    </>
   )
 }
 
@@ -20,7 +28,7 @@ export default HomePage
 
 export async function getStaticProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService()
 
   const page = await getPage('home')
 

@@ -1,8 +1,8 @@
 import Box from "@components/Box"
 import Meta from "@includes/Meta"
-import type { ILayout } from "@typings/Layout"
+import type { LayoutProps } from "@typings/Layout"
 
-const RootLayout = ({ children, metaData }: ILayout) => {
+const RootLayout = ({ children, metaData }: LayoutProps) => {
 
     return (
         <Box>

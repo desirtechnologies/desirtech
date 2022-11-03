@@ -1,24 +1,22 @@
 import { Client } from "@notionhq/client"
 
-const NotionService = {
-    api: new Client({
-        auth: process.env.FACADE_API_KEY,
-    }),
-    interface: {
-        notion: `${process.env.NODE_ENV === "production" ? "https://desir.tech/api/db" : `http://localhost:${process.env.PORT || 3000}/api/db`}`,
-    },
-    databases: {
-        central_dogma: 'b70f6b0e58b14ba59a4618e95898b817',
-    },
-    loadCentralDogma: async () => {
-        const { central_dogma } = NotionService.databases
-        const response = await NotionService.api.databases.query({
-            database_id: central_dogma
-        })
-        return response
-    },
+const NotionService = () => {
 
+    const serviceObject = {
+        api: new Client({
+            auth: process.env.FACADE_API_KEY,
+        }),
+        secured: {
+            central_dogma: process.env.CENTRAL_DOGMA_ID as string ?? null
+        },
+        getCentralDogma: async () => {
+            const response = await serviceObject.api.databases.query({
+                database_id: serviceObject.secured.central_dogma,
+            })
+            return response
+        },
+    }
+    return { ...serviceObject }
 }
-
 
 export default NotionService

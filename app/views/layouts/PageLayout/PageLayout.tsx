@@ -1,11 +1,12 @@
 import RootLayout from "@layouts/RootLayout"
-import type { ILayout } from "@typings/Layout"
+import type { LayoutProps } from "@typings/Layout"
 import Header from "@components/Header"
 import Footer from "@components/Footer"
-const PageLayout = ({ children, metaData }: ILayout) => {
+import React from "react"
+
+const PageLayout = ({ children, metaData, footer, header, menu }: LayoutProps) => {
 
     return (
-
         <RootLayout metaData={metaData}>
             <Header />
             {children}
@@ -14,4 +15,4 @@ const PageLayout = ({ children, metaData }: ILayout) => {
     )
 }
 
-export default PageLayout
+export default React.memo(PageLayout)

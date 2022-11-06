@@ -8,7 +8,6 @@ const PageLayout = ({ children, metaData, footer, header, menu }: LayoutProps) =
 
     return (
         <RootLayout metaData={metaData}>
-            <Header />
             {children}
             <Footer />
         </RootLayout>

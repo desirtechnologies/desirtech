@@ -6,7 +6,7 @@ const Meta = ({ pageTitle }: MetaProps) => {
 
     return (
         <Head>
-            <title>{pageTitle}</title>
+            <title>{pageTitle ?? "Desir Tech"}</title>
         </Head>
     )
 }

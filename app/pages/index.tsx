@@ -1,12 +1,17 @@
+import Carousel from "@components/Carousel"
+import Gallery from "@components/Gallery"
 import Hero from "@components/Hero"
-import PageLayout from '@layouts/PageLayout'
+import LogoCloud from "@components/LogoCloud"
 import PageService from '@services/page'
 import type { IPage } from "@typings/Page"
-import ContentGrid from "@views/components/ContentGrid"
-import SimpleForm from "@views/components/SimpleForm"
-import ContactForm from "@views/components/ContactForm"
-import Carousel from "@components/Carousel"
-import LogoCloud from "@components/LogoCloud"
+import Contact from "@views/components/Contact"
+import DataGrid from "@views/components/DataGrid"
+import Featured from "@views/components/Featured"
+import Stats from "@views/components/Stats"
+import Summary from "@views/components/Summary"
+
+
+
 const HomePage = ({ page: { data } }: IPage) => {
 
   const { hero, contentGrid, simpleForm } = data
@@ -15,11 +20,15 @@ const HomePage = ({ page: { data } }: IPage) => {
     <>
       <Hero />
       <Carousel />
-      <ContentGrid />
+      <Gallery />
       <LogoCloud />
-      <SimpleForm />
-      <ContactForm />
+      <DataGrid />
+      <Featured />
+      <Stats />
+      <Summary />
+      <Contact />
     </>
+
   )
 }
 
@@ -35,6 +44,7 @@ export async function getStaticProps() {
   return {
     props: {
       page
-    }
+    },
+    revalidate: 2
   }
 }

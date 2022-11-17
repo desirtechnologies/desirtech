@@ -5,10 +5,10 @@ import type { LayoutProps } from "@typings/Layout"
 const RootLayout = ({ children, metaData }: LayoutProps) => {
 
     return (
-        <Box>
+        <>
             <Meta {...metaData} />
             {children}
-        </Box>
+        </>
     )
 }
 

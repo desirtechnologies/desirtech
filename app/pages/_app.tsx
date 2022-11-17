@@ -2,6 +2,8 @@
 import "@libs/globals.css"
 import "@libs/scrollbar.css"
 import "@libs/tailwind.css"
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import 'react-awesome-slider/dist/styles.css';
 
 import PageService from '@controllers/services/page'
 import PageLayout from "@layouts/PageLayout"

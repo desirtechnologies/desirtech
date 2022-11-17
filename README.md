@@ -1,9 +1,8 @@
+# Desir Tech
 
-# Nature's Secret
+### Knowledge determines Destiny. 
 
-### 🌿Home to Nature's Best Kept Secrets.
-
- [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/naturessecretco/naturessecret.co?color=green&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fnaturessecret.co) ww
+ [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/naturessecretco/naturessecret.co?color=green&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fnaturessecret.co)
 
 <img src="./docs/logo.png" />
 
@@ -81,22 +80,6 @@ If you have any feedback, please reach out to us at fake@fake.com
 
 ## 🛣️Roadmap
 
-
-**Phase E**
-1. Community Marketing 
-
-**Phase D**
-1. Community Marketing 
-
-
-**Phase C**
-1. Community Marketing 
-
-
-**Phase B**
-1. Community Marketing 
-
-
 📍**Phase A**  
 * 🎉MVP Launch!
 
@@ -108,24 +91,11 @@ If you have any feedback, please reach out to us at fake@fake.com
 
  > To God Be All the Glory. 
 
-
-
-
----
-
-## ✒️Authors
-
-- [@desirtech](https://www.github.com/octokatherine)
-- [@desirdesigns](https://www.github.com/octokatherine)
-- [@desirablesolutions](https://www.github.com/octokatherine)
-
-
 ---
 
 ## 📜License
 
 > This project is under the MIT License☂️. 
 
-**All data & metadata property of Nature's Secret, LLC**<br/>
-**©️ 2022 Nature's Secret. All Rights Reserved.**
+**©️ 2022 Desir Tech. All Rights Reserved.**
 

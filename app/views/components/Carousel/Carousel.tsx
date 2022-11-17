@@ -66,7 +66,7 @@ const Carousel = () => {
                   <div className="flex items-center">
                     <div className="pr-8 mr-auto">
                       <p className="mb-2 text-base text-gray-400">
-                        Realyn's rating
+                        Realyns rating
                       </p>
                       <div className="inline-block">
                         <a className="inline-block" href="#">

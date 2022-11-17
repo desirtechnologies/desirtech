@@ -31,7 +31,7 @@ const Gallery = () => {
                         </div>
                         <div className="flex flex-wrap -mx-4 mb-20 xl:mb-36">
                             <div className="w-full lg:w-6/12 px-4 mb-6 lg:mb-0">
-                                <div className="relative max-w-max" href="#">
+                                <div className="relative max-w-max" >
                                     <img
                                         src="uinel-assets/images/portfolio/portfolio5-glass.png"
                                         alt=""
@@ -56,7 +56,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 lg:w-3/12 px-4 mb-6 md:mb-0">
-                                <div className="relative mx-auto max-w-max" href="#">
+                                <div className="relative mx-auto max-w-max">
                                     <img
                                         src="uinel-assets/images/portfolio/portfolio5-man.png"
                                         alt=""
@@ -81,7 +81,7 @@ const Gallery = () => {
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 lg:w-3/12 px-4">
-                                <div className="relative mx-auto max-w-max" href="#">
+                                <div className="relative mx-auto max-w-max" >
                                     <img
                                         src="uinel-assets/images/portfolio/portfolio5-dark.png"
                                         alt=""

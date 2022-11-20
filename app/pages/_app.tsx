@@ -25,5 +25,5 @@ Application.getInitialProps = async () => {
 
   const { layout } = (await getPage("home"))
 
-  return { ...layout }
+  return { layout }
 }

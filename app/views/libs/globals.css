@@ -6,13 +6,11 @@
 
 
 body,
-html,
-body::after,
-body::before {
+html {
     height: 100%;
     width: 100%;
     margin: 0;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     padding: 0;
     background-color: #000000;
     background-image: var(--circuits-svg);

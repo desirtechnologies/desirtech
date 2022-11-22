@@ -5,17 +5,21 @@ import type { LayoutProps } from "@typings/Layout"
 import DrawerMenu from "@views/includes/DrawerMenu"
 import React from "react"
 import Controller from "@includes/Controller"
+import { Suspense } from "react"
+
 
 const PageLayout = ({ children, metaData, footer, header, menu }: LayoutProps) => {
 
     return (
-        <RootLayout metaData={metaData}>
-            <Header />
-            {children}
-            <Footer />
-            <Controller/>
+        <Suspense fallback={<></>}>
+            <Controller />
             <DrawerMenu />
-        </RootLayout>
+            <RootLayout metaData={metaData}>
+                <Header />
+                {children}
+                <Footer />
+            </RootLayout>
+        </Suspense>
     )
 }
 

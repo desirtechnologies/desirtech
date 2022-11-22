@@ -1,22 +1,14 @@
-export type LinkProps = {
-    url: string,
-    name: string,
-}
+import type { ImageProps } from "@typings/Image"
+import type { FaviconProps } from "@typings/Favicon"
+import type { LinkProps } from "@typings/Link"
 
-export type ImageProps = {
-    src?: string,
-    alt?: string,
-    width?: number | string,
-    height?: number | string,
-}
-
-export type FaviconProps = {
-    image: ImageProps,
-    url: string,
+export type LinkType = {
+    title?: string,
+    links?: LinkProps[]
 }
 
 export type FooterProps = {
-    links?: LinkProps[],
+    links?: LinkType[],
     favicon?: FaviconProps,
     copyright?: string,
 }

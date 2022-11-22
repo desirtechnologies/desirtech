@@ -3,21 +3,22 @@ import type { FooterProps } from '@typings/Footer'
 const Footer = ({ links, favicon, copyright }: FooterProps) => {
 
 
+  const Header = () => {
 
-  return (
-    <section className="pb-24 2xl:pb-28 backdrop-blur-md text-white">
-      <div className="mb-16 py-5 border-b border-white border-opacity-10">
+    return (
+
+      <div className="py-5 mb-16 border-b border-white border-opacity-10">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
-            <div className="w-full md:w-auto px-4 pt-6 md:pt-0 mb-4 md:mb-0">
+            <div className="w-full px-4 pt-6 mb-4 md:w-auto md:pt-0 md:mb-0">
               <a
-                className="mr-6 lg:mr-16 text-white hover:text-gray-100 font-heading"
+                className="mr-6 text-white lg:mr-16 hover:text-gray-100 font-heading"
                 href="#"
               >
                 New tools
               </a>
               <a
-                className="mr-6 lg:mr-16 inline-flex items-center font-heading text-white hover:text-gray-100"
+                className="inline-flex items-center mr-6 text-white lg:mr-16 font-heading hover:text-gray-100"
                 href="#"
               >
                 <span className="mr-4">Security</span>
@@ -34,12 +35,12 @@ const Footer = ({ links, favicon, copyright }: FooterProps) => {
                   />
                 </svg>
               </a>
-              <a className="font-heading text-white hover:text-gray-100" href="#">
+              <a className="text-white font-heading hover:text-gray-100" href="#">
                 Join for free
               </a>
             </div>
-            <div className="w-full md:w-auto px-4">
-              <a className="font-bold text-xl" href="#">
+            <div className="w-full px-4 md:w-auto">
+              <a className="text-xl font-bold" href="#">
                 <img
                   className="h-10"
                   src="uinel-assets/logos/uinel-gray-white.svg"
@@ -50,334 +51,26 @@ const Footer = ({ links, favicon, copyright }: FooterProps) => {
           </div>
         </div>
       </div>
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-wrap -mx-4 mb-20 lg:mb-40">
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 mb-10 lg:mb-0">
-            <h3 className="font-medium text-xl text-white mb-10">About Uinel</h3>
-            <ul>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  About us
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Stories
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Our people
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Founders
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Why Uinel
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  How we compare
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Website
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Idea
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Mission
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Newsroom
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 mb-10 lg:mb-0">
-            <h3 className="font-medium text-xl text-white mb-10">
-              Product &amp; Tools
-            </h3>
-            <ul>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Download Uinel
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Sign up free
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Features
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Google integrations
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Microsoft integrations
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Dropbox integrations
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Mobile App
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 mb-10 lg:mb-0">
-            <h3 className="font-medium text-xl text-white mb-10">Community</h3>
-            <ul>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  UI Designers
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  UX Designers
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Graphic Designers
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Developers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Events
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 mb-10 sm:mb-0">
-            <h3 className="font-medium text-xl text-white mb-10">Support</h3>
-            <ul>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Your account
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Hire an experts
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Help center
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  For students
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Manage cookies
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  {` FAQ's`}
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Viedos on YT
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4">
-            <h3 className="font-medium text-xl text-white mb-10">More</h3>
-            <ul>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Spotify x Uinel
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li className="mb-5">
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
-                  href="#"
-                >
-                  Facebook
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    )
+  }
+
+
+  const Body = () => {
+
+
+    const _Footer = () => {
+
+      return (
         <div className="flex flex-wrap items-center justify-between -mx-4">
-          <div className="w-full lg:w-auto px-4 mb-8 lg:mb-0">
-            <p className="font-medium text-sm text-white tracking-widest">
-              <span>© 2021 UINEL.</span>
-              <span className="ml-6 font-medium uppercase tracking-widest text-gray-300">
-                All rights reserved.
-              </span>
+
+          
+          <div className="w-full px-4 mb-8 lg:w-auto lg:mb-0">
+            <p className="text-sm font-medium tracking-widest text-white">
+              <span>{copyright ? copyright : "COPYRIGHT_NOT_FOUND"}</span>
             </p>
           </div>
-          <div className="w-full lg:w-auto px-4">
+
+          <div className="w-full px-4 lg:w-auto">
             <a className="inline-block mr-5" href="#">
               <img src="uinel-assets/images/footers/instagram.svg" alt="" />
             </a>
@@ -389,11 +82,59 @@ const Footer = ({ links, favicon, copyright }: FooterProps) => {
             </a>
           </div>
         </div>
+      )
+    }
+
+    const _Links = () => {
+      return (
+        <div className="flex flex-wrap mb-20 -mx-4 lg:mb-40">
+
+          {
+            links ? links.map((link, index) => {
+              return (
+                <div key={index} className="w-full px-4 mb-10 sm:w-1/2 md:w-1/3 lg:w-1/5 lg:mb-0">
+
+                  <h3 className="mb-10 text-xl font-medium text-white">{link?.title ?? "TITLE_NOT_FOUND"}</h3>
+
+                  <ul>
+                    {
+                      link?.links ? link?.links.map((linkType, index) => {
+                        return (
+                          <li key={index} className="mb-5">
+                            <a
+                              className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
+                              href="#"
+                            >
+                              {linkType?.name ?? "LINK_TYPE_NAME"}
+                            </a>
+                          </li>
+                        )
+                      }) : <>LINKS_NOT_FOUND</>
+                    }
+                  </ul>
+                </div>
+              )
+            }) : <>LINKS_NOT_FOUND</>
+          }
+
+        </div>
+      )
+    }
+
+    return (
+      <div className="container px-4 mx-auto">
+        <_Links />
+        <_Footer />
       </div>
+    )
+  }
+
+
+  return (
+    <section className="pb-24 text-white 2xl:pb-28 backdrop-blur-sm font-mono">
+      <Header />
+      <Body />
     </section>
-
-
-
   )
 }
 

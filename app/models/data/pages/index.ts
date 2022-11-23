@@ -1,31 +1,34 @@
-import { layout } from "@configs/index"
-import { meta } from "@db/index"
+import layout from "@configs/layout"
+import type { PageQueryProps } from "@typings/Page"
 
-export type PageDatabaseQueryProps = {
-    store?: any,
-    key: string,
-}
-
-const pages = ({ store, key }: PageDatabaseQueryProps) => {
+const pages = ({ store, key }: PageQueryProps) => {
 
 
     const pageData = {
+
         home: {
+            metaData: {},
             data: {
                 hero: {
+                    title: "Desir Tech",
+                    cover: {
+                        src: "/assets/images/hacker.svg"
+                    }
 
                 }
             },
-            metaData: {},
         }
-
     }
 
     const pageObject = {
-        data: pageData,
+        version: Date.now(),
+        metaData: {},
+        data: pageData[key]?.data,
         layout: layout({
             header: {},
-            footer: {}
+            footer: {
+                copyright: 'LOL'
+            }
 
         })
 

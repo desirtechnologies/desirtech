@@ -5,7 +5,7 @@ const Carousel = () => {
       <div className="container px-4 mx-auto">
         <div className="text-center">
           <span className="text-sm text-gray-300 uppercase">What people say</span>
-          <h2 className="mt-8 mb-24 text-9xl md:text-10xl xl:text-11xl font-heading font-medium">
+          <h2 className="mt-8 mb-24 text-9xl md:text-10xl xl:text-11xl font-heading font-medium text-white font-mono">
             Opinion
           </h2>
         </div>

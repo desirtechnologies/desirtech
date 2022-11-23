@@ -22,8 +22,7 @@ export default function Application({ Component, pageProps, layout }: Applicatio
 Application.getInitialProps = async () => {
 
   const { getPage } = PageService()
-
-  const { layout } = (await getPage("home"))
+  const { layout } = await getPage("home")
 
   return { layout }
 }

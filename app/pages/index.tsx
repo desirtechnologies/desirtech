@@ -18,7 +18,7 @@ const HomePage = ({ page: { data } }: IPage) => {
 
   return (
     <>
-      <Hero />
+      <Hero {...hero} />
       <Carousel />
       <Gallery />
       <LogoCloud />
@@ -45,6 +45,6 @@ export async function getStaticProps() {
     props: {
       page
     },
-    revalidate: 2
+    revalidate: 1
   }
 }

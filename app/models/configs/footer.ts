@@ -3,11 +3,20 @@ import type { FooterProps } from "@typings/Footer"
 
 const footer = ({ links, favicon, copyright }: FooterProps) => {
 
-    const deafultObject = {
-
+    const defaultObject = {
+        links: [
+            {
+                title: "LINKS_NOT_FOUND"
+            }
+        ],
+        favicon: {
+            
+        }
     }
 
     const footerObject = {
+        links: links ?? defaultObject.links,
+        favicon: favicon ?? defaultObject.favicon
 
     }
 

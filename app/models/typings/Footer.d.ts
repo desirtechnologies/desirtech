@@ -9,6 +9,7 @@ export type LinkType = {
 
 export type FooterProps = {
     links?: LinkType[],
+    socials?: string[],
     favicon?: FaviconProps,
     copyright?: string,
 }

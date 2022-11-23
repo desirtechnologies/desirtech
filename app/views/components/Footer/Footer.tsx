@@ -1,6 +1,7 @@
 import type { FooterProps } from '@typings/Footer'
+import { SocialIcon } from 'react-social-icons';
 
-const Footer = ({ links, favicon, copyright }: FooterProps) => {
+const Footer = ({ links, favicon, copyright, socials }: FooterProps) => {
 
 
   const Header = () => {
@@ -63,7 +64,7 @@ const Footer = ({ links, favicon, copyright }: FooterProps) => {
       return (
         <div className="flex flex-wrap items-center justify-between -mx-4">
 
-          
+
           <div className="w-full px-4 mb-8 lg:w-auto lg:mb-0">
             <p className="text-sm font-medium tracking-widest text-white">
               <span>{copyright ? copyright : "COPYRIGHT_NOT_FOUND"}</span>
@@ -71,15 +72,17 @@ const Footer = ({ links, favicon, copyright }: FooterProps) => {
           </div>
 
           <div className="w-full px-4 lg:w-auto">
-            <a className="inline-block mr-5" href="#">
-              <img src="uinel-assets/images/footers/instagram.svg" alt="" />
-            </a>
-            <a className="inline-block mr-5" href="#">
-              <img src="uinel-assets/images/footers/facebook.svg" alt="" />
-            </a>
-            <a className="inline-block" href="#">
-              <img src="uinel-assets/images/footers/twitter.svg" alt="" />
-            </a>
+
+            {
+              socials ? socials.map((social, index) => {
+                return (
+                  <span key={index} className='inline-block mr-2'>
+                    <SocialIcon url={social ?? "#"} />
+                  </span>
+                )
+              }) : <></>
+            }
+
           </div>
         </div>
       )

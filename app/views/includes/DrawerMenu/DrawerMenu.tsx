@@ -1,8 +1,8 @@
 const DrawerMenu = () => {
     return (
-        <div className="fixed top-0 bottom-0 left-0 z-50 hidden w-5/6 max-w-sm navbar-menu">
-            <div className="fixed inset-0 bg-gray-800 navbar-backdrop opacity-80" />
-            <nav className="relative flex flex-col w-full h-full py-8 overflow-y-auto bg-white">
+        false ? <div className="fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm navbar-menu">
+            <div className="fixed inset-0 bg-black navbar-backdrop opacity-40" />
+            <nav className="relative flex flex-col w-full h-full py-8 overflow-y-auto backdrop-blur-md text-white font-mono">
                 <div className="flex items-center pl-16 mb-8">
                     <a className="text-2xl font-bold text-gray-800" href="#">
                         <img
@@ -115,7 +115,7 @@ const DrawerMenu = () => {
                     <span className="absolute w-px h-6 transform rotate-45 bg-black" />
                 </div>
             </button>
-        </div>
+        </div> : <></>
 
     )
 }

@@ -1,6 +1,6 @@
 const Summary = () => {
     return (
-        <section className="py-24 2xl:pt-64 2xl:pb-48 font-medium bg-yellow-500 overflow-hidden">
+        <section className="py-24 2xl:pt-64 2xl:pb-48 font-medium font-mono overflow-hidden">
             <div className="relative container px-4 mx-auto">
                 <span className="block mb-9 uppercase tracking-widest text-xs leading-4">
                     The Most popular

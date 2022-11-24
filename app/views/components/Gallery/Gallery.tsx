@@ -1,7 +1,7 @@
 const Gallery = () => {
     return (
         <div>
-            <section className="p-8 pb-0 font-medium bg-blueGray-100">
+            <section className="p-8 pb-0 font-medium font-mono">
                 <div className="relative py-24 2xl:py-44 bg-white z-10 rounded-t-10xl">
                     <div className="container px-4 mx-auto">
                         <h2 className="mb-16 xl:mb-28 font-heading text-9xl md:text-10xl xl:text-11xl leading-tight">

@@ -1,6 +1,6 @@
 const Featured = () => {
     return (
-        <section className="font-medium bg-blueGray-100 py-24 2xl:py-44 overflow-hidden rounded-b-10xl">
+        <section className="font-medium font-mono py-24 2xl:py-44 overflow-hidden rounded-b-10xl">
             <div className="container px-4 mx-auto">
                 <span className="block mb-9 uppercase tracking-widest text-xs leading-4 text-gray-300">
                     Discover out blog

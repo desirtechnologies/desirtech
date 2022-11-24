@@ -1,7 +1,7 @@
 const DataGrid = () => {
     return (
         <section>
-            <div className="font-medium py-24 2xl:py-44">
+            <div className="font-medium py-24 2xl:py-44 font-mono">
                 <div className="container px-4 mx-auto">
                     <h2 className="font-heading text-9xl md:text-10xl xl:text-11xl leading-tight mb-12 text-center">
                         Select software

@@ -7,8 +7,8 @@ const Header: ComponentType<HeaderProps> = ({ favicon, links, sX }: HeaderProps)
 
     return (
         <Headroom>
-            <section className="relative font-mono text-lg font-bold text-white backdrop-blur-sm">
-                <nav className="flex justify-between px-6 py-8 lg:px-12">
+            <section className="relative font-mono z-50 text-lg font-bold text-white backdrop-blur-sm">
+                <nav className="flex justify-between px-6 py-8 lg:px-12 z-50">
 
 
                     <div className="flex items-center justify-between w-full">

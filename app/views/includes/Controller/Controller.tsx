@@ -2,12 +2,16 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import CodeIcon from '@mui/icons-material/Code';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
 
-export default function Controller() {
+
+
+const Controller = () => {
 
   const actions = [
-    { icon: <FileCopyIcon />, name: 'Copy' },
+    { icon: <KeyboardDoubleArrowUpIcon />, name: 'Top' },
 
   ];
 
@@ -16,11 +20,14 @@ export default function Controller() {
       ariaLabel="Desir Tech Compass"
       FabProps={{
         sx: {
-          bgColor: "230bd80e"
+          bgcolor: '#230BD8',
+          '&:hover': {
+            bgcolor: 'black',
+          }
         }
       }}
       sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      icon={<SpeedDialIcon />}
+      icon={<CodeIcon />}
     >
       {actions.map((action) => (
         <SpeedDialAction
@@ -32,3 +39,5 @@ export default function Controller() {
     </SpeedDial>
   );
 }
+
+export default Controller

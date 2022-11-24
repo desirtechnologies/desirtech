@@ -1,7 +1,7 @@
 const Carousel = () => {
 
   return (
-    <section className="bg-blueGray-100 py-24 2xl:py-44 overflow-hidden">
+    <section className="font-mono py-24 2xl:py-44 overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="text-center">
           <span className="text-sm text-gray-300 uppercase">What people say</span>

@@ -1,7 +1,7 @@
 const Contact = () => {
     return (
         <section>
-            <div className="pb-12 pt-24 2xl:pt-40 bg-blueGray-100 rounded-b-10xl">
+            <div className="pb-12 pt-24 2xl:pt-40 rounded-b-10xl">
                 <div className="container px-4 mx-auto">
                     <div className="text-center">
                         <h2 className="text-9xl md:text-10xl xl:text-11xl font-medium font-heading mb-12 leading-tight">

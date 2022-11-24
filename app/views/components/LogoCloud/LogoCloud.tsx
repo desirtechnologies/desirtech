@@ -1,7 +1,7 @@
 const LogoCloud = () => {
 
     return (
-        <section className="bg-white py-24 2xl:py-44">
+        <section className="font-mono py-24 2xl:py-44">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-wrap -mx-4">
                     <div className="w-full lg:w-1/3 xl:w-1/2 px-4">

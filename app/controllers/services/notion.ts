@@ -10,9 +10,10 @@ const NotionService = () => {
             central_dogma: process.env.CENTRAL_DOGMA_ID as string ?? null
         },
         getCentralDogma: async () => {
-            const response = await serviceObject.api.databases.query({
+            const response = (await serviceObject.api.databases.query({
                 database_id: serviceObject.secured.central_dogma,
-            })
+            }))?.results
+
             return response
         },
     }

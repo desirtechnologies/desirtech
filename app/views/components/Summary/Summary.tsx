@@ -1,122 +1,121 @@
 const Summary = () => {
     return (
-        <section className="py-24 2xl:pt-64 2xl:pb-48 font-medium font-mono overflow-hidden">
-            <div className="relative container px-4 mx-auto">
-                <span className="block mb-9 uppercase tracking-widest text-xs leading-4">
+        <section className="py-24 font-mono font-medium text-white 2xl:pt-64 2xl:pb-48">
+            <div className="container px-4 mx-auto">
+                <span className="block text-xs leading-4 tracking-widest uppercase mb-9">
                     The Most popular
                 </span>
-                <h2 className="mb-20 xl:mb-44 font-heading text-9xl md:text-10xl xl:text-11xl leading-tight">
+                <h2 className="mb-20 leading-tight xl:mb-24 font-heading text-9xl md:text-10xl xl:text-11xl">
                     FAQ’s
                 </h2>
-                <div className="flex mb-20 xl:mb-40">
-                    <div className="flex-shrink-0 px-4 lg:px-1 w-full lg:w-1/3">
-                        <div className="relative py-9 px-16 h-full bg-white rounded-3xl">
-                            <h3 className="font-heading text-3xl xl:text-6xl leading-tighter">
-                                How should i develop my workflow over time?
-                            </h3>
-                            <a
-                                className="absolute -bottom-6 right-10 block w-12 h-12 bg-blue-500 rounded-full"
-                                href="#"
-                            >
-                                <img
-                                    className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                    src="uinel-assets/elements/faqs/arrow-down-white.svg"
-                                    alt=""
-                                />
-                            </a>
-                        </div>
+                <div className="relative flex justify-between mb-16 md:hidden">
+                    <div className="relative z-10 w-12 h-12 bg-white rounded-full">
+                        <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                            1
+                        </span>
                     </div>
-                    <div className="flex-shrink-0 px-4 lg:px-1 w-full lg:w-1/3">
-                        <div className="relative py-9 px-16 h-full bg-white rounded-3xl">
-                            <h3 className="font-heading text-3xl xl:text-6xl leading-tighter">
-                                Can i pay by credit card?
-                            </h3>
-                            <a
-                                className="absolute -bottom-6 right-10 block w-12 h-12 bg-blue-500 rounded-full"
-                                href="#"
-                            >
-                                <img
-                                    className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                    src="uinel-assets/elements/faqs/arrow-down-white.svg"
-                                    alt=""
-                                />
-                            </a>
-                        </div>
+                    <div className="relative z-10 w-12 h-12 bg-white rounded-full">
+                        <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                            2
+                        </span>
                     </div>
-                    <div className="flex-shrink-0 px-4 lg:px-1 w-full lg:w-1/3">
-                        <div className="relative py-9 px-16 h-full bg-white rounded-3xl">
-                            <h3 className="font-heading text-3xl xl:text-6xl leading-tighter">
-                                How often should the app be updated?
-                            </h3>
-                            <a
-                                className="absolute -bottom-6 right-10 block w-12 h-12 bg-blue-500 rounded-full"
-                                href="#"
-                            >
-                                <img
-                                    className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                    src="uinel-assets/elements/faqs/arrow-down-white.svg"
-                                    alt=""
-                                />
-                            </a>
-                        </div>
+                    <div className="relative z-10 w-12 h-12 bg-white rounded-full">
+                        <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                            3
+                        </span>
                     </div>
-                    <div className="flex-shrink-0 px-4 lg:px-1 w-full lg:w-1/3">
-                        <div className="relative py-9 px-16 h-full bg-white rounded-3xl">
-                            <h3 className="font-heading text-3xl xl:text-6xl leading-tighter">
-                                What is a product key?
-                            </h3>
-                            <a
-                                className="absolute -bottom-6 right-10 block w-12 h-12 bg-blue-500 rounded-full"
-                                href="#"
-                            >
-                                <img
-                                    className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                    src="uinel-assets/elements/faqs/arrow-down-white.svg"
-                                    alt=""
-                                />
-                            </a>
-                        </div>
-                    </div>
+                    <div className="absolute w-full bg-black top-1/2" style={{ height: 2 }} />
                 </div>
-                <div className="relative flex flex-wrap justify-center">
-                    <div className="flex items-center mx-auto w-full md:w-1/2 xl:w-full max-w-max">
-                        <a className="mr-4 lg:mr-8 xl:mr-24" href="#">
-                            <img src="uinel-assets/elements/faqs/arrow-left-black.svg" alt="" />
-                        </a>
-                        <div
-                            className="flex mx-auto w-56 lg:w-96 h-px bg-gray-100"
-                            style={{ height: 2 }}
-                        >
-                            <a className="w-1/3 bg-indigo-500" href="#" />
-                            <a className="w-2/3 bg-white" href="#" />
-                        </div>
-                        <a className="ml-4 lg:ml-8 xl:ml-24" href="#">
-                            <img src="uinel-assets/elements/faqs/arrow-right-black.svg" alt="" />
-                        </a>
-                    </div>
-                    <a
-                        className="xl:absolute xl:top-0 xl:right-0 xl:transform xl:-translate-y-1/2 inline-block mt-10 sm:mt-0 hover:text-darkBlueGray-400"
-                        href="#"
-                    >
-                        <div className="relative py-5 px-16">
-                            <span className="relative z-10 font-heading text-xl">
-                                Scroll for more
+                <div className="flex mx-auto max-w-max">
+                    <div className="relative hidden mr-12 md:top-12 md:flex md:flex-col">
+                        <div className="relative z-10 w-12 h-12 bg-white rounded-full mb-44 lg:mb-32">
+                            <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                                1
                             </span>
-                            <img
-                                className="absolute top-0 left-0"
-                                src="uinel-assets/elements/faqs/elipse1-blue.svg"
-                                alt=""
-                            />
-                            <img
-                                className="absolute top-0 left-0"
-                                src="uinel-assets/elements/faqs/elipse2-blue.svg"
-                                alt=""
-                            />
                         </div>
-                    </a>
+                        <div className="relative z-10 w-12 h-12 mb-20 bg-white rounded-full lg:mb-11">
+                            <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                                2
+                            </span>
+                        </div>
+                        <div className="relative z-10 w-12 h-12 bg-white rounded-full">
+                            <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                                3
+                            </span>
+                        </div>
+                        <div
+                            className="absolute transform bg-black top-4 left-1/2 -transform-x-1/2 h-96 lg:h-72"
+                            style={{ width: 2 }}
+                        />
+                    </div>
+                    <div className="max-w-max">
+                        <a
+                            className="flex items-start justify-between px-8 mb-12 bg-white md:px-14 py-9 max-w-max rounded-3xl"
+                            href="#"
+                        >
+                            <div>
+                                <h2 className="mb-5 text-3xl font-heading md:text-5xl xl:text-8xl leading-tighter">
+                                    How should i develop my workflow over time?
+                                </h2>
+                                <p className="text-lg font-normal leading-6">
+                                    The nulla commodo, commodo eros a, tristique lectus.
+                                </p>
+                            </div>
+                            <img
+                                className="relative ml-10 top-7"
+                                src="uinel-assets/elements/faqs/arrow-down-black.svg"
+                                alt=""
+                            />
+                        </a>
+                        <a
+                            className="flex items-start justify-between px-8 md:px-14 mb-9 md:mb-16 xl:mb-9 max-w-max"
+                            href="#"
+                        >
+                            <div>
+                                <h2 className="text-3xl font-heading md:text-5xl xl:text-8xl leading-tighter">
+                                    How often should the app be updated?
+                                </h2>
+                                <p className="hidden text-lg font-normal leading-6">
+                                    The nulla commodo, commodo eros a, tristique lectus.
+                                </p>
+                            </div>
+                            <img
+                                className="relative ml-10 top-7"
+                                src="uinel-assets/elements/faqs/arrow-down-black.svg"
+                                alt=""
+                            />
+                        </a>
+                        <a
+                            className="flex items-start justify-between px-8 mb-28 md:px-14 max-w-max"
+                            href="#"
+                        >
+                            <div>
+                                <h2 className="text-3xl font-heading md:text-5xl xl:text-8xl leading-tighter">
+                                    Can i pay by credit card?
+                                </h2>
+                                <p className="hidden text-lg font-normal leading-6">
+                                    The nulla commodo, commodo eros a, tristique lectus.
+                                </p>
+                            </div>
+                            <img
+                                className="relative ml-10 top-7"
+                                src="uinel-assets/elements/faqs/arrow-down-black.svg"
+                                alt=""
+                            />
+                        </a>
+                        <div className="flex justify-center">
+                            <a
+                                className="inline-block px-10 py-5 text-xl font-medium leading-6 tracking-tighter text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                href="#"
+                            >
+                                Show more
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
 
     )
 }

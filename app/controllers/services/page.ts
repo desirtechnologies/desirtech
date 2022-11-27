@@ -10,7 +10,7 @@ const PageService = () => {
 
             const { getCentralDogma } = NotionService()
 
-            const centralDogma = (await getCentralDogma())
+            const centralDogma = await getCentralDogma()
 
             const { layout, data } = pages({
                 store: centralDogma,

@@ -22,6 +22,7 @@
       "@layouts/*": ["views/layouts/*"],
       "@services/*": ["controllers/services/*"],
       "@includes/*": ["views/includes/*"],
+      "@hooks/*": ["controllers/hooks/*"],
       "@components/*": ["views/components/*"],
       "@pages/*": ["models/data/pages/*"],
       "@db/*": ["models/data/db/*"],

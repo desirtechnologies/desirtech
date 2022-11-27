@@ -27,6 +27,25 @@ const FacadeService = () => {
                 }
 
             },
+            links: {
+                name: "🔗Links",
+                shape: (data: any) => {
+
+                    const { URL, Name, Types, Status } = data.properties
+
+                    return {
+                        url: url(URL),
+                        name: title(Name),
+                        types: multi_select(Types),
+                        status: status(Status),
+                    }
+                },
+                predicate: (data: any) => {
+                    const { name } = serviceObject.types.links
+                    return isDatabase(name, data) ?? null
+                }
+
+            },
             faqs: {
                 name: "📱Social Media",
                 shape: (data: any) => {

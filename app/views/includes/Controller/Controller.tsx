@@ -19,10 +19,16 @@ const Controller = () => {
     <SpeedDial
       ariaLabel="Desir Tech Compass"
       FabProps={{
+        classes: {
+          "root": "duration-500 ease-in-out"
+        },
         sx: {
-          bgcolor: '#230BD8',
+          bgcolor: '#32c82f',
+          outline: "#000000",
+          boxShadow: "4px 4px black",
           '&:hover': {
-            bgcolor: 'black',
+            backgroundImage: "radial-gradient(circle, #32c82f, #000000, #00728c, #000000, #32c82f)",
+
           }
         }
       }}

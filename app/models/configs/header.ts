@@ -1,6 +1,6 @@
 import type { HeaderProps } from "@typings/Header"
 
-const header = ({ favicon }: HeaderProps) => {
+const header = ({ favicon, links }: HeaderProps) => {
 
     const defaultObject = {
         favicon: {
@@ -8,12 +8,18 @@ const header = ({ favicon }: HeaderProps) => {
                 src: "FAVICON_SRC_NOT_FOUND"
             },
             url: "#FAVICON_URL_NOT_FOUND"
-        }
+        },
+        links: [
+            {
+                name: "LINK_NOT_FOUND"
+            }
+        ]
 
     }
 
     const headerObject = {
-        favicon: favicon ?? defaultObject.favicon
+        favicon: favicon ?? defaultObject.favicon,
+        links: links ?? defaultObject.links
     }
 
     return { ...headerObject } ?? null

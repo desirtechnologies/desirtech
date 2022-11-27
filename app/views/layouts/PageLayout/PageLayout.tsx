@@ -13,11 +13,11 @@ const PageLayout = ({ children, metaData, footer, header, menu }: LayoutProps) =
     return (
         <Suspense fallback={<></>}>
             <Controller />
-            <DrawerMenu />
+            <DrawerMenu {...menu} />
             <RootLayout metaData={metaData}>
-                <Header />
+                <Header {...header} />
                 {children}
-                <Footer />
+                <Footer {...footer} />
             </RootLayout>
         </Suspense>
     )

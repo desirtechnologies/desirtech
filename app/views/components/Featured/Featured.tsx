@@ -1,116 +1,112 @@
 const Featured = () => {
     return (
-        <section className="font-medium font-mono py-24 2xl:py-44 overflow-hidden rounded-b-10xl">
+        <section className="py-24 font-mono 2xl:py-44">
             <div className="container px-4 mx-auto">
-                <span className="block mb-9 uppercase tracking-widest text-xs leading-4 text-gray-300">
-                    Discover out blog
-                </span>
-                <h2 className="mb-36 md:mb-20 xl:mb-32 font-heading text-9xl md:text-10xl xl:text-11xl leading-tight">
-                    Latest blog
-                </h2>
-                <div className="flex flex-wrap items-start -mx-4">
-                    <div className="relative md:-mt-0 w-full lg:w-2/3 px-4 mb-52 md:mb-12 -mt-20">
-                        <img
-                            className="w-full"
-                            src="uinel-assets/images/blog/blog2-learning.png"
-                            alt=""
-                        />
-                        <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-40 md:bottom-12 px-6 w-full">
-                            <div className="py-12 px-6 md:px-14 bg-white z-10 rounded-5xl shadow-md">
-                                <div className="flex items-center mb-4">
-                                    <a
-                                        className="inline-block font-heading text-lg leading-5 text-purple-500 hover:text-purple-600"
-                                        href="#"
-                                    >
-                                        New in Uinel
-                                    </a>
-                                    <div className="mx-4 w-px h-6 bg-gray-50" />
-                                    <p className="relative top-px uppercase tracking-widest text-xs text-gray-300">
-                                        2 june
-                                    </p>
+                <div className="text-center mb-14 xl:mb-24">
+                    <span className="inline-block py-3 text-lg font-medium leading-5 text-indigo-500 border border-indigo-500 px-7 mb-7 font-heading bg-blueGray-100 rounded-6xl">
+                        New products
+                    </span>
+                    <h2 className="mb-8 font-medium xl:mb-12 text-9xl md:text-10xl xl:text-12xl font-heading">
+                        Don’t look back
+                    </h2>
+                    <p className="text-xl text-darkBlueGray-400">
+                        Sed porttitor turpis sit amet malesuada porta vivamus lobortis.
+                    </p>
+                </div>
+                <div className="flex flex-wrap items-stretch -mx-3">
+                    <div className="w-full px-3 xl:w-1/2">
+                        <div className="-mx-3 sm:flex xl:flex-col">
+                            <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full">
+                                <div className="relative h-full">
+                                    <img
+                                        className="absolute object-cover w-full h-full rounded-7xl"
+                                        src="uinel-assets/images/ecommerce-newest-products/smartphone.jpg"
+                                        alt=""
+                                    />
+                                    <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
+                                        <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
+                                            -10%
+                                        </div>
+                                        <a
+                                            className="block mb-5 text-6xl font-medium font-heading hover:underline"
+                                            href="#"
+                                        >
+                                            Oppo Reno 5
+                                        </a>
+                                        <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
+                                            <span className="mr-2 text-xs">$</span>
+                                            <span>544.90</span>
+                                        </p>
+                                        <div className="sm:max-w-max">
+                                            <a
+                                                className="block w-full px-10 py-5 text-xl font-medium leading-6 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                                href="#"
+                                            >
+                                                Buy
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="mb-4 font-heading leading-normal text-3xl xl:text-7xl">
-                                    Get inspired from the all designers
-                                </h3>
-                                <p className="xl:max-w-md mb-4 xl:mb-0 font-heading font-normal text-base leading-8 text-gray-500">
-                                    I haretra neque non mi aliquam, finibus hart bibendum molestie.
-                                    Vestibulum suscipit sagittis dignissim mauris.
-                                </p>
-                                <button
-                                    className="block py-5 px-10 md:ml-auto md:w-auto w-full text-xl leading-6 text-white font-medium tracking-tighter font-heading bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-                                    type="button"
-                                >
-                                    Learn more
-                                </button>
+                            </div>
+                            <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full xl:mb-0">
+                                <div className="relative h-full">
+                                    <img
+                                        className="absolute object-cover w-full h-full rounded-7xl"
+                                        src="uinel-assets/images/ecommerce-newest-products/woman.jpg"
+                                        alt=""
+                                    />
+                                    <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
+                                        <a
+                                            className="block mb-5 text-6xl font-medium font-heading hover:underline"
+                                            href="#"
+                                        >
+                                            Headphones Blacksaint 3
+                                        </a>
+                                        <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
+                                            <span className="mr-2 text-xs">$</span>
+                                            <span>544.90</span>
+                                        </p>
+                                        <div className="sm:max-w-max">
+                                            <a
+                                                className="block w-full px-10 py-4 text-xl font-medium leading-8 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                                href="#"
+                                            >
+                                                Buy
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="h-40 xl:h-80 bg-gray-50 rounded-b-9xl" />
                     </div>
-                    <div className="relative w-full lg:w-1/3 px-4">
-                        <div className="flex flex-wrap -mx-4">
-                            <div className="relative w-full md:w-1/2 lg:w-full px-4 mb-12 md:mb-0 lg:mb-12">
-                                <img
-                                    className="w-full"
-                                    src="uinel-assets/images/blog/blog2-woman.png"
-                                    alt=""
-                                />
-                                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-7 w-full px-6">
-                                    <div className="py-12 px-6 md:px-14 bg-white rounded-5xl shadow-md">
-                                        <div className="flex items-center mb-4">
-                                            <a
-                                                className="inline-block font-heading text-lg leading-5 text-purple-500 hover:text-purple-600"
-                                                href="#"
-                                            >
-                                                UX Design
-                                            </a>
-                                            <div className="mx-4 w-px h-6 bg-gray-50" />
-                                            <p className="relative top-px uppercase tracking-widest text-xs text-gray-300">
-                                                1 june
-                                            </p>
-                                        </div>
-                                        <a className="inline-block hover:underline" href="#">
-                                            <h3 className="font-heading leading-normal text-3xl xl:text-7xl">
-                                                Get inspired from the all designers
-                                            </h3>
-                                        </a>
-                                    </div>
+                    <div className="w-full px-3 xl:w-1/2">
+                        <div className="relative flex flex-col justify-end h-full">
+                            <img
+                                className="absolute object-cover w-full h-full rounded-7xl"
+                                src="uinel-assets/images/ecommerce-newest-products/woman2.jpg"
+                                alt=""
+                            />
+                            <div className="relative z-10 p-10 xl:px-24 xl:pb-44 xl:pt-24">
+                                <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
+                                    -5%
                                 </div>
-                                <div className="h-40 bg-gray-50 rounded-b-9xl" />
-                            </div>
-                            <div className="relative w-full md:w-1/2 lg:w-full px-4">
-                                <img
-                                    className="w-full"
-                                    src="uinel-assets/images/blog/blog2-travel.png"
-                                    alt=""
-                                />
-                                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-7 w-full px-6">
-                                    <div className="py-12 px-6 md:px-14 bg-white rounded-5xl shadow-md">
-                                        <div className="flex items-center mb-4">
-                                            <a
-                                                className="inline-block font-heading text-lg leading-5 text-purple-500 hover:text-purple-600"
-                                                href="#"
-                                            >
-                                                Community
-                                            </a>
-                                            <div className="mx-4 w-px h-6 bg-gray-50" />
-                                            <p className="relative top-px uppercase tracking-widest text-xs text-gray-300">
-                                                1 june
-                                            </p>
-                                        </div>
-                                        <a className="inline-block hover:underline" href="#">
-                                            <h3 className="font-heading leading-normal text-3xl xl:text-7xl">
-                                                Get inspired from the all designers
-                                            </h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="h-40 bg-gray-50 rounded-b-9xl" />
+                                <a
+                                    className="block mb-5 text-6xl font-medium xl:text-10xl font-heading hover:underline"
+                                    href="#"
+                                >
+                                    Samsung
+                                </a>
+                                <p className="flex items-center text-xl font-medium tracking-tighter text-blue-500 font-heading">
+                                    <span className="mr-2 text-xs">$</span>
+                                    <span>544.90</span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
     )
 }

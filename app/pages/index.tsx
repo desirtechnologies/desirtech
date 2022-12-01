@@ -4,14 +4,16 @@ import Hero from "@components/Hero"
 import LogoCloud from "@components/LogoCloud"
 import PageService from '@services/page'
 import type { PageType } from "@typings/Page"
-import Contact from "@views/components/Contact"
-import DataGrid from "@views/components/DataGrid"
-import Featured from "@views/components/Featured"
-import Stats from "@views/components/Stats"
-import Summary from "@views/components/Summary"
-import PageLayout from "@views/layouts/PageLayout"
-
-
+import Contact from "@components/Contact"
+import DataGrid from "@components/DataGrid"
+import Featured from "@components/Featured"
+import Stats from "@components/Stats"
+import Summary from "@components/Summary"
+import PageLayout from "@layouts/PageLayout"
+import Flow from "@components/Flow"
+import Timeline from "@components/Timeline"
+import Table from "@views/components/Table"
+import Pillars from "@views/components/Pillars"
 export async function getStaticProps() {
 
   const { getPage } = PageService()
@@ -36,10 +38,13 @@ const HomePage = ({ page }: PageType) => {
 
     <>
       <Hero {...hero} />
-      <Gallery />
-      <LogoCloud />
-      <DataGrid />
       <Featured />
+      <Timeline />
+      <Carousel />
+      <Pillars />
+      <Flow />
+      <LogoCloud />
+      <Table />
       <Stats />
       <Summary />
       <Contact />

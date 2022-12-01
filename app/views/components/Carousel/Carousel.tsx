@@ -1,16 +1,19 @@
 const Carousel = () => {
 
   return (
-    <section className="font-mono py-24 2xl:py-44 overflow-hidden">
+    <section
+      className="py-24 overflow-hidden font-mono 2xl:py-44"
+      style={{ borderTopLeftRadius: 80, borderTopRightRadius: 80 }}
+    >
       <div className="container px-4 mx-auto">
-        <div className="text-center">
+        <div className="mb-24 text-center">
           <span className="text-sm text-gray-300 uppercase">What people say</span>
-          <h2 className="mt-8 mb-24 text-9xl md:text-10xl xl:text-11xl font-heading font-medium text-white font-mono">
-            Opinion
+          <h2 className="mt-8 font-medium text-9xl md:text-10xl xl:text-11xl font-heading">
+            Testimonials
           </h2>
         </div>
-        <div className="flex flex-wrap items-center justify-center -mx-4 mb-16 md:mb-28">
-          <div className="w-auto px-4 mb-4 xl:mb-0 text-center order-last sm:order-first">
+        <div className="flex flex-wrap items-center justify-center mb-16 md:mb-28">
+          <div className="order-last w-auto px-4 mb-4 text-center xl:mb-0 sm:order-first">
             <a className="inline-block" href="#">
               <svg
                 width={8}
@@ -26,96 +29,58 @@ const Carousel = () => {
               </svg>
             </a>
           </div>
-          <div className="w-full sm:w-2/3 max-w-4xl px-4 mx-auto mb-16 sm:mb-0">
-            <div className="relative mb-5 py-20 px-8 md:px-20 bg-white rounded-7xl shadow-lg">
-              <img
-                className="absolute top-0 right-0 mr-12 transform -translate-y-1/2"
-                src="uinel-assets/images/team/quote-2.svg"
-                alt=""
-              />
-              <p className="mb-8 text-lg md:text-xl font-heading font-medium">
-                Morbi ut nisl placerat, suscipit urna non, fringilla leo. Aenean mi
-                libero, pretium eu convallis non, feugiat non ipsum. Vestibulum ante
-                ipsum primis in faucibus orci luctus et ultrices posuere cubilia!
-              </p>
-              <p className="text-gray-400">
-                I haretra neque non mi aliquam, finibus hart bibendum molestie.
-                Vestibulum suscipit sagittis dignissim mauris.
-              </p>
-            </div>
-            <div className="flex flex-wrap -mx-4">
-              <div className="w-full lg:w-1/2 px-4 lg:flex-grow mb-8 lg:mb-0">
-                <div className="h-full flex items-center py-5 px-8 md:px-20 bg-white rounded-7xl shadow-lg">
-                  <div className="flex items-center justify-center text-left">
+          <div className="w-full mx-auto mb-16 sm:w-4/5 sm:mb-0">
+            <div className="shadow-lg bg-gray-50 rounded-7xl">
+              <div className="flex flex-wrap pb-8 lg:items-end">
+                <div className="self-stretch w-full overflow-hidden lg:w-1/2 rounded-tr-3xl lg:rounded-tr-none rounded-tl-3xl">
+                  <img
+                    className="object-cover w-full h-full"
+                    src="uinel-assets/images/team/photo-big.png"
+                    alt=""
+                  />
+                </div>
+                <div className="w-full lg:w-1/2">
+                  <div className="flex items-center py-5 pl-8 pr-8 md:pl-20">
+                    <span className="text-xl font-medium">4.2</span>
+                    <a className="inline-block ml-3 mr-1" href="#">
+                      <img src="uinel-assets/images/team/star-gold.svg" alt="" />
+                    </a>
+                    <a className="inline-block mr-1" href="#">
+                      <img src="uinel-assets/images/team/star-gold.svg" alt="" />
+                    </a>
+                    <a className="inline-block mr-1" href="#">
+                      <img src="uinel-assets/images/team/star-gold.svg" alt="" />
+                    </a>
+                    <a className="inline-block mr-1" href="#">
+                      <img src="uinel-assets/images/team/star-gold.svg" alt="" />
+                    </a>
+                    <a className="inline-block" href="#">
+                      <img src="uinel-assets/images/team/star.svg" alt="" />
+                    </a>
+                  </div>
+                  <div className="relative px-8 pt-16 pb-20 bg-white md:pl-20">
                     <img
-                      className="mr-8 w-16 h-20 rounded-full object-cover"
-                      src="uinel-assets/images/team/placeholder-photo4.png"
+                      className="absolute top-0 right-0 w-10 mt-10 mr-6 transform md:mr-0 md:translate-x-1/2"
+                      src="uinel-assets/images/team/quote-2.svg"
                       alt=""
                     />
-                    <div>
-                      <h4 className="text-xl font-heading font-medium mb-2">
-                        Realyn Richmond
-                      </h4>
-                      <p className="text-gray-400">ASOS LTD</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2 px-4 lg:flex-grow">
-                <div className="h-full py-4 pl-12 pr-4 bg-white rounded-7xl shadow-lg">
-                  <div className="flex items-center">
-                    <div className="pr-8 mr-auto">
-                      <p className="mb-2 text-base text-gray-400">
-                        Realyns rating
-                      </p>
-                      <div className="inline-block">
-                        <a className="inline-block" href="#">
-                          <img
-                            className="w-5 h-5"
-                            src="uinel-assets/images/team/star-gold.svg"
-                            alt=""
-                          />
-                        </a>
-                        <a className="inline-block" href="#">
-                          <img
-                            className="w-5 h-5"
-                            src="uinel-assets/images/team/star-gold.svg"
-                            alt=""
-                          />
-                        </a>
-                        <a className="inline-block" href="#">
-                          <img
-                            className="w-5 h-5"
-                            src="uinel-assets/images/team/star-gold.svg"
-                            alt=""
-                          />
-                        </a>
-                        <a className="inline-block" href="#">
-                          <img
-                            className="w-5 h-5"
-                            src="uinel-assets/images/team/star-gold.svg"
-                            alt=""
-                          />
-                        </a>
-                        <a className="inline-block" href="#">
-                          <img
-                            className="w-5 h-5"
-                            src="uinel-assets/images/team/star.svg"
-                            alt=""
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="inline-block p-5 border border-gray-100 rounded-4xl">
-                      <p className="mb-2 text-base text-gray-400">Average grade</p>
-                      <span className="text-xl font-medium">4.87</span>
-                    </div>
+                    <h3 className="mb-5 text-3xl font-medium font-heading">
+                      Thx for amazing tools, Uinel’s family!
+                    </h3>
+                    <p className="text-base text-gray-300 mb-14">
+                      I haretra neque non mi aliquam, finibus hart bibendum
+                      molestie. Vestibulum suscipit sagittis lorem sad dignissim
+                      mauris neno haretra sagittis.
+                    </p>
+                    <h4 className="text-xl font-medium font-heading">
+                      Jasmine Joy
+                    </h4>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-auto px-4 mb-4 xl:mb-0 text-center order-last">
+          <div className="order-last w-auto px-4 mb-4 text-center xl:mb-0">
             <a className="inline-block" href="#">
               <svg
                 width={8}
@@ -132,8 +97,8 @@ const Carousel = () => {
             </a>
           </div>
         </div>
-        <div className="h-1">
-          <div className="bg-gray-100 h-1/2 w-64 mx-auto rounded-full">
+        <div className="h-1 mx-auto">
+          <div className="w-64 mx-auto bg-gray-100 rounded-full h-1/2">
             <div className="w-1/3 h-full bg-purple-500 rounded-full" />
           </div>
         </div>

@@ -1,17 +1,19 @@
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialAction from '@mui/material/SpeedDialAction';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import CodeIcon from '@mui/icons-material/Code';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 
 
 
 const Controller = () => {
 
-  const actions = [
-    { icon: <KeyboardDoubleArrowUpIcon />, name: 'Top' },
+  const Controls = [
+    {
+      icon: <KeyboardDoubleArrowUpIcon />,
+      name: 'Top',
+      action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
 
   ];
 
@@ -27,7 +29,7 @@ const Controller = () => {
           outline: "#000000",
           boxShadow: "4px 4px black",
           '&:hover': {
-            backgroundImage: "radial-gradient(circle, #32c82f, #000000, #00728c, #000000, #32c82f)",
+            backgroundImage: "linear-gradient(to top, #32c82f, #000000, #00728c, #000000, #32c82f)",
 
           }
         }
@@ -35,11 +37,12 @@ const Controller = () => {
       sx={{ position: 'fixed', bottom: 16, right: 16 }}
       icon={<CodeIcon />}
     >
-      {actions.map((action) => (
+      {Controls.map((control) => (
         <SpeedDialAction
-          key={action.name}
-          icon={action.icon}
-          tooltipTitle={action.name}
+          onClick={control.action}
+          key={control.name}
+          icon={control.icon}
+          tooltipTitle={<div className="font-mono">{control?.name}</div>}
         />
       ))}
     </SpeedDial>

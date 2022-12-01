@@ -1,19 +1,13 @@
 import Meta from "@includes/Meta"
+import BackgroundSx from "@styles/Background"
 import type { LayoutProps } from "@typings/Layout"
 
 const RootLayout = ({ children, metaData }: LayoutProps) => {
 
-    const ContainerSx = {
-        backgroundColor: "#000000ED",
-        backgroundImage: "url('/assets/images/circuits.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-    }
+    const { containerSx } = BackgroundSx()
 
     return (
-        <div style={ContainerSx}>
+        <div style={containerSx}>
             <Meta {...metaData} />
             {children}
         </div>

@@ -17,8 +17,8 @@ const Hero: ComponentType<HeroProps> = ({ title, heading }: HeroProps) => {
                             {heading ? heading : "HEADING_NOT_FOUND"}
                         </span>
                     </div>
-                    <div className="relative self-center flex-1 w-full h-full m-auto -mt-1 xl:-mt-6">
-                        <HackerSVG className={" self-center h-full m-auto cursor-pointer"} />
+                    <div className="relative self-center flex-1 w-full h-full m-auto -mt-1 xl:h-3/4 xl:w-3/4 xl:-mt-6">
+                        <HackerSVG style={{ width: "inherit", height: "inherit" }} className={" self-center h-full m-auto cursor-pointer"} />
                     </div>
                 </div>
             </div>

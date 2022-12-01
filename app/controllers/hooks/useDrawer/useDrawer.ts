@@ -2,9 +2,7 @@ import { atom, useRecoilState } from "recoil"
 
 const drawerState = atom({
     key: 'drawerState',
-    default: {
-        isOpen: false
-    },
+    default: false
 });
 
 const useDrawer = () => {
@@ -12,15 +10,15 @@ const useDrawer = () => {
     const [drawer, setDrawer] = useRecoilState(drawerState)
 
     const toggleDrawer = () => {
-        setDrawer({ isOpen: !drawer.isOpen })
+        setDrawer(!drawer)
     }
 
     const closeDrawer = () => {
-        setDrawer({ isOpen: false })
+        setDrawer(false)
     }
 
     const openDrawer = () => {
-        setDrawer({ isOpen: true })
+        setDrawer(true)
     }
 
     return { drawer, toggleDrawer, closeDrawer, openDrawer }

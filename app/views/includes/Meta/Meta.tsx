@@ -10,6 +10,28 @@ const Meta: ComponentType<MetaProps> = ({ pageTitle }: MetaProps) => {
             title="Desir Tech"
             description="This example uses more of the available config options."
             canonical="https://www.desir.tech"
+            additionalLinkTags={[
+                {
+                  rel: 'icon',
+                  href: 'https://www.test.ie/favicon.ico',
+                },
+                {
+                  rel: 'apple-touch-icon',
+                  href: 'https://www.test.ie/touch-icon-ipad.jpg',
+                  sizes: '76x76'
+                },
+                {
+                  rel: 'manifest',
+                  href: '/manifest.json'
+                },
+                {
+                  rel: 'preload',
+                  href: 'https://www.test.ie/font/sample-font.woof2',
+                  as: 'font',
+                  type: 'font/woff2',
+                  crossOrigin: 'anonymous'
+                }
+              ]}
             openGraph={{
                 url: 'https://www.url.ie/a',
                 title: 'Open Graph Title',

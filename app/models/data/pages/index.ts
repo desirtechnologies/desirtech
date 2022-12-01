@@ -18,10 +18,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             data: {
                 hero: {
                     title: "Desir Tech",
-                    cover: {
-                        src: "/assets/images/hacker.svg"
-                    }
-
+                    heading: "Technomancer",
                 }
             },
         }
@@ -36,7 +33,7 @@ const pages = ({ store, key }: PageQueryProps) => {
                 links: getLinks().map((link) => ({
                     name: link?.name ?? "NOT_FOUND",
                     url: link?.url ?? "#"
-                })).splice(0,4)
+                })).splice(0, 7)
             },
             footer: {
                 copyright: 'LOL'

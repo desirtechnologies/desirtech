@@ -17,8 +17,8 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links }: DrawerMenuProps) 
             unmountOnExit >
 
             <div className="fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm navbar-menu">
-                <div className="fixed inset-0 bg-black navbar-backdrop opacity-40" />
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
+
                     <nav className="relative flex flex-col w-full h-full py-8 overflow-y-auto font-mono text-white flicker-in-1 backdrop-blur-md">
                         <div className="flex items-center pl-16 mb-8">
                             <a className="text-2xl font-bold text-gray-800" href="#">
@@ -125,14 +125,16 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links }: DrawerMenuProps) 
                                 </span>
                             </p>
                         </div>
+
+                        <button onClick={() => closeDrawer()} className="absolute p-6 navbar-close group top-5 right-5">
+                            <div className="absolute top-3">
+                                <span className="absolute w-px h-6 duration-500 transform -rotate-45 bg-white group-hover:rotate-45" />
+                                <span className="absolute w-px h-6 duration-300 transform rotate-45 bg-white group-hover:-rotate-45" />
+                            </div>
+                        </button>
                     </nav>
                 </ClickAwayListener>
-                <button className="absolute p-6 navbar-close group top-5 right-5">
-                    <div onClick={() => closeDrawer()} className="absolute top-3">
-                        <span className="absolute w-px h-6 duration-500 transform -rotate-45 bg-white group-hover:rotate-45" />
-                        <span className="absolute w-px h-6 duration-300 transform rotate-45 bg-white group-hover:-rotate-45" />
-                    </div>
-                </button>
+
 
             </div>
 

@@ -24,7 +24,8 @@
     "react-headroom": "^3.2.1",
     "react-social-icons": "^5.15.0",
     "react-transition-group": "^4.4.5",
-    "recoil": "^0.7.6"
+    "recoil": "^0.7.6",
+    "spinners-react": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",

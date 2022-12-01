@@ -4,7 +4,7 @@ import type { LayoutProps } from "@typings/Layout"
 const RootLayout = ({ children, metaData }: LayoutProps) => {
 
     const ContainerSx = {
-        backgroundColor: "#000000EE",
+        backgroundColor: "#000000ED",
         backgroundImage: "url('/assets/images/circuits.svg')",
         backgroundSize: "cover",
         backgroundPosition: "center center",

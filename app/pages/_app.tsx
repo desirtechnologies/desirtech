@@ -7,26 +7,25 @@ import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import 'react-awesome-slider/dist/styles.css';
 
 import type { ApplicationProps } from "@typings/Application";
+
 import { RecoilRoot } from 'recoil';
-
-
+import { SpinnerInfinity } from 'spinners-react';
 
 export default function Application({ Component, pageProps }: ApplicationProps) {
 
   const { PageLayout } = Component?.layout ?? <></>
 
+
   return (
     <RecoilRoot>
       {
-        PageLayout ? <PageLayout {...pageProps.page.layout}>
+        (PageLayout) ? <PageLayout {...pageProps.page.layout}>
 
           <Component {...pageProps} />
 
         </PageLayout> :
           <>
-
-            <Component {...pageProps} />
-
+            <SpinnerInfinity enabled={true} />
           </>
       }
     </RecoilRoot>

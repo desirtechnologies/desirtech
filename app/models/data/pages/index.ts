@@ -18,7 +18,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             data: {
                 hero: {
                     title: "Desir Tech",
-                    heading: getTitles().values
+                    heading: ["Dev", "Techie"]
                 }
             },
         }

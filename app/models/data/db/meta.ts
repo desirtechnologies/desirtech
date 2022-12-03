@@ -17,7 +17,6 @@ const meta = (store) => {
         },
 
         getMeta: () => {
-
             return (store.filter((data) => {
                 return (
                     meta.predicate(data)

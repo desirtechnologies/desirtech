@@ -31,14 +31,14 @@ export async function getStaticProps() {
 
 const HomePage = ({ page }: PageType) => {
 
-  const { hero, contentGrid, simpleForm } = page?.data
+  const { hero, featured, contentGrid, simpleForm } = page?.data
 
 
   return (
 
     <>
       <Hero {...hero} />
-      <Featured />
+      <Featured {...featured} />
       <Timeline />
       <Carousel />
       <Pillars />

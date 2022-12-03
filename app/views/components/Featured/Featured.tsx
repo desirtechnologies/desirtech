@@ -1,18 +1,32 @@
-const Featured = () => {
+import type { FeaturedProps } from "@models/typings/Featured"
+import type { ComponentType } from "@models/typings/Component"
+
+
+
+const Featured: ComponentType<FeaturedProps> = ({ heading, title, description }: FeaturedProps) => {
+
+
+    const Header = () => {
+        return (
+            <div className="text-center mb-14 xl:mb-24">
+                <span className="inline-block py-3 text-lg font-medium leading-5 text-indigo-500 border border-indigo-500 px-7 mb-7 font-heading bg-blueGray-100 rounded-6xl">
+                    {heading ? heading : "HEADING_NOT_FOUND"}
+                </span>
+                <h2 className="mb-8 font-medium xl:mb-12 text-9xl md:text-10xl xl:text-12xl font-heading">
+                    {title ? title : "TITLE_NOT_FOUND"}
+                </h2>
+                <p className="text-xl text-darkBlueGray-400">
+                    {description ? description : "DESCRIPTION_NOT_FOUND"}
+                </p>
+            </div>
+
+        )
+    }
     return (
-        <section className="py-24 font-mono 2xl:py-44">
+        <section className="py-24 font-mono text-white 2xl:py-44">
             <div className="container px-4 mx-auto">
-                <div className="text-center mb-14 xl:mb-24">
-                    <span className="inline-block py-3 text-lg font-medium leading-5 text-indigo-500 border border-indigo-500 px-7 mb-7 font-heading bg-blueGray-100 rounded-6xl">
-                        New products
-                    </span>
-                    <h2 className="mb-8 font-medium xl:mb-12 text-9xl md:text-10xl xl:text-12xl font-heading">
-                        Don’t look back
-                    </h2>
-                    <p className="text-xl text-darkBlueGray-400">
-                        Sed porttitor turpis sit amet malesuada porta vivamus lobortis.
-                    </p>
-                </div>
+
+                <Header />
                 <div className="flex flex-wrap items-stretch -mx-3">
                     <div className="w-full px-3 xl:w-1/2">
                         <div className="-mx-3 sm:flex xl:flex-col">
@@ -79,6 +93,8 @@ const Featured = () => {
                             </div>
                         </div>
                     </div>
+
+                    
                     <div className="w-full px-3 xl:w-1/2">
                         <div className="relative flex flex-col justify-end h-full">
                             <img
@@ -103,7 +119,11 @@ const Featured = () => {
                             </div>
                         </div>
                     </div>
+
+                    
                 </div>
+
+
             </div>
         </section>
 

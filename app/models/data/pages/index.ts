@@ -19,6 +19,17 @@ const pages = ({ store, key }: PageQueryProps) => {
                 hero: {
                     title: "Desir Tech",
                     heading: ["Dev", "Techie"]
+                },
+                featured: {
+                    primary: {
+                        title: "",
+                        cover: {
+                            src: ""
+                        }
+
+                    },
+                    secondary: {},
+                    tertiary: {}
                 }
             },
         }

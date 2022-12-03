@@ -6,7 +6,7 @@ import type { PageQueryProps } from "@typings/Page"
 const pages = ({ store, key }: PageQueryProps) => {
 
     const { getLinks, getPageLinks } = links(store)
-    const { getFavicon } = meta(store)
+    const { getFavicon, getTitles } = meta(store)
 
 
     const pageData = {
@@ -18,7 +18,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             data: {
                 hero: {
                     title: "Desir Tech",
-                    heading: ["Technomancer", "Developer", "DevOps Engineer", "Researcher", "Jazz Pianist", "UI/UX Designer", "Strategist", "Architect"],
+                    heading: getTitles().values
                 }
             },
         }

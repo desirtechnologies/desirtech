@@ -106,15 +106,16 @@ const FacadeService = () => {
 
             },
             meta: {
-                name: "📏Meta",
+                name: "🔎Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status, Description } = data.properties
+                    const { URL, Title, Types, Status, Values, Description } = data.properties
 
                     return {
                         url: url(URL),
                         description: rich_text(Description),
                         title: rich_text(Title),
+                        values: multi_select(Values),
                         types: multi_select(Types),
                         status: status(Status),
                     }

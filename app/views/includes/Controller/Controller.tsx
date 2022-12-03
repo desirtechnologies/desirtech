@@ -2,7 +2,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-
+import TerminalIcon from '@mui/icons-material/Terminal';
 
 
 
@@ -27,15 +27,16 @@ const Controller = () => {
         sx: {
           bgcolor: '#008000',
           outline: "#000000",
-          boxShadow: "4px 4px black",
           '&:hover': {
-            backgroundImage: "linear-gradient(to top, #32c82f, #000000, #00728c, #000000, #32c82f)",
+            backgroundColor: "#000000",
+            boxShadow: "0px 0px #FFFFFF88",
+            transitionDuration: "500ms"
 
           }
         }
       }}
       sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      icon={<CodeIcon />}
+      icon={<TerminalIcon />}
     >
       {Controls.map((control) => (
         <SpeedDialAction

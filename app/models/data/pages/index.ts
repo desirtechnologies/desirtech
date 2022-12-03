@@ -18,7 +18,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             data: {
                 hero: {
                     title: "Desir Tech",
-                    heading: "Technomancer",
+                    heading: ["Technomancer", "Developer", "DevOps Engineer", "Researcher", "Jazz Pianist", "UI/UX Designer", "Strategist", "Architect"],
                 }
             },
         }

@@ -4,22 +4,88 @@ import type { DrawerMenuProps } from "@models/typings/DrawerMenu";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { CSSTransition } from 'react-transition-group';
 
-const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links }: DrawerMenuProps) => {
+const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links, copyright }: DrawerMenuProps) => {
 
     const { drawer, toggleDrawer, closeDrawer } = useDrawer()
 
+
+
+    const Copyright = () => {
+
+        return (
+            <div className="px-10 mt-auto">
+                <button className="w-full px-5 py-3 mt-6 text-sm font-bold tracking-wide uppercase border-2 border-gray-200 border-opacity-50 rounded-full font-body hover:border-gray-300">
+                    <span className="block mt-px">New project</span>
+                </button>
+                <p className="mt-6 mb-4 text-center">
+                    <span className="text-sm text-darkBlueGray-400">
+                        2021 © Uinel. All rights reserved.
+                    </span>
+                </p>
+            </div>
+        )
+    }
+
+    const Links = () => {
+
+        return (
+            <div>
+                <ul>
+                    <li className="px-10 mb-1">
+                        <a
+                            className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
+                            href="#"
+                        >
+                            New tools
+                        </a>
+                    </li>
+                    <li className="px-10 mb-1">
+                        <a
+                            className="flex items-center py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
+                            href="#"
+                        >
+                            Products
+
+                        </a>
+                    </li>
+                    <li className="px-10 mb-1">
+                        <a
+                            className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
+                            href="#"
+                        >
+                            Pricing
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        )
+    }
+
+    const CloseButton = () => {
+
+        return (
+            <button onClick={() => closeDrawer()} className="absolute p-6 navbar-close group top-5 right-5">
+                <div className="absolute top-3">
+                    <span className="absolute w-px h-6 duration-500 transform -rotate-45 bg-white group-hover:rotate-45" />
+                    <span className="absolute w-px h-6 duration-300 transform rotate-45 bg-white group-hover:-rotate-45" />
+                </div>
+            </button>
+        )
+    }
 
     return (
 
         <CSSTransition
             in={drawer}
-            timeout={300}
+            timeout={500}
             unmountOnExit >
 
-            <div className="fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm navbar-menu">
+            <div className="fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm navbar-menu backdrop-blur-md">
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
+                    <nav className="relative flex flex-col w-full h-full py-8 overflow-y-auto font-mono text-white flicker-in-1">
 
-                    <nav className="relative flex flex-col w-full h-full py-8 overflow-y-auto font-mono text-white flicker-in-1 backdrop-blur-md">
+
                         <div className="flex items-center pl-16 mb-8">
                             <a className="text-2xl font-bold text-gray-800" href="#">
                                 <img
@@ -29,6 +95,8 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links }: DrawerMenuProps) 
                                 />
                             </a>
                         </div>
+
+
                         <div className="flex items-center px-10 mb-10">
                             <a className="flex items-center ml-1" href="#">
                                 <img
@@ -74,68 +142,15 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links }: DrawerMenuProps) 
                                 </svg>
                             </a>
                         </div>
-                        <div>
-                            <ul>
-                                <li className="px-10 mb-1">
-                                    <a
-                                        className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                                        href="#"
-                                    >
-                                        New tools
-                                    </a>
-                                </li>
-                                <li className="px-10 mb-1">
-                                    <a
-                                        className="flex items-center py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                                        href="#"
-                                    >
-                                        <span>Products</span>
-                                        <svg
-                                            className="ml-4"
-                                            width={8}
-                                            height={5}
-                                            viewBox="0 0 8 5"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M6.97291 0.193232C7.20854 -0.0644107 7.58938 -0.0644107 7.82328 0.193232C8.05804 0.450875 8.05978 0.867141 7.82328 1.12478L4.42529 4.80677C4.19053 5.06441 3.81056 5.06441 3.57406 4.80677L0.176073 1.12478C-0.0586909 0.868102 -0.0586909 0.450875 0.176073 0.193232C0.411706 -0.0644107 0.792544 -0.0644107 1.02644 0.193232L4.00098 3.21284L6.97291 0.193232Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li className="px-10 mb-1">
-                                    <a
-                                        className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                                        href="#"
-                                    >
-                                        Pricing
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="px-10 mt-auto">
-                            <button className="w-full px-5 py-3 mt-6 text-sm font-bold tracking-wide uppercase border-2 border-gray-200 border-opacity-50 rounded-full font-body hover:border-gray-300">
-                                <span className="block mt-px">New project</span>
-                            </button>
-                            <p className="mt-6 mb-4 text-center">
-                                <span className="text-sm text-darkBlueGray-400">
-                                    2021 © Uinel. All rights reserved.
-                                </span>
-                            </p>
-                        </div>
 
-                        <button onClick={() => closeDrawer()} className="absolute p-6 navbar-close group top-5 right-5">
-                            <div className="absolute top-3">
-                                <span className="absolute w-px h-6 duration-500 transform -rotate-45 bg-white group-hover:rotate-45" />
-                                <span className="absolute w-px h-6 duration-300 transform rotate-45 bg-white group-hover:-rotate-45" />
-                            </div>
-                        </button>
+
+                        <Links />
+
+                        <Copyright />
+
+                        <CloseButton />
                     </nav>
                 </ClickAwayListener>
-
-
             </div>
 
         </CSSTransition>

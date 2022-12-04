@@ -44,10 +44,10 @@ const pages = ({ store, key }: PageQueryProps) => {
                 links: getLinks().map((link) => ({
                     name: link?.name ?? "NOT_FOUND",
                     url: link?.url ?? "#"
-                })).splice(0, 7)
+                })).splice(0, 6)
             },
             footer: {
-                copyright: 'LOL'
+                copyright: 'Desir Tech'
             }
 
         })

@@ -1,26 +1,31 @@
 import type { FooterProps } from "@typings/Footer"
 
-
 const footer = ({ links, favicon, copyright }: FooterProps) => {
 
-    const defaultObject = {
+    const defaultObject: FooterProps = {
         links: [
             {
                 title: "LINKS_NOT_FOUND"
             }
         ],
         favicon: {
-            
-        }
+            image: {
+
+            },
+            url: "URL_NOT_FOUND"
+
+        },
+        copyright: "COPYRIGHT_NOT_FOUND"
     }
 
-    const footerObject = {
+    const footerObject: FooterProps = {
         links: links ?? defaultObject.links,
-        favicon: favicon ?? defaultObject.favicon
+        favicon: favicon ?? defaultObject.favicon,
+        copyright: copyright ?? defaultObject.copyright
 
     }
 
-    return { ...footerObject } ?? null
+    return { ...footerObject } as FooterProps
 
 }
 

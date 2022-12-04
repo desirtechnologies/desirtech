@@ -1,7 +1,7 @@
 const Contact = () => {
     return (
         <section>
-            <div className="pt-24 pb-12 font-mono 2xl:pt-40 rounded-b-4xl">
+            <div className="pt-24 pb-12 font-mono text-white 2xl:pt-40 rounded-b-4xl">
                 <div className="container px-4 mx-auto">
                     <div className="text-center">
                         <h2 className="mb-12 font-medium leading-tight text-9xl md:text-10xl xl:text-11xl font-heading">

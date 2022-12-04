@@ -7,7 +7,6 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
     const Primary = () => {
 
-     
 
         return (
             features?.primary ?
@@ -16,8 +15,8 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                         <img
                             loading="lazy"
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src={cover ? cover.src : "IMAGE_NOT_FOUND"}
-                            alt={cover ? cover.alt : "IMAGE_NOT_FOUND"}
+                            src={cover ? cover?.src : "IMAGE_NOT_FOUND"}
+                            alt={cover ? cover?.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-44 xl:pt-24">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
@@ -39,85 +38,95 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                     </div>
                 </div> :
 
-                <>FEATURE_NOT_FOUND</>
+                <>PRIMARY_FEATURE_NOT_FOUND</>
 
         )
     }
 
     const Secondary = () => {
+
+
         return (
-            <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full">
-                <div className="relative h-full">
-                    <img
-                        className="absolute object-cover w-full h-full rounded-7xl"
-                        src="uinel-assets/images/ecommerce-newest-products/smartphone.jpg"
-                        alt=""
-                    />
-                    <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
-                        <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
-                            -10%
-                        </div>
-                        <a
-                            className="block mb-5 text-6xl font-medium font-heading hover:underline"
-                            href="#"
-                        >
-                            Oppo Reno 5
-                        </a>
-                        <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
-                            <span className="mr-2 text-xs">$</span>
-                            <span>544.90</span>
-                        </p>
-                        <div className="sm:max-w-max">
+            features?.secondary ?
+                <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full">
+                    <div className="relative h-full">
+                        <img
+                            className="absolute object-cover w-full h-full rounded-7xl"
+                            src="uinel-assets/images/ecommerce-newest-products/smartphone.jpg"
+                            alt=""
+                        />
+                        <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
+                            <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
+                                -10%
+                            </div>
                             <a
-                                className="block w-full px-10 py-5 text-xl font-medium leading-6 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                className="block mb-5 text-6xl font-medium font-heading hover:underline"
                                 href="#"
                             >
-                                Buy
+                                {features?.secondary?.title ? features.secondary.title : "SECONDARY_FEATURE_TITLE_NOT_FOUND"}
                             </a>
+                            <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
+                                <span className="mr-2 text-xs">$</span>
+                                <span>544.90</span>
+                            </p>
+                            <div className="sm:max-w-max">
+                                <a
+                                    className="block w-full px-10 py-5 text-xl font-medium leading-6 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                    href="#"
+                                >
+                                    Buy
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> :
+                <>SECONDARY_FEATURE_NOT_FOUND</>
 
         )
     }
 
     const Tertiary = () => {
+
+        
         return (
-            <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full xl:mb-0">
-                <div className="relative h-full">
-                    <img
-                        className="absolute object-cover w-full h-full rounded-7xl"
-                        src="uinel-assets/images/ecommerce-newest-products/woman.jpg"
-                        alt=""
-                    />
-                    <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
-                        <a
-                            className="block mb-5 text-6xl font-medium font-heading hover:underline"
-                            href="#"
-                        >
-                            Headphones Blacksaint 3
-                        </a>
-                        <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
-                            <span className="mr-2 text-xs">$</span>
-                            <span>544.90</span>
-                        </p>
-                        <div className="sm:max-w-max">
+            features?.tertiary ?
+                <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full xl:mb-0">
+                    <div className="relative h-full">
+                        <img
+                            className="absolute object-cover w-full h-full rounded-7xl"
+                            src="uinel-assets/images/ecommerce-newest-products/woman.jpg"
+                            alt=""
+                        />
+                        <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
                             <a
-                                className="block w-full px-10 py-4 text-xl font-medium leading-8 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                className="block mb-5 text-6xl font-medium font-heading hover:underline"
                                 href="#"
                             >
-                                Buy
+                                Headphones Blacksaint 3
                             </a>
+                            <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
+                                <span className="mr-2 text-xs">$</span>
+                                <span>544.90</span>
+                            </p>
+                            <div className="sm:max-w-max">
+                                <a
+                                    className="block w-full px-10 py-4 text-xl font-medium leading-8 tracking-tighter text-center text-white bg-blue-500 font-heading hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                                    href="#"
+                                >
+                                    Buy
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> :
+                <>TERTIARY_FEATURE_NOT_FOUND</>
 
         )
     }
 
     const Header = () => {
+
+        
         return (
             <div className="text-center cursor-pointer mb-14 xl:mb-24">
                 <span className="inline-block py-3 text-2xl font-medium leading-5 text-green-500 border border-green-500 px-7 mb-7 font-heading rounded-4xl">

@@ -2,7 +2,7 @@ import type { FeaturedProps } from "@typings/Featured"
 import type { ComponentType } from "@typings/Component"
 
 
-const Featured: ComponentType<FeaturedProps> = ({ heading, title, cover, description, features }: FeaturedProps) => {
+const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, features }: FeaturedProps) => {
 
 
     const Primary = () => {

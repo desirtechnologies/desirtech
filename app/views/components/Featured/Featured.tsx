@@ -15,8 +15,8 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                         <img
                             loading="lazy"
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src={cover ? cover?.src : "IMAGE_NOT_FOUND"}
-                            alt={cover ? cover?.alt : "IMAGE_NOT_FOUND"}
+                            src={cover.src`` ? cover?.src : "IMAGE_NOT_FOUND"}
+                            alt={cover.alt ? cover?.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-44 xl:pt-24">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
@@ -87,7 +87,7 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
     const Tertiary = () => {
 
-        
+
         return (
             features?.tertiary ?
                 <div className="w-full px-3 mb-6 sm:w-1/2 xl:w-full xl:mb-0">
@@ -126,7 +126,7 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
 
     const Header = () => {
 
-        
+
         return (
             <div className="text-center cursor-pointer mb-14 xl:mb-24">
                 <span className="inline-block py-3 text-2xl font-medium leading-5 text-green-500 border border-green-500 px-7 mb-7 font-heading rounded-4xl">

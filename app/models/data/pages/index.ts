@@ -46,6 +46,13 @@ const pages = ({ store, key }: PageQueryProps) => {
                     url: link?.url ?? "#"
                 })).splice(0, 6)
             },
+
+            menu: {
+                links: getLinks().map((link) => ({
+                    name: link?.name ?? "NOT_FOUND",
+                    url: link?.url ?? "#"
+                })).splice(0, 6)
+            },
             footer: {
                 copyright: 'Desir Tech'
             }

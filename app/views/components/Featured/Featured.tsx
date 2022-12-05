@@ -2,7 +2,7 @@ import type { FeaturedProps } from "@typings/Featured"
 import type { ComponentType } from "@typings/Component"
 
 
-const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, features }: FeaturedProps) => {
+const Featured: ComponentType<FeaturedProps> = ({ heading, title, cover, description, features }: FeaturedProps) => {
 
 
     const Primary = () => {
@@ -15,8 +15,8 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                         <img
                             loading="lazy"
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src={cover.src`` ? cover?.src : "IMAGE_NOT_FOUND"}
-                            alt={cover.alt ? cover?.alt : "IMAGE_NOT_FOUND"}
+                            src={features.primary.cover.src ? features.primary.cover.src : "IMAGE_NOT_FOUND"}
+                            alt={features.primary.cover.src ? features.primary.cover.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-44 xl:pt-24">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">

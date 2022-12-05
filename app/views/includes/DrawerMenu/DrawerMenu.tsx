@@ -30,33 +30,29 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links, copyright }: Drawer
 
         return (
             <div>
-                <ul>
-                    <li className="px-10 mb-1">
-                        <a
-                            className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                            href="#"
-                        >
-                            New tools
-                        </a>
-                    </li>
-                    <li className="px-10 mb-1">
-                        <a
-                            className="flex items-center py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                            href="#"
-                        >
-                            Products
+                {
+                    links ?
+                        <ul>
 
-                        </a>
-                    </li>
-                    <li className="px-10 mb-1">
-                        <a
-                            className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
-                            href="#"
-                        >
-                            Pricing
-                        </a>
-                    </li>
-                </ul>
+                            {
+                                links.map((link, index) => {
+                                    return (
+                                        <li
+                                            key={index}
+                                            className="px-10 mb-1">
+                                            <a
+                                                className="block py-4 pl-8 text-lg rounded-full text-body hover:shadow-2xl"
+                                                href={link?.url ?? "#LINK_NOT_FOUND"}
+
+                                            >
+                                                {link?.name ?? "LINK_NOT_FOUND"}
+                                            </a>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul> : <>LINKS_NOT_FOUND</>
+                }
             </div>
 
         )

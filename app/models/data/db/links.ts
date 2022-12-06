@@ -1,21 +1,21 @@
 import FacadeService from "@services/fadcade"
+import type  { NotionDataResponseType } from "@typings/Notion"
 
+const links = (store: NotionDataResponseType) => {
 
-const links = (store: any[]) => {
+    const { notion } = FacadeService().types
 
-    const { types: { links } } = FacadeService()
+    const { links } = notion()
 
     const linksObject = {
-        getPageLinks: () => { },
-        getLinks: () => {
 
+        getLinks: () => {
             return store.filter((data) => {
                 return links.predicate(data)
             }).map((data) => {
                 return links.shape(data)
             })
         }
-
     }
 
 

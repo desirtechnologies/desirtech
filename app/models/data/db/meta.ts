@@ -1,18 +1,18 @@
-import FacadeService from "@controllers/services/fadcade"
+import FacadeService from "@services/fadcade"
+import type { NotionDataResponseType } from "@typings/Notion"
 
 
-const meta = (store) => {
+const meta = (store: NotionDataResponseType) => {
 
-    const { types: { meta } } = FacadeService()
+    const { notion } = FacadeService().types
+    const { meta } = notion()
 
     const metaObject = {
 
-        getFavicon: () => { },
-        getTitles: () => {
+        getTitle: () => {
 
-            const titlesKey = "🪪Title"
-
-            return metaObject.getMeta().find((meta) => meta.types.includes(titlesKey))
+            const _key = meta.variants.title
+            return metaObject.getMeta().find((meta) => meta.types.includes(_key))
 
         },
 

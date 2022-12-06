@@ -1,12 +1,13 @@
 import layout from "@configs/layout"
 import links from "@db/links"
 import meta from "@db/meta"
+
 import type { PageQueryProps } from "@typings/Page"
 
 const pages = ({ store, key }: PageQueryProps) => {
 
-    const { getLinks, getPageLinks } = links(store)
-    const { getFavicon, getTitles } = meta(store)
+    const { getLinks } = links(store)
+    const { getTitle } = meta(store)
 
 
     const pageData = {
@@ -18,7 +19,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             data: {
                 hero: {
                     title: "Desir Tech",
-                    heading: ["Dev", "Techie"]
+                    heading: getTitle()?.values
                 },
                 featured: {
                     primary: {
@@ -28,8 +29,12 @@ const pages = ({ store, key }: PageQueryProps) => {
                         }
 
                     },
-                    secondary: {},
-                    tertiary: {}
+                    secondary: {
+
+                    },
+                    tertiary: {
+
+                    }
                 }
             },
         }
@@ -37,7 +42,7 @@ const pages = ({ store, key }: PageQueryProps) => {
 
     const pageObject = {
         version: Date.now(),
-        metaData: {},
+        metaData: pageData[key]?.metaData,
         data: pageData[key]?.data,
         layout: layout({
             header: {
@@ -56,7 +61,6 @@ const pages = ({ store, key }: PageQueryProps) => {
             footer: {
                 copyright: 'Desir Tech'
             }
-
         })
 
     }

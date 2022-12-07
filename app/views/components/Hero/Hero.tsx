@@ -16,6 +16,7 @@ const Hero: ComponentType<HeroProps> = ({ title, heading }: HeroProps) => {
                                 heading ? <TextScrambler
                                     phrases={heading}
                                     speed={75}
+                                    chars={"⊗∵⊙∦∋⋉∑∅"}
                                     pauseTime={1800} />
                                     : <>HEADING_NOT_FOUND</>
                             }

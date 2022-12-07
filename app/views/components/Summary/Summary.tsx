@@ -1,13 +1,23 @@
+export type SummaryProps = {
+    title?: string,
+    heading?: string
+}
+
+
 const Summary = () => {
     return (
         <section className="py-24 font-mono font-medium 2xl:pt-64 2xl:pb-48">
             <div className="container px-4 mx-auto">
+
+
                 <span className="block text-xs leading-4 tracking-widest uppercase mb-9">
                     The Most popular
                 </span>
                 <h2 className="mb-20 leading-tight xl:mb-24 font-heading text-9xl md:text-10xl xl:text-11xl">
                     FAQ’s
                 </h2>
+
+
                 <div className="relative flex justify-between mb-16 md:hidden">
                     <div className="relative z-10 w-12 h-12 bg-white rounded-full">
                         <span className="absolute text-2xl font-bold transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">

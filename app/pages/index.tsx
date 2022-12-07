@@ -31,7 +31,7 @@ export async function getStaticProps() {
 
 const HomePage = ({ page }: PageType) => {
 
-  const { hero, featured, contentGrid, simpleForm } = page?.data
+  const { hero, featured, contact, simpleForm } = page?.data
 
 
   return (
@@ -47,7 +47,7 @@ const HomePage = ({ page }: PageType) => {
       <Table />
       <Stats />
       <Summary />
-      <Contact />
+      <Contact {...contact} />
     </>
 
   )

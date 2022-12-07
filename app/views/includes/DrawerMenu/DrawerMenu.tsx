@@ -15,12 +15,12 @@ const DrawerMenu: ComponentType<DrawerMenuProps> = ({ links, copyright }: Drawer
 
         return (
             <div className="px-10 mt-auto">
-                <button className="w-full px-5 py-3 mt-6 text-sm font-bold tracking-wide uppercase border-2 border-gray-200 border-opacity-50 rounded-full font-body hover:border-gray-300">
-                    <span className="block mt-px">New project</span>
+                <button className="w-full group duration-500 ease-in-out px-5 py-3 hover:border-1 mt-6 text-xl hover:bg-white font-bold tracking-wide uppercase border-2 border-white border-opacity-70 rounded-full font-body hover:border-gray-500">
+                    <span className="block bg-transparent mt-px group-hover:backdrop-blur-sm group-hover:text-black group-hover:bg-opacity-30">Support Me</span>
                 </button>
                 <p className="mt-6 mb-4 text-center">
                     <span className="text-sm text-darkBlueGray-400">
-                        2021 © Uinel. All rights reserved.
+                        {copyright ? copyright : "COPYRIGHT_NOT_FOUND"}
                     </span>
                 </p>
             </div>

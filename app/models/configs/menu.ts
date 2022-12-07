@@ -1,6 +1,6 @@
 import type { DrawerMenuProps } from "@typings/DrawerMenu"
 
-const menu = ({ links }: DrawerMenuProps) => {
+const menu = ({ links, copyright }: DrawerMenuProps) => {
 
     const defaultObject = {
         favicon: {
@@ -13,12 +13,14 @@ const menu = ({ links }: DrawerMenuProps) => {
             {
                 name: "LINK_NOT_FOUND"
             }
-        ]
+        ],
+        copyright: "COPYRIGHT_NOT_FOUND"
 
     }
 
     const menuObject = {
-        links: links ?? defaultObject.links
+        links: links ?? defaultObject.links,
+        copyright: copyright ?? defaultObject.copyright
     }
 
     return { ...menuObject } ?? null

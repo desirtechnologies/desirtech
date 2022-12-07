@@ -1,6 +1,6 @@
 import type { FooterProps } from "@typings/Footer"
 
-const footer = ({ links, favicon, copyright }: FooterProps) => {
+const footer = ({ links, favicon, copyright, socials }: FooterProps) => {
 
     const defaultObject: FooterProps = {
         links: [
@@ -15,13 +15,15 @@ const footer = ({ links, favicon, copyright }: FooterProps) => {
             url: "URL_NOT_FOUND"
 
         },
-        copyright: "COPYRIGHT_NOT_FOUND"
+        copyright: "COPYRIGHT_NOT_FOUND",
+        socials: []
     }
 
     const footerObject: FooterProps = {
         links: links ?? defaultObject.links,
         favicon: favicon ?? defaultObject.favicon,
-        copyright: copyright ?? defaultObject.copyright
+        copyright: copyright ?? defaultObject.copyright,
+        socials: socials ?? defaultObject.socials
 
     }
 

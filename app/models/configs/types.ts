@@ -1,13 +1,8 @@
 import utils from "@utils/index"
 
-
 export const notion = () => {
 
-    const {
-        notion:
-        { files, url, email, phone, rich_text, title, multi_select,
-            number, status, select, isDatabase, getProperties } }
-        = utils()
+    const { notion: { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } } = utils()
 
     const notionTypes = {
 
@@ -70,14 +65,17 @@ export const notion = () => {
 
         },
         portfolio: {
-            name: "🎁Portfolio",
+            name: "💼Portfolio",
+            variants: {
+                featured: "🌟Featured"
+            },
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status, Covers } = data.properties
+                const { URL, Name, Types, Status, Covers } = data.properties
 
                 return {
                     url: url(URL),
-                    title: rich_text(Title),
+                    name: title(Name),
                     types: multi_select(Types),
                     covers: files(Covers),
                     status: status(Status),
@@ -93,11 +91,11 @@ export const notion = () => {
             name: "📱Social Media",
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status } = data.properties
+                const { URL, Name, Types, Status } = data.properties
 
                 return {
                     url: url(URL),
-                    title: rich_text(Title),
+                    name: title(Name),
                     types: multi_select(Types),
                     status: status(Status),
                 }
@@ -113,16 +111,16 @@ export const notion = () => {
             variants: {
                 title: "🪪Title",
                 favicon: "",
-                copyright: ""
+                copyright: "📜Copyright"
             },
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status, Values, Description } = data.properties
+                const { URL, Name, Types, Status, Values, Description } = data.properties
 
                 return {
                     url: url(URL),
                     description: rich_text(Description),
-                    title: rich_text(Title),
+                    name: title(Name),
                     values: multi_select(Values),
                     types: multi_select(Types),
                     status: status(Status),

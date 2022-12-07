@@ -12,8 +12,13 @@ const meta = (store: NotionDataResponseType) => {
         getTitle: () => {
 
             const _key = meta.variants.title
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key))
+            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
 
+        },
+        getCopyright: () => {
+
+            const _key = meta.variants.copyright
+            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
         },
 
         getMeta: () => {

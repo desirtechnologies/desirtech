@@ -3,6 +3,7 @@ export type MetaProps = {
     pageTitle?: string,
     description?: string,
     canonical?: string,
+    url?: string,
     twitter?: {
         handle?: string,
         site?: string,

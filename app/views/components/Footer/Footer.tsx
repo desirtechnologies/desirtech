@@ -66,7 +66,7 @@ const Footer = ({ links, favicon, copyright, socials }: FooterProps) => {
 
 
           <div className="w-full px-4 mb-8 lg:w-auto lg:mb-0">
-            <p className="text-sm font-medium tracking-widest text-white">
+            <p className="text-lg font-medium tracking-widest text-white">
               <span>{copyright ? copyright : "COPYRIGHT_NOT_FOUND"}</span>
             </p>
           </div>
@@ -77,10 +77,10 @@ const Footer = ({ links, favicon, copyright, socials }: FooterProps) => {
               socials ? socials.map((social, index) => {
                 return (
                   <span key={index} className='inline-block mr-2'>
-                    <SocialIcon url={social ?? "#"} />
+                    <SocialIcon bgColor="#FFFFFF" url={social ?? "#"} />
                   </span>
                 )
-              }) : <></>
+              }) : <>SOCIALS_NOT_FOUND</>
             }
 
           </div>
@@ -97,7 +97,7 @@ const Footer = ({ links, favicon, copyright, socials }: FooterProps) => {
               return (
                 <div key={index} className="w-full px-4 mb-10 sm:w-1/2 md:w-1/3 lg:w-1/5 lg:mb-0">
 
-                  <h3 className="mb-10 text-xl font-medium text-white">{link?.title ?? "TITLE_NOT_FOUND"}</h3>
+                  <h3 className="mb-10 text-xl font-medium text-white border-b-green-700 border-1">{link?.title ?? "TITLE_NOT_FOUND"}</h3>
 
                   <ul>
                     {
@@ -105,7 +105,7 @@ const Footer = ({ links, favicon, copyright, socials }: FooterProps) => {
                         return (
                           <li key={index} className="mb-5">
                             <a
-                              className="text-darkBlueGray-200 hover:text-darkBlueGray-300"
+                              className="text-xl"
                               href="#"
                             >
                               {linkType?.name ?? "LINK_TYPE_NAME"}

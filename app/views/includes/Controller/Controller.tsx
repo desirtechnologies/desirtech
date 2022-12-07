@@ -14,6 +14,26 @@ const Controller = () => {
       name: 'Top',
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
+    {
+      icon: <KeyboardDoubleArrowUpIcon />,
+      name: 'Top',
+      action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
+    {
+      icon: <KeyboardDoubleArrowUpIcon />,
+      name: 'Top',
+      action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
+    {
+      icon: <KeyboardDoubleArrowUpIcon />,
+      name: 'Top',
+      action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
+    {
+      icon: <KeyboardDoubleArrowUpIcon />,
+      name: 'Top',
+      action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    },
 
   ];
 

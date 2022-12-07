@@ -7,12 +7,12 @@ const NotionService = () => {
             auth: process.env.FACADE_API_KEY,
         }),
         secured: {
-            central_dogma: process.env.CENTRAL_DOGMA_ID as string ?? null
+            central_dogma: process.env.CENTRAL_DOGMA_ID as (string) ?? null
         },
         getCentralDogma: async () => {
             const response = (await serviceObject.api.databases.query({
                 database_id: serviceObject.secured.central_dogma,
-            }))?.results 
+            }))?.results ?? null
 
             return response
         },

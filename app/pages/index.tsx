@@ -14,6 +14,8 @@ import Flow from "@components/Flow"
 import Timeline from "@components/Timeline"
 import Table from "@views/components/Table"
 import Pillars from "@views/components/Pillars"
+
+
 export async function getStaticProps() {
 
   const { getPage } = PageService()

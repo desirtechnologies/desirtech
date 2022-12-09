@@ -15,8 +15,8 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                         <img
                             loading="lazy"
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src={features.primary.cover.src ? features.primary.cover.src : "IMAGE_NOT_FOUND"}
-                            alt={features.primary.cover.src ? features.primary.cover.alt : "IMAGE_NOT_FOUND"}
+                            src={features?.primary?.cover?.src ? features.primary.cover.src : "IMAGE_NOT_FOUND"}
+                            alt={features?.primary?.cover?.alt ? features.primary.cover.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-44 xl:pt-24">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
@@ -26,7 +26,6 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                                 className="block mb-5 text-6xl font-medium xl:text-10xl font-heading hover:underline"
                                 href="#"
                             >
-
                                 {features?.primary?.title ? title : "TITLE_NOT_FOUND"}
 
                             </a>
@@ -52,8 +51,8 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                     <div className="relative h-full">
                         <img
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src="uinel-assets/images/ecommerce-newest-products/smartphone.jpg"
-                            alt=""
+                            src={features?.secondary?.cover?.src ? features.secondary.cover.src : "IMAGE_NOT_FOUND"}
+                            alt={features?.secondary?.cover?.alt ? features.secondary.cover.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold text-blue-500 bg-white border border-blue-500 font-heading rounded-3xl">
@@ -94,15 +93,15 @@ const Featured: ComponentType<FeaturedProps> = ({ heading, title, description, f
                     <div className="relative h-full">
                         <img
                             className="absolute object-cover w-full h-full rounded-7xl"
-                            src="uinel-assets/images/ecommerce-newest-products/woman.jpg"
-                            alt=""
+                            src={features?.tertiary?.cover?.src ? features.tertiary.cover.src : "IMAGE_NOT_FOUND"}
+                            alt={features?.tertiary?.cover?.alt ? features.tertiary.cover.alt : "IMAGE_NOT_FOUND"}
                         />
                         <div className="relative z-10 p-10 xl:px-24 xl:pb-14 xl:pt-24">
                             <a
                                 className="block mb-5 text-6xl font-medium font-heading hover:underline"
                                 href="#"
                             >
-                                Headphones Blacksaint 3
+                                {features?.tertiary?.title ? features.tertiary.title : "TERTIARY_FEATURE_TITLE_NOT_FOUND"}
                             </a>
                             <p className="flex items-center mb-6 text-xl font-medium tracking-tighter text-blue-500 xl:mb-14 font-heading">
                                 <span className="mr-2 text-xs">$</span>

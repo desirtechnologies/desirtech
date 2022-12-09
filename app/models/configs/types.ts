@@ -7,6 +7,19 @@ export const notion = () => {
     const notionTypes = {
 
 
+        variants: {
+            title: "🪪Title",
+            favicon: "",
+            featured: "🌟Featured",
+            obfuscator: "🗝️Obfuscator",
+            heading: "#️⃣Heading",
+            portfolio: "💼Portfolio",
+            copyright: "📜Copyright",
+            phone: "📞Phone",
+            email: "📧Email"
+        },
+
+
         services: {
             name: "Services",
             shape: (data: any) => {
@@ -71,19 +84,19 @@ export const notion = () => {
             },
             shape: (data: any) => {
 
-                const { URL, Name, Types, Status, Covers } = data.properties
+                const { URL, Name, Types, Status, Media } = data.properties
 
                 return {
                     url: url(URL),
                     name: title(Name),
                     types: multi_select(Types),
-                    covers: files(Covers),
+                    media: files(Media),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
                 const { name } = notionTypes.portfolio
-                return isDatabase(name, data) ?? null
+                return true
             }
 
         },
@@ -111,16 +124,22 @@ export const notion = () => {
             variants: {
                 title: "🪪Title",
                 favicon: "",
-                copyright: "📜Copyright"
+                heading: "",
+                portfolio: "💼Portfolio",
+                copyright: "📜Copyright",
+                phone: "📞Phone",
+                email: "📧Email"
             },
             shape: (data: any) => {
 
-                const { URL, Name, Types, Status, Values, Description } = data.properties
+                const { URL, Name, Types, Phone, Email, Status, Values, Description } = data.properties
 
                 return {
                     url: url(URL),
                     description: rich_text(Description),
                     name: title(Name),
+                    phone: phone(Phone),
+                    email: email(Email),
                     values: multi_select(Values),
                     types: multi_select(Types),
                     status: status(Status),

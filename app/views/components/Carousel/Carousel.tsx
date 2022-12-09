@@ -2,14 +2,14 @@ const Carousel = () => {
 
   return (
     <section
-      className="py-24 overflow-hidden font-mono 2xl:py-44"
+      className="py-24 overflow-hidden font-mono 2xl:py-44 text-white"
       style={{ borderTopLeftRadius: 80, borderTopRightRadius: 80 }}
     >
       <div className="container px-4 mx-auto">
         <div className="mb-24 text-center">
           <span className="text-sm text-gray-300 uppercase">What people say</span>
           <h2 className="mt-8 font-medium text-9xl md:text-10xl xl:text-11xl font-heading">
-            Testimonials
+            Quotes
           </h2>
         </div>
         <div className="flex flex-wrap items-center justify-center mb-16 md:mb-28">

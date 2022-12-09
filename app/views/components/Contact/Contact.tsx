@@ -1,7 +1,8 @@
 import type { ContactProps } from "@typings/Contact"
 import type { ComponentType } from "@typings/Component"
+import { SocialIcon } from 'react-social-icons';
 
-const Contact: ComponentType<ContactProps> = ({ phone, email, heading, description }: ContactProps) => {
+const Contact: ComponentType<ContactProps> = ({ phone, email, heading, description, socials }: ContactProps) => {
 
     const Header = () => {
 
@@ -48,7 +49,13 @@ const Contact: ComponentType<ContactProps> = ({ phone, email, heading, descripti
 
                 <div className="w-full pb-8 lg:w-1/3 lg:pb-0 md:px-8 xl:px-16">
                     <div className="flex items-center">
-                        {[]}
+                        {socials ? socials.map((social, index) => {
+
+                            return (
+                                <SocialIcon key={index} url={social ?? "SOCIAL_NOT_FOIND"} />
+                            )
+                        }) : <></>
+                        }
                     </div>
                 </div>
             </div>

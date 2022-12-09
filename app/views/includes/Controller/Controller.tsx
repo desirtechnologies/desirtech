@@ -3,7 +3,10 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import TerminalIcon from '@mui/icons-material/Terminal';
-
+import SearchIcon from '@mui/icons-material/Search';
+import LightbulbCircleIcon from '@mui/icons-material/LightbulbCircle';
+import ShareIcon from '@mui/icons-material/Share';
+import MessageIcon from '@mui/icons-material/Message';
 
 
 const Controller = () => {
@@ -15,23 +18,23 @@ const Controller = () => {
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
     {
-      icon: <KeyboardDoubleArrowUpIcon />,
-      name: 'Top',
+      icon: <SearchIcon />,
+      name: 'Search',
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
     {
-      icon: <KeyboardDoubleArrowUpIcon />,
-      name: 'Top',
+      icon: <LightbulbCircleIcon />,
+      name: 'Light',
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
     {
-      icon: <KeyboardDoubleArrowUpIcon />,
-      name: 'Top',
+      icon: <ShareIcon />,
+      name: 'Share',
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
     {
-      icon: <KeyboardDoubleArrowUpIcon />,
-      name: 'Top',
+      icon: <MessageIcon />,
+      name: 'Message',
       action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
 
@@ -61,9 +64,10 @@ const Controller = () => {
       {Controls.map((control) => (
         <SpeedDialAction
           onClick={control.action}
+          tooltipOpen
           key={control.name}
           icon={control.icon}
-          tooltipTitle={<div className="font-mono">{control?.name}</div>}
+          tooltipTitle={<div className="font-mono text-md">{control?.name}</div>}
         />
       ))}
     </SpeedDial>

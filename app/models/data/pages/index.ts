@@ -3,14 +3,16 @@ import links from "@db/links"
 import meta from "@db/meta"
 import portfolio from "@db/portfolio"
 import social_media from "@db/social-media"
-
+import type { FeaturedProps } from "@typings/Featured"
+import type { HeroProps } from "@typings/Hero"
+import type { ContactProps } from "@models/typings/Contact"
 import type { PageQueryProps } from "@typings/Page"
 
 const pages = ({ store, key }: PageQueryProps) => {
 
     const { getLinks } = links(store)
     const { getSocialMedia } = social_media(store)
-    const { getTitle, getCopyright } = meta(store)
+    const { getTitle, getCopyright, getObfuscator, getPhone, getEmail, getPortfolioHeading } = meta(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
 
     const pageData = {
@@ -21,19 +23,45 @@ const pages = ({ store, key }: PageQueryProps) => {
                 description: "Welcome to my laboratory!"
             },
             data: {
-                hero: {
-                    title: "Desir Tech",
-                    heading: getTitle()?.values
-                },
-                featured: {
-                    primary: getPortfolio()[0],
-                    secondary: getPortfolio()[1],
-                    tertiary: getPortfolio()[2]
+                hero: <HeroProps>{
+                    title: getTitle().name ?? null,
+                    obfuscator: getObfuscator().values[0],
+                    heading: getTitle()?.values ?? null
                 },
 
-                contact: {
-                    phone: "",
-                    email: ""
+                featured: <FeaturedProps>{
+                    heading: getPortfolioHeading()?.name ?? null,
+                    title: getPortfolioHeading()?.values[0] ?? null,
+                    description: getPortfolioHeading()?.description ?? null,
+                    features: {
+                        primary: {
+                            title: "WTFMVMT",
+                            cover: {
+                                src: getFeaturedPortfolio()[0].media[0].url
+                            }
+                        },
+                        secondary: {
+                            title: "WTFMVMT",
+                            cover: {
+                                src: getFeaturedPortfolio()[0].media[0].url
+                            }
+                        },
+                        tertiary: {
+                            title: "WTFMVMT",
+                            cover: {
+                                src: getFeaturedPortfolio()[0].media[0].url
+                            }
+                        }
+                    }
+
+                },
+
+                contact: <ContactProps>{
+                    heading: "Get in Touch with Me",
+                    description: "",
+                    phone: getPhone().phone ?? null,
+                    email: getEmail().email ?? null,
+                    socials: getSocialMedia().map((social) => social.url ?? "#")
                 }
             },
         }
@@ -60,6 +88,7 @@ const pages = ({ store, key }: PageQueryProps) => {
             },
             footer: {
                 copyright: getCopyright().values[0],
+                headings: ["Copyright", "Quotes", "Question of the Day"],
                 links: [
                     {
                         title: "Sitemap",
@@ -76,14 +105,14 @@ const pages = ({ store, key }: PageQueryProps) => {
                         }))
                     },
                     {
-                        title: "Sectors",
+                        title: "Resources",
                         links: getLinks().map((link) => ({
                             name: link?.name,
                             url: link?.url
                         }))
                     },
                     {
-                        title: "Sectors",
+                        title: "Research",
                         links: getLinks().map((link) => ({
                             name: link?.name,
                             url: link?.url

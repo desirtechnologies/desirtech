@@ -4,7 +4,7 @@ import type { HeroProps } from "@typings/Hero"
 import TextScrambler from 'react-scramble-text'
 import HackerSVG from "@components/HackerSVG"
 
-const Hero: ComponentType<HeroProps> = ({ title, heading }: HeroProps) => {
+const Hero: ComponentType<HeroProps> = ({ title, heading, obfuscator }: HeroProps) => {
 
     return (
         <section className="z-0 h-full -mt-20"  >
@@ -16,7 +16,7 @@ const Hero: ComponentType<HeroProps> = ({ title, heading }: HeroProps) => {
                                 heading ? <TextScrambler
                                     phrases={heading}
                                     speed={75}
-                                    chars={"⊗∵⊙∦∋⋉∑∅"}
+                                    chars={obfuscator ?? "⊗∵⊙∦∋⋉∑∅"}
                                     pauseTime={1800} />
                                     : <>HEADING_NOT_FOUND</>
                             }

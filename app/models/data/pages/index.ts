@@ -35,21 +35,26 @@ const pages = ({ store, key }: PageQueryProps) => {
                     description: getPortfolioHeading()?.description ?? null,
                     features: {
                         primary: {
-                            title: "WTFMVMT",
+                            title: getFeaturedPortfolio()[0].name,
                             cover: {
-                                src: getFeaturedPortfolio()[0].media[0].url
+                                src: getFeaturedPortfolio()[0].media[0]?.url,
+                                alt: getFeaturedPortfolio()[0].media[0]?.name,
                             }
                         },
                         secondary: {
-                            title: "WTFMVMT",
+                            title: getFeaturedPortfolio()[1]?.name,
                             cover: {
-                                src: getFeaturedPortfolio()[0].media[0].url
+                                src: getFeaturedPortfolio()[1]?.media[0].url,
+                                alt: getFeaturedPortfolio()[1].media[0]?.name,
+
                             }
                         },
                         tertiary: {
-                            title: "WTFMVMT",
+                            title: getFeaturedPortfolio()[2]?.name,
                             cover: {
-                                src: getFeaturedPortfolio()[0].media[0].url
+                                src: getFeaturedPortfolio()[2]?.media[0].url,
+                                alt: getFeaturedPortfolio()[2].media[0]?.name,
+
                             }
                         }
                     }

@@ -58,7 +58,10 @@ const Controller = () => {
           }
         }
       }}
-      sx={{ position: 'fixed', bottom: 16, right: 16 }}
+      sx={{
+        position: 'fixed', bottom: 16, right: 16,
+        zIndex: "99999999"
+      }}
       icon={<TerminalIcon />}
     >
       {Controls.map((control) => (

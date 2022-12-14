@@ -73,8 +73,8 @@ const Header: ComponentType<HeaderProps> = ({ favicon, links, sX }: HeaderProps)
                         <Links />
                         <Search />
                     </div>
-                    <button onClick={() => toggleDrawer()} className="self-center cursor-pointer navbar-burger xl:hidden focus:outline-none">
-                        <div className="relative flex flex-col group" >
+                    <button onClick={() => toggleDrawer()} className="group self-center cursor-pointer navbar-burger xl:hidden focus:outline-none">
+                        <div className="relative flex flex-col " >
                             <span className="w-px h-8 -mb-5 duration-500 rotate-90 bg-white" />
                             <span className="w-px h-8 -mb-5 duration-500 transform rotate-90 bg-white group-hover:rotate-45" />
                             <span className="w-px h-8 duration-500 rotate-90 bg-white" />

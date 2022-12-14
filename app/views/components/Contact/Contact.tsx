@@ -8,7 +8,7 @@ const Contact: ComponentType<ContactProps> = ({ phone, email, heading, descripti
 
         return (
             <>
-                <h2 className="mb-12 font-medium leading-tight text-9xl md:text-10xl xl:text-11xl font-heading">
+                <h2 className="mb-8 font-medium leading-tight text-6xl md:text-8xl xl:text-11xl font-heading">
                     {heading ?? "HEADING_NOT_FOUND"}
                 </h2>
                 <p className="mb-20 text-xl">
@@ -52,9 +52,9 @@ const Contact: ComponentType<ContactProps> = ({ phone, email, heading, descripti
                         {socials ? socials.map((social, index) => {
 
                             return (
-                                <SocialIcon key={index} url={social ?? "SOCIAL_NOT_FOIND"} />
+                                <SocialIcon bgColor="#FFFFFF" className="ml-2" key={index} url={social ?? "SOCIAL_NOT_FOIND"} />
                             )
-                        }) : <></>
+                        }) : <>[Client]: SOCIALS_NOT_FOUND</>
                         }
                     </div>
                 </div>

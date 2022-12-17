@@ -1,64 +1,70 @@
 import FacadeService from "@services/fadcade"
 import type { NotionDataResponseType } from "@typings/Notion"
-
+import { collections } from "@utils/index"
 
 const meta = (store: NotionDataResponseType) => {
 
-    const { notion } = FacadeService().types
-    const { meta, variants } = notion()
+    const { createDatabase, queryDatabase } = collections()
 
-    const metaObject = {
+    const { meta, variants } = FacadeService().types.notion()
 
+    const dbObject = {
 
         getObfuscator: () => {
-            const _key = variants.obfuscator
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
-
+            return queryDatabase({
+                keys: [variants.obfuscator],
+                db: dbObject.db.data
+            })
         },
 
         getPortfolioHeading: () => {
-            const _key = [variants.heading, variants.portfolio]
-            return metaObject.getMeta().find((meta) => _key.every((t) => {
-                return meta.types.includes(t)
-            })) ?? null
+            return queryDatabase({
+                keys: [variants.portfolio, variants.heading],
+                db: dbObject.db.data
+            })
         },
 
         getPhone: () => {
-            const _key = variants.phone
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
+            return queryDatabase({
+                keys: [variants.phone],
+                db: dbObject.db.data
+            })
 
         },
         getEmail: () => {
-            const _key = variants.email
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
+            return queryDatabase({
+                keys: [variants.email],
+                db: dbObject.db.data
+            })
         },
 
         getTitle: () => {
-
-            const _key = variants.title
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
-
+            return queryDatabase({
+                keys: [variants.title],
+                db: dbObject.db.data
+            })
         },
-        getCopyright: () => {
 
-            const _key = variants.copyright
-            return metaObject.getMeta().find((meta) => meta.types.includes(_key)) ?? null
+        getCopyright: () => {
+            return queryDatabase({
+                keys: [variants.copyright],
+                db: dbObject.db.data,
+            })
         },
 
         getMeta: () => {
-            return (store.filter((data) => {
-                return (
-                    meta.predicate(data)
-                )
-            })).map((data) => {
-                return (
-                    meta.shape(data)
-                )
-            })
-        }
+            return dbObject.db.data
+        },
+
+        db: createDatabase({
+            id: meta.name,
+            data: store,
+            shape: meta.shape,
+            predicate: meta.predicate
+        })
     }
 
-    return { ...metaObject }
+    return { ...dbObject }
 }
 
 

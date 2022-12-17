@@ -2,10 +2,10 @@ import layout from "@configs/layout"
 import links from "@db/links"
 import meta from "@db/meta"
 import portfolio from "@db/portfolio"
-import social_media from "@db/social-media"
+import social_media from "@models/data/db/social_media"
+import type { ContactProps } from "@models/typings/Contact"
 import type { FeaturedProps } from "@typings/Featured"
 import type { HeroProps } from "@typings/Hero"
-import type { ContactProps } from "@models/typings/Contact"
 import type { PageQueryProps } from "@typings/Page"
 
 const pages = ({ store, key }: PageQueryProps) => {
@@ -35,30 +35,38 @@ const pages = ({ store, key }: PageQueryProps) => {
                     description: getPortfolioHeading()?.description ?? null,
                     features: {
                         primary: {
-                            title: getFeaturedPortfolio()[0].name,
+                            title: getFeaturedPortfolio()[0]?.name ?? null,
                             cover: {
-                                src: getFeaturedPortfolio()[0].media[0]?.url,
-                                alt: getFeaturedPortfolio()[0].media[0]?.name,
+                                src: getFeaturedPortfolio()[0]?.media[0]?.url ?? null,
+                                alt: getFeaturedPortfolio()[0]?.media[0]?.name ?? null,
                             }
                         },
                         secondary: {
-                            title: getFeaturedPortfolio()[1]?.name,
+                            title: getFeaturedPortfolio()[1]?.name ?? null,
                             cover: {
-                                src: getFeaturedPortfolio()[1]?.media[0].url,
-                                alt: getFeaturedPortfolio()[1].media[0]?.name,
+                                src: getFeaturedPortfolio()[1]?.media[0]?.url ?? null,
+                                alt: getFeaturedPortfolio()[1]?.media[0]?.name ?? null,
 
                             }
                         },
                         tertiary: {
-                            title: getFeaturedPortfolio()[2]?.name,
+                            title: getFeaturedPortfolio()[2]?.name ?? null,
                             cover: {
-                                src: getFeaturedPortfolio()[2]?.media[0].url,
-                                alt: getFeaturedPortfolio()[2].media[0]?.name,
+                                src: getFeaturedPortfolio()[2]?.media[0]?.url ?? null,
+                                alt: getFeaturedPortfolio()[2]?.media[0]?.name ?? null,
 
                             }
                         }
                     }
 
+                },
+
+                timeline: {
+                    title: "Latest Activity",
+                    heading: "Relevant Updates",
+                    events: getPortfolio().map((portfolio) => ({
+                        name: portfolio?.name ?? null
+                    }))
                 },
 
                 contact: <ContactProps>{

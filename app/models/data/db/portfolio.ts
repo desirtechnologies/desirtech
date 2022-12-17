@@ -1,33 +1,38 @@
 import FacadeService from "@services/fadcade"
 import type { NotionDataResponseType } from "@typings/Notion"
-
+import { collections } from "@utils/index"
 
 const portfolio = (store: NotionDataResponseType) => {
 
     const { notion } = FacadeService().types
     const { portfolio, variants } = notion()
 
+    const { createDatabase, queryDatabase } = collections()
 
-    const portfolioObject = {
+
+    const dbObject = {
 
         getFeaturedPortfolio: () => {
-            const _key = variants.featured
-            return portfolioObject.getPortfolio().filter((p) => p.types.includes(_key));
+            return queryDatabase({
+                keys: [variants.featured],
+                db: dbObject.db.data,
+                batch: true
+            })
         },
 
         getPortfolio: () => {
-            return (store.filter((data) => {
-                return (portfolio.predicate(data)
-                )
-            })).map((data) => {
-                return (
-                    portfolio.shape(data)
-                )
-            })
-        }
+            return dbObject.db.data
+        },
+
+        db: createDatabase({
+            id: portfolio.name,
+            data: store,
+            shape: portfolio.shape,
+            predicate: portfolio.predicate
+        })
     }
 
-    return { ...portfolioObject }
+    return { ...dbObject }
 }
 
 

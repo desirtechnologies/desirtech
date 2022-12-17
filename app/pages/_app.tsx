@@ -13,17 +13,13 @@ import { SpinnerInfinity } from 'spinners-react';
 
 export default function Application({ Component, pageProps }: ApplicationProps) {
 
-  const { PageLayout } = Component?.layout ?? <></>
-
-
   return (
     <RecoilRoot>
       {
-        (PageLayout) ? <PageLayout {...pageProps.page.layout}>
-
-          <Component {...pageProps} />
-
-        </PageLayout> :
+        (Component?.layout) ?
+          <Component.layout {...pageProps.page.layout}>
+            <Component {...pageProps} />
+          </Component.layout> :
           <>
             <SpinnerInfinity enabled={true} />
           </>

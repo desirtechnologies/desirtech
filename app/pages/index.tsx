@@ -1,19 +1,17 @@
 import Carousel from "@components/Carousel"
-import Gallery from "@components/Gallery"
+import Contact from "@components/Contact"
+import Featured from "@components/Featured"
+import Flow from "@components/Flow"
 import Hero from "@components/Hero"
 import LogoCloud from "@components/LogoCloud"
-import PageService from '@services/page'
-import type { PageType } from "@typings/Page"
-import Contact from "@components/Contact"
-import DataGrid from "@components/DataGrid"
-import Featured from "@components/Featured"
 import Stats from "@components/Stats"
 import Summary from "@components/Summary"
-import PageLayout from "@layouts/PageLayout"
-import Flow from "@components/Flow"
 import Timeline from "@components/Timeline"
-import Table from "@views/components/Table"
+import PageLayout from "@layouts/PageLayout"
+import PageService from '@services/page'
+import type { PageType } from "@typings/Page"
 import Pillars from "@views/components/Pillars"
+import Table from "@views/components/Table"
 
 
 export async function getStaticProps() {
@@ -33,7 +31,7 @@ export async function getStaticProps() {
 
 const HomePage = ({ page }: PageType) => {
 
-  const { hero, featured, contact, simpleForm } = page?.data
+  const { hero, featured, flow, table, stats, summary, carousel, timeline, contact } = page?.data ?? null
 
 
   return (
@@ -41,7 +39,7 @@ const HomePage = ({ page }: PageType) => {
     <>
       <Hero {...hero} />
       <Featured {...featured} />
-      <Timeline />
+      <Timeline {...timeline} />
       <Carousel />
       <Pillars />
       <Flow />
@@ -55,7 +53,7 @@ const HomePage = ({ page }: PageType) => {
   )
 }
 
-HomePage.layout = { PageLayout }
+HomePage.layout = PageLayout
 
 export default HomePage
 

@@ -1,8 +1,8 @@
-import utils from "@utils/index"
+import { notion as notionUtils } from "@utils/index"
 
 export const notion = () => {
 
-    const { notion: { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } } = utils()
+    const { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = notionUtils()
 
     const notionTypes = {
 
@@ -79,9 +79,6 @@ export const notion = () => {
         },
         portfolio: {
             name: "💼Portfolio",
-            variants: {
-                featured: "🌟Featured"
-            },
             shape: (data: any) => {
 
                 const { URL, Name, Types, Status, Media } = data.properties
@@ -96,7 +93,7 @@ export const notion = () => {
             },
             predicate: (data: any) => {
                 const { name } = notionTypes.portfolio
-                return true
+                return isDatabase(name, data) ?? null
             }
 
         },

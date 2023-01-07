@@ -1,17 +1,28 @@
-const Carousel = () => {
+import type { ComponentType  } from "@typings/Component"
+import type { CarouselProps } from "@typings/Carousel"
 
+const Carousel:ComponentType<CarouselProps> = ({ title, heading }: CarouselProps) => {
+
+  const Heading = () => {
+    
+    return (
+      <div className="mb-24 text-center">
+      <span className="text-sm text-gray-300 uppercase">{heading ?? "[Client]:HEADING_NOT_FOUND"}</span>
+      <h2 className="mt-8 font-medium text-9xl md:text-10xl xl:text-11xl font-heading">
+        {title ??"[Client]:TITLE_NOT_FOUND"}
+      </h2>
+    </div>
+    )
+  }
+
+  
   return (
     <section
-      className="py-24 overflow-hidden font-mono 2xl:py-44 text-white"
+      className="py-24 overflow-hidden font-mono text-white 2xl:py-44"
       style={{ borderTopLeftRadius: 80, borderTopRightRadius: 80 }}
     >
       <div className="container px-4 mx-auto">
-        <div className="mb-24 text-center">
-          <span className="text-sm text-gray-300 uppercase">What people say</span>
-          <h2 className="mt-8 font-medium text-9xl md:text-10xl xl:text-11xl font-heading">
-            Quotes
-          </h2>
-        </div>
+       <Heading/>
         <div className="flex flex-wrap items-center justify-center mb-16 md:mb-28">
           <div className="order-last w-auto px-4 mb-4 text-center xl:mb-0 sm:order-first">
             <a className="inline-block" href="#">
@@ -58,7 +69,7 @@ const Carousel = () => {
                       <img src="uinel-assets/images/team/star.svg" alt="" />
                     </a>
                   </div>
-                  <div className="relative px-8 pt-16 pb-20 bg-white md:pl-20">
+                  <div className="relative px-8 pt-16 pb-20 md:pl-20">
                     <img
                       className="absolute top-0 right-0 w-10 mt-10 mr-6 transform md:mr-0 md:translate-x-1/2"
                       src="uinel-assets/images/team/quote-2.svg"

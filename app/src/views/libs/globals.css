@@ -1,0 +1,10 @@
+@import url("scrollbar.module.css");
+
+body {
+    background-color: #000000DF;
+    background-image: url('/assets/images/circuits.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

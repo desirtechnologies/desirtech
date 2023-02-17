@@ -1,9 +1,14 @@
 @import url("scrollbar.module.css");
 
+:root {
+    --dark-black-850: #000000EF;
+}
+
 body {
-    background-color: #000000DF;
+    position: relative;
+    background-color: #000000EF;
     background-image: url('/assets/images/circuits.svg');
-    background-size: cover;
+    background-size: 500% 500%;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;

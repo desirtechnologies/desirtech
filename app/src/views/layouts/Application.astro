@@ -1,10 +1,15 @@
 ---
-import "../libs/globals.css"
+import "@libs/globals.css";
+
+import Header from "@includes/dynamic/Header";
+import Footer from "@includes/static/Footer/Footer.astro";
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>

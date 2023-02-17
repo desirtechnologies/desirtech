@@ -1,8 +1,11 @@
 ---
 import Application from "@layouts/Application.astro";
 
-import PageService from "@services/pages"
-
+import Hero from "@components/dynamic/Hero";
+import CollectionsGrid from "@components/static/CollectionsGrid/CollectionsGrid.astro";
 ---
 
-<Application>Test Here</Application>
+<Application>
+  <Hero />
+  <CollectionsGrid />
+</Application>

@@ -6,6 +6,7 @@ import Footer from "@includes/static/Footer/Footer.astro";
 import Meta from "@includes/static/Meta/Meta.astro";
 import ContactSection from "@includes/dynamic/ContactSection";
 import Container from "@components/static/Container/Container.astro";
+import Navigator from "@includes/dynamic/Navigator";
 ---
 
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ import Container from "@components/static/Container/Container.astro";
     <Header />
     <slot />
     <ContactSection />
+    <Navigator />
     <Footer />
   </Container>
 </html>

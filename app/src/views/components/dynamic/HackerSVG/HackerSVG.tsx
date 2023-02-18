@@ -269,9 +269,11 @@ export default function HackerSVG() {
 
     return (
         <svg
-            width={712}
-            height={670}
-            className="object-contain"
+
+            className="h-full w-full m-0 object-contain"
+            height={712}
+            width={670}
+
             viewBox="0 0 712 670"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -311,17 +313,18 @@ export default function HackerSVG() {
                         `
 
 
-                        .drawPath {
-                            stroke-dasharray: 100;
-                            animation-direction: alternate-reverse;
-                            animation: dash 20s ease-in-out infinite;
-                          }
+            .drawPath {
+                stroke-dasharray: 100;
+                object-fit: scale-down;
+                animation-direction: alternate-reverse;
+                animation: dash 20s ease-in-out infinite;
+              }
 
-                        @keyframes dash {
-                            to {
-                              stroke-dashoffset: 1000;
-                            }
-                          }
+            @keyframes dash {
+                to {
+                  stroke-dashoffset: 1000;
+                }
+              }
 `
                     }
                 </style>

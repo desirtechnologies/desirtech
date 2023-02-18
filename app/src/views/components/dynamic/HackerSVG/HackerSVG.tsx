@@ -1,8 +1,4 @@
 
-import type { IComponent } from "@typings/Hero"
-
-export interface IHackerSVG extends IComponent {
-}
 
 export default function HackerSVG() {
 
@@ -281,7 +277,7 @@ export default function HackerSVG() {
             xmlns="http://www.w3.org/2000/svg"
 
         >
-            <g className="transition-all group" clip-path="url(#clip0_1_2)">
+            <g className="transition-all group object-contain w-full h-full" clip-path="url(#clip0_1_2)">
                 <DeskDrawerRight />
                 <DeskDrawerLeft />
                 <DeskSurface />

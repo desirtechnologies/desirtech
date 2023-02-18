@@ -8,13 +8,13 @@ export default function Hero() {
                 <div className=" overflow-hidden rounded-t-3xl">
 
                     <div className="relative mt-20 flex items-center justify-center">
-                        <div className="relative z-20 px-8 mx-auto">
+                        <div className="relative z-20 object-fit group">
                             <HackerSVG />
                             <a
-                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block px-8 py-3.5 text-lg text-center text-gray-900 font-bold bg-gray-50 hover:bg-gray-200 focus:ring-4 focus:ring-gray-200 rounded-full"
+                                className="absolute top-1/2 group-hover:top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block px-8 py-3.5 text-lg text-center text-gray-200 font-bold font-mono backdrop-blur-sm border-white border-2 border-opacity-25 box-shadow-lg hover:bg-black duration-500 ease-in-out focus:ring-4 focus:ring-gray-200 rounded-full"
                                 href="#"
                             >
-                                Watch Video
+                                Technomancer
                             </a>
                         </div>
                         <div className="absolute left-0 top-0 w-full h-1/2">

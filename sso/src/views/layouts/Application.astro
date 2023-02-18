@@ -1,6 +1,7 @@
 ---
 import NavBar from "@includes/dynamic/NavBar";
 import Meta from "@includes/static/Meta/Meta.astro";
+import Navigator from "@includes/dynamic/Navigator";
 ---
 
 <!DOCTYPE html>
@@ -8,5 +9,7 @@ import Meta from "@includes/static/Meta/Meta.astro";
   <Meta />
   <body>
     <NavBar />
+    <slot />
+    <Navigator />
   </body>
 </html>

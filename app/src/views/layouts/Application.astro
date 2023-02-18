@@ -4,14 +4,17 @@ import "@libs/globals.css";
 import Header from "@includes/dynamic/Header";
 import Footer from "@includes/static/Footer/Footer.astro";
 import Meta from "@includes/static/Meta/Meta.astro";
+import ContactSection from "@includes/dynamic/ContactSection";
+import Container from "@components/static/Container/Container.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Meta/>
-  <body>
+  <Meta />
+  <Container as={"body"}>
     <Header />
     <slot />
+    <ContactSection />
     <Footer />
-  </body>
+  </Container>
 </html>

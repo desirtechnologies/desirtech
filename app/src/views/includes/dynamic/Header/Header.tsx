@@ -1,148 +1,197 @@
 export default function Header({ }) {
 
     return (
-        <header aria-label="Site Header" class="border-b border-gray-100 border-1 border-opacity-50 shadow-black shadow-sm backdrop-blur-sm fixed top-0 w-full z-50">
-            <div
-                class="mx-auto flex h-20 max-w-screen-2xl items-center justify-between sm:px-6 lg:px-8"
-            >
-                <div class="flex items-center">
-                    <button type="button" class="p-2 sm:mr-4 lg:hidden">
-                        <svg
-                            class="h-6 w-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
-                    </button>
-
-                    <a href="#" class="flex">
-                        <span class="sr-only">Logo</span>
-                        <span class="inline-block h-10 w-32 rounded-lg bg-gray-200"></span>
-                    </a>
-                </div>
-
-                <div class="flex flex-1 items-center justify-end">
-                    <nav
-                        aria-label="Site Nav"
-                        class="hidden lg:flex lg:gap-4 lg:text-xs lg:font-bold lg:uppercase lg:tracking-wide lg:text-gray-500"
-                    >
-                        <a
-                            href="/about"
-                            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
-                        >
-                            About
-                        </a>
-
-                        <a
-                            href="/news"
-                            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
-                        >
-                            News
-                        </a>
-
-                        <a
-                            href="/products"
-                            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
-                        >
-                            Products
-                        </a>
-
-                        <a
-                            href="/contact"
-                            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
-                        >
-                            Contact
-                        </a>
-                    </nav>
-
-                    <div class="ml-8 flex items-center">
-                        <div
-                            class="flex items-center divide-x divide-gray-100 border-x border-gray-100"
-                        >
-                            <span>
-                                <a
-                                    href="/cart"
-                                    class="block border-b-4 border-transparent p-6 hover:border-red-700"
-                                >
+        <section className="py-6 fixed top-0 w-full z-50">
+            <div className="container mx-auto px-4">
+                <div className="flex items-center justify-between px-6 py-3.5 backdrop-blur-lg border-2 border-opacity-25 hover:border-opacity-50 cursor-pointer hover:shadow-lg duration-500 ease-in-out delay-75 border-white rounded-full">
+                    <div className="w-auto">
+                        <div className="flex flex-wrap items-center">
+                            <div className="w-auto">
+                                <a href="#">
+                                    <img src="zanrly-assets/logos/zanrly-logo-white.svg" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-auto">
+                        <div className="flex flex-wrap items-center">
+                            <div className="w-auto hidden lg:block">
+                                <ul className="flex items-center justify-center">
+                                    <li className="mr-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Features
+                                        </a>
+                                    </li>
+                                    <li className="mr-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Solutions
+                                        </a>
+                                    </li>
+                                    <li className="mr-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Resources
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Pricing
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-auto">
+                        <div className="flex flex-wrap items-center">
+                            <div className="w-auto hidden lg:block">
+                                <div className="flex flex-wrap -m-2">
+                                    <div className="w-full md:w-auto p-2">
+                                        <a
+                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-800 rounded-full"
+                                            href="#"
+                                        >
+                                            Log In
+                                        </a>
+                                    </div>
+                                    <div className="w-full md:w-auto p-2">
+                                        <a
+                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
+                                            href="#"
+                                        >
+                                            Get Started
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-auto lg:hidden">
+                                <a className="inline-block" href="#">
                                     <svg
-                                        class="h-4 w-4"
+                                        className="navbar-burger text-blue-500"
+                                        width={45}
+                                        height={45}
+                                        viewBox="0 0 56 56"
                                         fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
+                                        <rect width={56} height={56} rx={28} fill="currentColor" />
                                         <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                            d="M37 32H19M37 24H19"
+                                            stroke="white"
+                                            strokeWidth="1.5"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                         />
                                     </svg>
-
-                                    <span class="sr-only">Cart</span>
                                 </a>
-                            </span>
-
-                            <span>
-                                <a
-                                    href="/account"
-                                    class="block border-b-4 border-transparent p-6 hover:border-red-700"
-                                >
-                                    <svg
-                                        class="h-4 w-4"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                        />
-                                    </svg>
-
-                                    <span class="sr-only"> Account </span>
-                                </a>
-                            </span>
-
-                            <span class="hidden sm:block">
-                                <a
-                                    href="/search"
-                                    class="block border-b-4 border-transparent p-6 hover:border-red-700"
-                                >
-                                    <svg
-                                        class="h-4 w-4"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                        />
-                                    </svg>
-
-                                    <span class="sr-only"> Search </span>
-                                </a>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div className="hidden navbar-menu fixed top-0 left-0 bottom-0 w-4/6 sm:max-w-xs z-50">
+                    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80" />
+                    <nav className="relative z-10 px-9 pt-8 bg-gray-800 h-full overflow-y-auto">
+                        <div className="flex flex-wrap justify-between h-full">
+                            <div className="w-full">
+                                <div className="flex items-center justify-between -m-2">
+                                    <div className="w-auto p-2">
+                                        <a className="inline-block" href="#">
+                                            <img src="zanrly-assets/logos/zanrly-logo-white.svg" alt="" />
+                                        </a>
+                                    </div>
+                                    <div className="w-auto p-2">
+                                        <a className="inline-block navbar-burger" href="#">
+                                            <svg
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M6 18L18 6M6 6L18 18"
+                                                    stroke="#ffffff"
+                                                    strokeWidth={2}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col justify-center py-8 w-full">
+                                <ul>
+                                    <li className="mb-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Features
+                                        </a>
+                                    </li>
+                                    <li className="mb-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Solutions
+                                        </a>
+                                    </li>
+                                    <li className="mb-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Resources
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            Pricing
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-col justify-end w-full pb-8">
+                                <div className="flex flex-wrap -m-2">
+                                    <div className="w-full p-2">
+                                        <a
+                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-700 rounded-full"
+                                            href="#"
+                                        >
+                                            Log In
+                                        </a>
+                                    </div>
+                                    <div className="w-full p-2">
+                                        <a
+                                            className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
+                                            href="#"
+                                        >
+                                            Get Started
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
-        </header>
+        </section>
 
 
     )

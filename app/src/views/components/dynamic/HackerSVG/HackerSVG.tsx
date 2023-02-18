@@ -275,12 +275,13 @@ export default function HackerSVG() {
         <svg
             width={712}
             height={670}
+            className="object-contain"
             viewBox="0 0 712 670"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
 
         >
-            <g class="transition-all group" clip-path="url(#clip0_1_2)">
+            <g className="transition-all group" clip-path="url(#clip0_1_2)">
                 <DeskDrawerRight />
                 <DeskDrawerLeft />
                 <DeskSurface />

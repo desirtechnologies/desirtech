@@ -3,7 +3,7 @@ export default function Header({ }) {
     return (
         <section className="py-6 fixed top-0 w-full z-50 font-mono">
             <div className="container mx-auto px-4">
-                <div className="flex items-center justify-between px-6 py-3.5 backdrop-blur-lg border-2 border-opacity-25 hover:border-opacity-50 cursor-pointer hover:shadow-lg duration-500 ease-in-out delay-75 border-white rounded-full">
+                <div className="flex items-center justify-between px-6 py-3.5 backdrop-blur-lg border-2 border-opacity-25 hover:border-opacity-50 cursor-pointer hover:shadow-xl shadow-white duration-500 will-change-scroll ease-in-out border-white rounded-full">
                     <div className="w-auto">
                         <div className="flex flex-wrap items-center">
                             <div className="w-auto">

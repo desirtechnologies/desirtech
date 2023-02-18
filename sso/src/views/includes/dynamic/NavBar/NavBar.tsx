@@ -1,156 +1,131 @@
+import Notifications from "@includes/dynamic/Notifications"
+import Breadcrumbs from "@components/dynamic/Breadcrumbs"
+
+
 export default function NavBar() {
 
     return (
-        <>
-            {/*
-  This component uses @tailwindcss/forms
+        <section className="overflow-hidden w-full fixed top-0 bg-black">
 
-  yarn add @tailwindcss/forms
-  npm install @tailwindcss/forms
-
-  plugins: [require('@tailwindcss/forms')]
-*/}
-            <header aria-label="Page Header" className="bg-gray-50">
-                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-                    <div className="flex items-center sm:justify-between sm:gap-4">
-                        <div className="relative hidden sm:block">
-                            <label className="sr-only" htmlFor="search">
-                                {" "}
-                                Search{" "}
-                            </label>
-                            <input
-                                className="h-10 w-full rounded-lg border-none bg-white pl-4 pr-10 text-sm shadow-sm sm:w-56"
-                                id="search"
-                                type="search"
-                                placeholder="Search website..."
-                            />
-                            <button
-                                type="button"
-                                className="absolute top-1/2 right-1 -translate-y-1/2 rounded-md bg-gray-50 p-2 text-gray-600 transition hover:text-gray-700"
-                            >
-                                <span className="sr-only">Submut Search</span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                        <div className="flex flex-1 items-center justify-between gap-8 sm:justify-end">
-                            <div className="flex gap-4">
-                                <button
-                                    type="button"
-                                    className="block shrink-0 rounded-lg bg-white p-2.5 text-gray-600 shadow-sm hover:text-gray-700 sm:hidden"
-                                >
-                                    <span className="sr-only">Search</span>
+            <Notifications />
+            <nav className="py-3.5 xl:pb-0 px-7">
+                <div className="flex items-center justify-between xl:mb-5">
+                    <div className="w-full xl:w-auto px-2 xl:mr-10">
+                        <div className="flex items-center justify-between">
+                            <a className="inline-flex items-center h-7" href="#">
+                                <img src="dashy-assets/logos/dashy-logo-light.svg" alt="" />
+                            </a>
+                            <div className="xl:hidden">
+                                <button className="navbar-burger text-gray-400 hover:text-gray-300 focus:outline-none">
                                     <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
+                                        width={20}
+                                        height={12}
+                                        viewBox="0 0 20 12"
                                         fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
+                                        xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                            d="M1 2H19C19.2652 2 19.5196 1.89464 19.7071 1.70711C19.8946 1.51957 20 1.26522 20 1C20 0.734784 19.8946 0.48043 19.7071 0.292893C19.5196 0.105357 19.2652 0 19 0H1C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1C0 1.26522 0.105357 1.51957 0.292893 1.70711C0.48043 1.89464 0.734784 2 1 2ZM19 10H1C0.734784 10 0.48043 10.1054 0.292893 10.2929C0.105357 10.4804 0 10.7348 0 11C0 11.2652 0.105357 11.5196 0.292893 11.7071C0.48043 11.8946 0.734784 12 1 12H19C19.2652 12 19.5196 11.8946 19.7071 11.7071C19.8946 11.5196 20 11.2652 20 11C20 10.7348 19.8946 10.4804 19.7071 10.2929C19.5196 10.1054 19.2652 10 19 10ZM19 5H1C0.734784 5 0.48043 5.10536 0.292893 5.29289C0.105357 5.48043 0 5.73478 0 6C0 6.26522 0.105357 6.51957 0.292893 6.70711C0.48043 6.89464 0.734784 7 1 7H19C19.2652 7 19.5196 6.89464 19.7071 6.70711C19.8946 6.51957 20 6.26522 20 6C20 5.73478 19.8946 5.48043 19.7071 5.29289C19.5196 5.10536 19.2652 5 19 5Z"
+                                            fill="currentColor"
                                         />
                                     </svg>
                                 </button>
-                                <a
-                                    href="#"
-                                    className="block shrink-0 rounded-lg bg-white p-2.5 text-gray-600 shadow-sm hover:text-gray-700"
-                                >
-                                    <span className="sr-only">Academy</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                                        />
-                                    </svg>
-                                </a>
-                                <a
-                                    href="#"
-                                    className="block shrink-0 rounded-lg bg-white p-2.5 text-gray-600 shadow-sm hover:text-gray-700"
-                                >
-                                    <span className="sr-only">Notifications</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                                        />
-                                    </svg>
-                                </a>
                             </div>
-                            <button
-                                type="button"
-                                className="group flex shrink-0 items-center rounded-lg transition"
-                            >
-                                <span className="sr-only">Menu</span>
-                                <img
-                                    alt="Man"
-                                    src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                    className="h-10 w-10 rounded-full object-cover"
-                                />
-                                <p className="ml-2 hidden text-left text-xs sm:block">
-                                    <strong className="block font-medium">Eric Frusciante</strong>
-                                    <span className="text-gray-500"> eric@frusciante.com </span>
-                                </p>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="ml-4 hidden h-5 w-5 text-gray-500 transition group-hover:text-gray-700 sm:block"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </button>
                         </div>
                     </div>
-                    <div className="mt-8">
-                        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                            Welcome Back, Barry!
-                        </h1>
-                        <p className="mt-1.5 text-sm text-gray-500">
-                            Your website has seen a 52% increase in traffic in the last month.
-                            Keep it up! 🚀
-                        </p>
+                    <div className="hidden xl:block w-full md:w-auto px-2 mr-auto">
+                        <div className="flex items-center pr-4 border border-neutral-500 rounded-lg focus-within:border-neutral-400">
+                            <div className="pl-4 pr-3.5">
+                                <svg
+                                    width={19}
+                                    height={18}
+                                    viewBox="0 0 19 18"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M15.4999 16.2803C15.7928 16.5732 16.2677 16.5732 16.5606 16.2803C16.8535 15.9874 16.8535 15.5126 16.5606 15.2197L15.4999 16.2803ZM12.0606 10.7197C11.7677 10.4268 11.2928 10.4268 10.9999 10.7197C10.7071 11.0126 10.7071 11.4874 10.9999 11.7803L12.0606 10.7197ZM12.2803 7.5C12.2803 9.98528 10.2656 12 7.78027 12V13.5C11.094 13.5 13.7803 10.8137 13.7803 7.5H12.2803ZM7.78027 12C5.29499 12 3.28027 9.98528 3.28027 7.5H1.78027C1.78027 10.8137 4.46656 13.5 7.78027 13.5V12ZM3.28027 7.5C3.28027 5.01472 5.29499 3 7.78027 3V1.5C4.46656 1.5 1.78027 4.18629 1.78027 7.5H3.28027ZM7.78027 3C10.2656 3 12.2803 5.01472 12.2803 7.5H13.7803C13.7803 4.18629 11.094 1.5 7.78027 1.5V3ZM16.5606 15.2197L12.0606 10.7197L10.9999 11.7803L15.4999 16.2803L16.5606 15.2197Z"
+                                        fill="#495460"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                className="py-2 text-sm text-neutral-400 placeholder-neutral-400 bg-transparent outline-none"
+                                id="horizontalNav3-1"
+                                type="text"
+                                placeholder="Type to search"
+                            />
+                        </div>
+                    </div>
+                    <div className="hidden xl:block w-full md:w-auto px-2">
+                        <div className="md:flex items-center">
+                            <div className="w-full md:w-auto mb-6 md:mb-0">
+                                <div className="flex flex-wrap items-center">
+                                    <a
+                                        className="mr-5 px-3 py-1.5 text-sm font-medium text-white hover:text-neutral-200"
+                                        href="#"
+                                    >
+                                        Create account
+                                    </a>
+                                    <a
+                                        className="px-3 py-1.5 text-sm font-medium text-white bg-gradient-purple-left focus:ring-4 focus:ring-purple-300 rounded-lg"
+                                        href="#"
+                                    >
+                                        Sign In
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </header>
-        </>
+                <div className="hidden xl:flex xl:flex-wrap">
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            Home
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-transparent font-medium bg-clip-text bg-gradient-purple-top">
+                            Payments
+                        </span>
+                        <div className="h-0.5 bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            Business operations
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            Financial services
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            Developer tools
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            Security
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                    <a className="group inline-block mr-7" href="#">
+                        <span className="inline-block pb-3.5 text-sm text-neutral-200 group-hover:text-transparent font-medium bg-clip-text group-hover:bg-gradient-purple-top">
+                            All products
+                        </span>
+                        <div className="h-0.5 group-hover:bg-gradient-purple-left" />
+                    </a>
+                </div>
+            </nav>
+            <Breadcrumbs />
+
+        </section>
 
     )
 }

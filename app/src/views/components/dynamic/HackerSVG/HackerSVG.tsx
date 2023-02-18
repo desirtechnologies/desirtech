@@ -280,7 +280,7 @@ export default function HackerSVG() {
             xmlns="http://www.w3.org/2000/svg"
 
         >
-            <g class="transition-all group animate-in" clip-path="url(#clip0_1_2)">
+            <g class="transition-all group" clip-path="url(#clip0_1_2)">
                 <DeskDrawerRight />
                 <DeskDrawerLeft />
                 <DeskSurface />

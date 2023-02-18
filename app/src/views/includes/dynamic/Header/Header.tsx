@@ -1,9 +1,9 @@
 export default function Header({ }) {
 
     return (
-        <header aria-label="Site Header" class="border-b border-gray-100 backdrop-blur-sm">
+        <header aria-label="Site Header" class="border-b border-gray-100 border-1 border-opacity-50 shadow-black shadow-sm backdrop-blur-sm fixed top-0 w-full z-50">
             <div
-                class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between sm:px-6 lg:px-8"
+                class="mx-auto flex h-20 max-w-screen-2xl items-center justify-between sm:px-6 lg:px-8"
             >
                 <div class="flex items-center">
                     <button type="button" class="p-2 sm:mr-4 lg:hidden">

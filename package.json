@@ -1,0 +1,23 @@
+{
+  "name": "desir.tech",
+  "version": "0.9.9",
+  "description": "Knowledge Determines Destiny. ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "readme:g":"npx @appnest/readme generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desirtech/desir.tech.git"
+  },
+  "author": "Jeffrey Desir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desirtech/desir.tech/issues"
+  },
+  "homepage": "https://github.com/desirtech/desir.tech#readme"
+}

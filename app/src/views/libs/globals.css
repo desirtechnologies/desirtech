@@ -7,10 +7,10 @@
 
 body {
     position: relative;
-    background-color: #000000EF;
+    background-color: #000000ED;
     background-image: url('/assets/images/circuits.svg');
     background-size: 500% 500%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed !important;
 }

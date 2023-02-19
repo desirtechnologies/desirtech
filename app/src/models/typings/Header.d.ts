@@ -1,9 +1,10 @@
-import type { FaviconProps } from "@typings/Favicon"
-import type { LinkProps } from "@typings/Link"
+import type { CallToActionProps } from "@typings/CallToAction" 
+import type { FaviconProps } from "@typings/Favicon" 
+import type { LinkProps } from "@typings/Link" 
+import type { IComponent } from "@typings/Component"
 
-
-export type HeaderProps = {
-    favicon?: FaviconProps,
-    links?: LinkProps[]
-    sX?: any
+export interface IHeader extends IComponent {
+    favicon?: FaviconProps;
+    links?: LinkProps[];
+    cta?: CallToActionProps[];
 }

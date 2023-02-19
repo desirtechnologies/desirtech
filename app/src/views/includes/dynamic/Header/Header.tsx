@@ -1,16 +1,6 @@
-export type FaviconProps = {
-    url?: string;
-    image?: {
-        src?: string;
-        alt?: string;
-    }
-}
+import type { IHeader } from "@typings/Header"
 
-export interface IHeader extends JSX.Element {
-    favicon?: FaviconProps;
-}
-
-export default function Header({ favicon }): IHeader {
+export default function Header({ favicon, links, cta }): IHeader {
 
 
     const Favicon = () => {

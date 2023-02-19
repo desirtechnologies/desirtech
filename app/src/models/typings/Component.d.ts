@@ -1,3 +1,2 @@
-import type { FC } from "react"
-
-export type ComponentType<T> = FC<T> | React.ComponentClass<T>
+export interface IComponent extends JSX.Element {
+}

@@ -88,7 +88,7 @@ export default function Header({ favicon }): IHeader {
                             </div>
                             <div className="w-full md:w-auto p-2">
                                 <a
-                                    className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
+                                    className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-green-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
                                     href="#"
                                 >
                                     Get Started

@@ -1,4 +1,5 @@
 @import url("scrollbar.module.css");
+@import url("reset.module.css");
 
 :root {
     --dark-black-850: #000000EF;

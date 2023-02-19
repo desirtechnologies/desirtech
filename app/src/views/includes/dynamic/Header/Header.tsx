@@ -1,5 +1,12 @@
 import type { IHeader } from "@typings/Header"
 
+
+export const defaultProps = {
+    links: [...new Array(4).map((i) => ({
+        name: "LINK_NOT_FOUND",
+
+    }))]
+}
 export default function Header({ favicon, links, cta }): IHeader {
 
 
@@ -23,38 +30,28 @@ export default function Header({ favicon, links, cta }): IHeader {
                 <div className="flex flex-wrap items-center">
                     <div className="w-auto hidden lg:block">
                         <ul className="flex items-center justify-center">
-                            <li className="mr-9">
-                                <a
-                                    className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                    href="#"
-                                >
-                                    Features
-                                </a>
-                            </li>
-                            <li className="mr-9">
-                                <a
-                                    className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                    href="#"
-                                >
-                                    Solutions
-                                </a>
-                            </li>
-                            <li className="mr-9">
-                                <a
-                                    className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                    href="#"
-                                >
-                                    Resources
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
-                                    href="#"
-                                >
-                                    Pricing
-                                </a>
-                            </li>
+                            {
+                                links?.map((link, index) => (
+                                    <li key={index} className="mr-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            {link?.name ?? null}
+                                        </a>
+                                    </li>
+                                )) ?? defaultProps.links.map((link, index) => (
+                                    <li key={index} className="mr-9">
+                                        <a
+                                            className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
+                                            href="#"
+                                        >
+                                            "{link?.name}"
+                                        </a>
+                                    </li>
+                                ))
+                            }
+
                         </ul>
                     </div>
                 </div>

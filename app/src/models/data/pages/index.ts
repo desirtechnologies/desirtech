@@ -7,15 +7,17 @@ import type { ContactProps } from "@models/typings/Contact"
 import type { FeaturedProps } from "@typings/Featured"
 import type { HeroProps } from "@typings/Hero"
 import type { PageQueryProps } from "@typings/Page"
+// import Database from "@db/index"
+// [data]: Database.getSocialMedia()
 
-const pages = ({ store, key }: PageQueryProps) => {
+export default function pages({ store, key }) {
 
     const { getLinks } = links(store)
     const { getSocialMedia } = social_media(store)
     const { getTitle, getCopyright, getObfuscator, getPhone, getEmail, getPortfolioHeading } = meta(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
 
-    const pageData = {
+    const _data = {
 
         home: {
             metaData: {
@@ -80,11 +82,11 @@ const pages = ({ store, key }: PageQueryProps) => {
         }
     }
 
-    const pageObject = {
+    const _object = {
         version: Date.now(),
-        data: pageData[key]?.data,
+        data: _data[key]?.data,
         layout: layout({
-            metaData: pageData[key]?.metaData,
+            metaData: _data[key]?.metaData,
             header: {
                 links: getLinks().map((link) => ({
                     name: link?.name ?? "NOT_FOUND",
@@ -145,7 +147,5 @@ const pages = ({ store, key }: PageQueryProps) => {
 
     }
 
-    return { ...pageObject }
+    return _object
 }
-
-export default pages

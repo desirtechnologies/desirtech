@@ -8,7 +8,7 @@
 body {
     position: relative;
     background-color: #000000ED;
-    background-image: url('/assets/images/circuits.svg');
+    background-image: url('/assets/images/circuits.svg'), url('/assets/images/noise.svg');
     background-size: 500% 500%;
     background-position: center center;
     background-repeat: no-repeat;

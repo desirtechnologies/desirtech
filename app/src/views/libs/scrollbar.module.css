@@ -9,5 +9,5 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: #008000;
-
+    border-radius: 4em;
 }

@@ -1,32 +1,23 @@
 import pages from "@pages/index"
-import NotionService from '@services/notion'
 
-const PageService = () => {
+const PageService = ({ opts }) => {
 
-    const serviceObject = {
+    const _service = {
 
+        getPage: async (id: string) => {
 
-        getPage: async (pageKey: string) => {
-
-            const { getCentralDogma } = NotionService()
-
-            const centralDogma = await getCentralDogma()
-
-            const { layout, data } = pages({
-                store: centralDogma,
-                key: pageKey
-            })
+            const { layout, data } = await pages(id)
 
             const page = {
                 layout,
                 data,
-            }
-            
+            } ?? null
+
             return page
         }
     }
 
-    return { ...serviceObject }
+    return _service
 }
 
 

@@ -70,7 +70,7 @@ export const notion = () => {
 
 export const collections = () => {
 
-    const utilsObject = {
+    const _utils = {
 
         shuffle: (arr) => {
             let currentIndex = arr.length, randomIndex;
@@ -98,6 +98,10 @@ export const collections = () => {
             }
         },
 
+        makeQueryable:({ db, key }) => {
+            return db[key] ?? null
+        },
+
         createDatabase: ({ id, data, shape, predicate }: any) => {
 
             return {
@@ -112,6 +116,8 @@ export const collections = () => {
             }
         }
     }
-    return { ...utilsObject }
+
+
+    return _utils
 }
 

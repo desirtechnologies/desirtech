@@ -8,6 +8,9 @@ import ContactSection from "@includes/dynamic/ContactSection";
 import Container from "@components/static/Container/Container.astro";
 import Navigator from "@includes/dynamic/Navigator";
 
+export const defaultProps = {
+  header: {}
+}
 const { layout } = Astro.props;
 ---
 
@@ -15,7 +18,7 @@ const { layout } = Astro.props;
 <html lang="en">
   <Meta  />
   <Container>
-    <Header />
+    <Header {...layout?.header ?? defaultProps.header}/>
     <slot />
     <ContactSection />
     <Footer />

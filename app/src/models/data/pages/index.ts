@@ -1,41 +1,37 @@
 
-import type { IPage } from "@typings/Page"
-import { collections } from "@utils/index"
-import { Database } from "@db/index"
+import { notionCMS } from "@models/configs"
+import { blackprint } from "@utils/blackprint"
 
-export default async function pages(id: string): Promise<IPage> {
+export const MySitePages = async () => {
 
-    const _pages = {
-        home: {
-            metaData: {
-                pageTitle: "Home"
-            },
-            data: {
-                hero: {
+    const { defineViewStore, defineDatabase } = blackprint()
 
+    const { portfolio } = await defineDatabase(notionCMS())
+
+    return defineViewStore({
+        layout: {
+
+            header: {
+                favicon: {
+                    image: {
+                        
+                    }
+                }
+            }
+
+        },
+        pages: {
+            home: {
+                metaData: {
+                    pageTitle: "Home",
+                    description: ""
+                },
+                data: {
+                    featuredSection: {
+                        features: portfolio.getFeatured()
+                    }
                 }
             }
         }
-    }
-
-
-    const _object = {
-        layout: {
-            header: {
-                favicon: await Database.getFavicon(),
-                impressum: await Database.getImpressum()
-            },
-            footer: {
-                copyright: await Database.getCopyright()
-            },
-            metaData: _pages[id]?.metaData
-        },
-        data: _pages[id]?.data,
-        pages: _pages[id]?.pages ?? null,
-        version: Date.now()
-    }
-
-    return _object
-
+    })
 }
-

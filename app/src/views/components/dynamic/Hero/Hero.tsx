@@ -1,5 +1,12 @@
 import HackerSVG from "@components/dynamic/HackerSVG";
 
+
+export interface IHero extends IComponent {
+    titles: string[];
+    banner: any;
+}
+
+
 export default function Hero() {
 
     return (

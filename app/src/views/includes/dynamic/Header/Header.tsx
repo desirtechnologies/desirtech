@@ -5,8 +5,21 @@ export const defaultProps = {
     links: [...new Array(4).map((i) => ({
         name: "LINK_NOT_FOUND",
 
-    }))]
+    }))],
+    favicon: {
+        url: "URL_NOT_FOUND"
+    },
+    cta: {
+        primary: {
+            name: "CTA_NOT_FOUND",
+        },
+        secondary: {
+            name: "CTA_NOT_FOUND",
+        }
+    }
 }
+
+
 export default function Header({ favicon, links, cta }): IHeader {
 
 
@@ -15,8 +28,8 @@ export default function Header({ favicon, links, cta }): IHeader {
             <div className="w-auto">
                 <div className="flex flex-wrap items-center">
                     <div className="w-auto">
-                        <a href="#">
-                            <img src="zanrly-assets/logos/zanrly-logo-white.svg" alt="" />
+                        <a href={favicon?.url ?? defaultProps.favicon.url}>
+                            <img src={favicon?.image?.src} alt={favicon?.image?.alt} />
                         </a>
                     </div>
                 </div>
@@ -60,50 +73,58 @@ export default function Header({ favicon, links, cta }): IHeader {
     }
 
     const CallToAction = () => {
+
+        const MobileMenuBurger = () => (
+            <div className="w-auto lg:hidden">
+                <a className="inline-block" href="#">
+                    <svg
+                        className="text-green-700 opacity-80 focus:shadow-2xl"
+                        width={45}
+                        height={45}
+                        viewBox="0 0 56 56"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width={56} height={56} rx={28} fill="currentColor" />
+                        <path
+                            d="M37 32H19M37 24H19"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
+                </a>
+            </div>
+        )
         return (
             <div className="w-auto">
                 <div className="flex flex-wrap items-center">
-                    <div className="w-auto hidden lg:block">
-                        <div className="flex flex-wrap -m-2">
-                            <div className="w-full md:w-auto p-2">
-                                <a
-                                    className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-800 rounded-full"
-                                    href="#"
-                                >
-                                    Log In
-                                </a>
+                    {cta ?
+                        <div className="w-auto hidden lg:block">
+                            <div className="flex flex-wrap -m-2">
+                                <div className="w-full md:w-auto p-2">
+                                    <a
+                                        className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-800 rounded-full"
+                                        href={cta?.primary?.url}
+
+                                    >
+                                        {cta?.primary?.name}
+                                    </a>
+                                </div>
+                                <div className="w-full md:w-auto p-2">
+                                    <a
+                                        className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-green-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
+                                        href={cta?.secondary?.url}
+
+                                    >
+                                        {cta?.secondary?.name}
+
+                                    </a>
+                                </div>
                             </div>
-                            <div className="w-full md:w-auto p-2">
-                                <a
-                                    className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-green-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
-                                    href="#"
-                                >
-                                    Get Started
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-auto lg:hidden">
-                        <a className="inline-block" href="#">
-                            <svg
-                                className="navbar-burger text-green-700 opacity-50 backdrop-blur-sm"
-                                width={45}
-                                height={45}
-                                viewBox="0 0 56 56"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <rect width={56} height={56} rx={28} fill="currentColor" />
-                                <path
-                                    d="M37 32H19M37 24H19"
-                                    stroke="white"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </a>
-                    </div>
+                        </div> : null}
+                    <MobileMenuBurger />
                 </div>
             </div>
         )

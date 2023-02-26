@@ -1,23 +1,57 @@
 import { Client } from "@notionhq/client"
+import { blackprint } from "@utils/blackprint"
 
-const NotionService = () => {
+export interface INotionPage { }
+export interface INotionPageGetter { cursor?: string | undefined, aggResults?: any[], pageId: any }
 
-    const serviceObject = {
-        api: new Client({
-            auth: process.env.FACADE_API_KEY,
-        }),
-        secured: {
-            central_dogma: process.env.CENTRAL_DOGMA_ID as (string) ?? null
-        },
-        getCentralDogma: async () => {
-            const response = (await serviceObject.api.databases.query({
-                database_id: serviceObject.secured.central_dogma,
-            }))?.results ?? null
 
-            return response
-        },
-    }
-    return { ...serviceObject }
+
+const { defineService } = blackprint()
+
+export const NotionService = () => {
+
+    const NotionClient = new Client({
+        auth: import.meta.env.FACADE_API_KEY ?? process.env.FACADE_API_KEY,
+    })
+
+
+    return defineService({
+        methods: {
+            getNotionPage: async ({ cursor, aggResults, pageId }: INotionPageGetter): Promise<INotionPage> => {
+
+                let aggregateResults: any[] = []
+
+                const { has_more, next_cursor, results } = await NotionClient.databases.query({
+                    database_id: pageId,
+                    page_size: 100,
+                    start_cursor: cursor,
+                })
+
+                aggregateResults.push(...results, ...aggResults as any[])
+
+                if (!has_more) {
+                    return aggregateResults
+                } else {
+                    return NotionService().methods.getNotionPage({ cursor: next_cursor as string, aggResults: aggregateResults, pageId })
+                }
+            }
+            ,
+            getNotionPages: async ({ pageIds }) => {
+
+                const { getNotionPage } = NotionService().methods.getNotionPage;
+
+                const pageData = await pageIds.map((pageId) => {
+                    return {
+                        [pageId.name]: getNotionPage({
+                            cursor: undefined,
+                            aggResults: [],
+                            pageId: pageId.id
+                        })
+                    }
+                })
+
+                return pageData
+            }
+        }
+    })
 }
-
-export default NotionService

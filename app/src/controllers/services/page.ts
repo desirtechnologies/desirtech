@@ -1,27 +1,19 @@
-import pages from "@pages/index"
+import { MySitePages } from "@pages/index"
+import { blackprint } from "@utils/blackprint"
 
-const PageService = ({ opts }) => {
+const { defineService, createPage } = blackprint()
 
-    const _service = {
+export const PageService = () => {
+    return defineService({
+        methods: {
+            getPage: async (id: string) => {
 
-        getPage: async (id: string) => {
+                const PageStore = await MySitePages()
 
-            const { layout, data } = await pages(id)
+                const pageData = createPage({ store: PageStore, id })
 
-            const page = {
-                layout,
-                data,
-            } ?? null
-
-            return page
+                return pageData
+            }
         }
-    }
-
-    return _service
+    })
 }
-
-
-
-
-export default PageService
-

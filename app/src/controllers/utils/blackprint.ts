@@ -33,7 +33,7 @@ export const blackprint = () => {
             };
         },
 
-        defineDatabaseConfiguration: ({ method, params }): IBlackprintDatabaseConfiguration => {
+        defineConfiguration: ({ method, params }): IBlackprintDatabaseConfiguration => {
             return method(params)
         },
         defineService: ({ methods }): IBlackprintService => {

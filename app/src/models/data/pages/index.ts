@@ -6,17 +6,13 @@ export const MySitePages = async () => {
 
     const { defineViewStore, defineDatabase } = blackprint()
 
-    const { portfolio } = await defineDatabase(notionCMS())
+    const { meta } = await defineDatabase(notionCMS())
 
     return defineViewStore({
-        layout: {
 
+        layout: {
             header: {
-                favicon: {
-                    image: {
-                        
-                    }
-                }
+                favicon: meta.getFavicon(["src", "url"])
             }
 
         },

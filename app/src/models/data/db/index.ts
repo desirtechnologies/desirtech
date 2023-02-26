@@ -9,4 +9,11 @@ const { variants } = notionCMS().params
 export const portfolioMethods = defineMethods();
 
 
-export const metaMethods = defineMethods();
+export const metaDatabase = () => {
+
+    return {
+        getFavicon: defineMethods(() => {
+            
+        })
+    }
+}

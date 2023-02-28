@@ -1,12 +1,12 @@
 import { Client } from "@notionhq/client"
-import { blackprint } from "@utils/blackprint"
+import { services } from "@utils/blackprint"
 
 export interface INotionPage { }
 export interface INotionPageGetter { cursor?: string | undefined, aggResults?: any[], pageId?: { name?: string, id?: string } }
 
 
 
-const { defineService } = blackprint()
+const { defineService } = services()
 
 export const NotionService = () => {
 

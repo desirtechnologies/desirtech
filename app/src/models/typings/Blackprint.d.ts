@@ -8,8 +8,10 @@ export interface IBlackprintConfiguration {
     controllers?: any;
 }
 
+export type BlackprintModule = {}
+
 export interface IBlackprintService {
-    methods?: any;
+    methods?: {};
 }
 
 export interface IBlackprintViewStore {
@@ -30,8 +32,46 @@ export interface IBlackprintLibrary {
 }
 
 export interface IBlackprintConfiguration { }
-export interface IBlackprintDatabaseConfiguration extends IBlackprintConfiguration {
-    method?: Promise<Function> & Function;
-    params?: any;
+
+export interface IBlackprintDatabaseConfiguration {
+    init?: Promise<Function> & Function;
+    params?: {
+        collections?: any;
+    };
 }
 
+
+export type AbstractRootIndexedObject = {
+    _root?: any
+}
+
+export type BlackprintViewsModules = BlackprintModule & AbstractRootIndexedObject & {
+    layouts?: any;
+    libs?: any;
+    styles?: any;
+    components?: any;
+    includes?: any;
+}
+
+export type BlackprintModelsModules = BlackprintModule & AbstractRootIndexedObject & {
+    configs?: any;
+    data?: {
+        db?: any,
+        pages?: any
+    }
+    typings?: any
+}
+
+
+export type BlackprintControllersModules = AbstractRootIndexedObject & {
+    hooks?: any;
+    services?: any;
+    utils?: any;
+}
+
+
+export type BlackprintModules = AbstractRootIndexedObject & {
+    views?: BlackprintViewsModules
+    controllers?: BlackprintControllersModules,
+    models?: BlackprintModelsModules
+}

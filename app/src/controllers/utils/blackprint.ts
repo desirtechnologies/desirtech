@@ -1,71 +1,157 @@
-import type { IBlackprintViewStore } from "@typings/Blackprint";
-import type { IBlackprintService } from "@typings/Blackprint"
-import type { IBlackrpintUtility } from "@typings/Blackprint"
-import type { IBlackprintAPIRoute } from "@typings/Blackprint"
-import type { IBlackprintDatabaseConfiguration } from "@typings/Blackprint"
-import type { IBlackprintLibrary } from "@typings/Blackprint"
+import type { BlackprintControllersModules, BlackprintModelsModules, BlackprintModules, BlackprintViewsModules } from "@typings/Blackprint";
 
 
-export const blackprint = () => {
+export const blackprint = (): BlackprintModules => {
+
+    const lib: BlackprintModules = {
+        _root: {
+            defineConfiguration: () => { }
+        },
+
+        models: {
+            _root: {
+
+            },
+            configs: configs,
+            data: {
+                db: db,
+                pages: pages
+            }
+        },
+
+        controllers: {
+            _root: {
+
+            },
+            utils: utils,
+            hooks: hooks,
+            services: services
+        },
+
+        views: {
+            _root: {
+            },
+            components: components,
+            layouts: {},
+            includes: {},
+        }
+    }
+
+    return lib as BlackprintModules
+};
+
+export const hooks = {
+
+}
+
+export const db = () => {
     return {
-
-        defineViewStore: ({ layout, pages }): IBlackprintViewStore => {
+        defineViewStore: ({ layout, pages }) => {
             return {
                 layout, pages, meta: {
                     version: Date.now()
                 }
             };
-        },
-
-        defineMethods: () => {
 
         },
-        defineMethod: () => { },
+        defineDatabaseCollection: ({ meta, methods }) => {
+            return { meta, methods }
+        },
+        defineDatabase: async (databaseConfig) => {
 
-        defineUtility: ({ methods }): IBlackrpintUtility => {
-            return methods
-        },
-        defineMetaConfig: () => { },
-        defineAPIRoute: ({ get, post }) => {
-            return {
-                get: get ?? null,
-                post: post ?? null
-            };
-        },
-
-        defineConfiguration: ({ method, params }): IBlackprintDatabaseConfiguration => {
-            return method(params)
-        },
-        defineService: ({ methods }): IBlackprintService => {
-            return { methods };
-        },
-        defineHook: (hook) => {
-            return hook();
-        },
-        defineCollection: ({ methods, meta }) => {
-            return { meta, methods };
-        },
-        defineDatabase: async (databaseConfig: IBlackprintDatabaseConfiguration) => {
-
-            const methodData = await databaseConfig.method();
+            const { meta, initStore, params } = await databaseConfig()
 
             const db =
                 Object.fromEntries(
-                    Object.keys(databaseConfig.params.collections).map((k) => ({
-                        [k]: databaseConfig.params.collections[k].methods(methodData),
+                    Object.keys(params.collections).map((k) => ({
+                        [k]: params.collections[k]().methods(initStore[k]),
                     })) as Array<any>
                 ) ?? null;
 
             return db;
         },
 
-        createPage: ({ store, id }) => {
-            return {
-                id: crypto.randomUUID(),
-                version: Date.now(),
-                layout: store?.layout,
-                data: store[id]?.data,
-            };
+
+        defineDatabaseMethod: ({ shape, filters }) => {
+            return function ({ store }) {
+                return shape(store).filter(filters[0])
+            }
         },
-    };
-};
+    }
+}
+
+export const components = {}
+
+export const layouts = {}
+
+export const includes = {}
+
+export const styles = {}
+
+export const libs = {}
+
+export const utils = {
+    defineUtility: ({ methods }) => {
+        return methods
+    },
+}
+
+export const configs = () => {
+    return {
+        defineDatabaseConfiguration: async ({ params, init }) => {
+            return {
+                params,
+                initStore: await init(params)
+            }
+        },
+
+
+    }
+}
+
+export const pages = {
+    createPage: ({ store, id }) => {
+        return {
+            id: crypto.randomUUID(),
+            version: Date.now(),
+            layout: store?.layout,
+            data: store[id]?.data,
+        };
+    },
+
+}
+
+export const services = () => {
+    return {
+        defineService: ({ methods }) => {
+            return { methods }
+        }
+    }
+}
+
+export const controllers = (): BlackprintControllersModules => {
+    return {
+        hooks: hooks,
+        services: services
+    } as BlackprintControllersModules
+}
+
+export const models = (): BlackprintModelsModules => {
+    return {
+        configs: configs,
+        data: {
+            db: db,
+            pages: pages
+        }
+    } as BlackprintModelsModules
+}
+
+export const views = (): BlackprintViewsModules => {
+    return {
+        components: components,
+        layouts: layouts,
+        includes: includes,
+        libs: libs,
+        styles: styles
+    } as BlackprintViewsModules
+}

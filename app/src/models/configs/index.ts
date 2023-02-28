@@ -1,50 +1,40 @@
 import { NotionService } from "@services/notion"
-import { blackprint } from "@utils/blackprint"
-import { metaMethods } from "@db/index"
+import { models as BlackprintModels } from "@utils/blackprint"
+import { metaCollection, portfolioCollection } from "@db/index"
 
 
 export const notionCMS = () => {
 
-    const { defineConfiguration, defineCollection } = blackprint()
+    const { defineDatabaseConfiguration } = BlackprintModels().configs()
 
     return (
-        defineConfiguration({
-
+        defineDatabaseConfiguration({
+            keys: {
+                title: "🪪Title",
+                favicon: "Favicon",
+                featured: "🌟Featured",
+                obfuscator: "🗝️Obfuscator",
+                heading: "#️⃣Heading",
+                portfolio: "💼Portfolio",
+                copyright: "📜Copyright",
+                phone: "📞Phone",
+                email: "📧Email"
+            },
             params: {
-                variants: {
-                    title: "🪪Title",
-                    favicon: "",
-                    featured: "🌟Featured",
-                    obfuscator: "🗝️Obfuscator",
-                    heading: "#️⃣Heading",
-                    portfolio: "💼Portfolio",
-                    copyright: "📜Copyright",
-                    phone: "📞Phone",
-                    email: "📧Email"
-                },
+                
                 collections: {
-                    services: defineCollection({
-                        meta: {
-                            notionPageId: import.meta.env.META_PAGE_ID
-                        },
-                        methods: servicesMethods
-                    }),
-                    meta: defineCollection({
-                        meta: {
-                            notionPageId: import.meta.env.META_PAGE_ID
-                        },
-                        methods: metaMethods
-                    })
+                    meta: metaCollection,
+                    portfolio: portfolioCollection
                 },
             },
 
-            method: async (params) => {
+            init: async (params) => {
 
                 const { getNotionPages } = NotionService().methods
 
                 const pageIds = Object.keys(params.collections).map((param) => (
                     {
-                        id: params.collections[param].meta.notionPageId,
+                        id: params.collections[param]().meta.notionPageId,
                         name: param
                     }
                 ))
@@ -55,3 +45,4 @@ export const notionCMS = () => {
         })
     )
 }
+

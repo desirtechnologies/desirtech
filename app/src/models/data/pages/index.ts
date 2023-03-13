@@ -6,12 +6,16 @@ export const MySitePages = async () => {
 
     const { defineViewStore, defineDatabase } = BlackprintDatabase()
 
-    const { meta, portfolio } = await defineDatabase(notionCMS)
+    const data = await defineDatabase(notionCMS)
 
     return defineViewStore({
         layout: {
             header: {
-                favicon: meta.getFavicon()
+                favicon: "meta.getFavicon()"
+            },
+            footer: {
+
+                favicon: [{}][0]
             }
 
         },
@@ -19,13 +23,26 @@ export const MySitePages = async () => {
             home: {
                 metaData: {
                     pageTitle: "Home",
-                    description: ""
+                    description: "Knowledge Determines Destiny"
                 },
                 data: {
-                    featuredSection: {
-                  
-                    }
+                    hero: {},
+                    featuredGrid: {},
+                    featuredSection: {},
+                    stepsSection: {
+
+                    },
+                    statsGrid: {},
+                    contentGrid: {},
+                    simpleForm: {},
+                    pricingTable: {},
+                    summarySection: {}
                 }
+            },
+
+            portfolio: {
+                metaData: {},
+                data: {}
             }
         }
     })

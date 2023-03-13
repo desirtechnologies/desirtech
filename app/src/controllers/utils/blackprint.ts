@@ -40,8 +40,12 @@ export const blackprint = (): BlackprintModules => {
     return lib as BlackprintModules
 };
 
-export const hooks = {
+export const hooks = () => {
+    return {
+        defineHook: () => {
 
+        }
+    }
 }
 
 export const db = () => {
@@ -54,27 +58,37 @@ export const db = () => {
             };
 
         },
-        defineDatabaseCollection: ({ meta, methods }) => {
-            return { meta, methods }
+        defineDatabaseCollection: ({ meta, shape, methods }: { meta?: any, shape?: any, methods?: any }) => {
+            return function (store) {
+                return {
+                    data: shape(store),
+                    methods,
+                    meta
+                }
+            }
         },
-        defineDatabase: async (databaseConfig) => {
+        defineDatabase: async (databaseConfig: any) => {
 
-            const { meta, initStore, params } = await databaseConfig()
+            const { init: store, params, rest } = await databaseConfig()
 
-            const db =
-                Object.fromEntries(
-                    Object.keys(params.collections).map((k) => ({
-                        [k]: params.collections[k]().methods(initStore[k]),
-                    })) as Array<any>
-                ) ?? null;
+            const collections = Object.fromEntries(
+                Object.entries(params.collections)
+                    .map(([name, methods]: [string, Function]) => {
+                        let test = methods(store).data
+                        return [
+                            name,
+                            test
+                        ]
+                    }))
 
-            return db;
+
+            return { collections, rest, store };
         },
 
 
-        defineDatabaseMethod: ({ shape, filters }) => {
-            return function ({ store }) {
-                return shape(store).filter(filters[0])
+        defineDatabaseMethod: ({ filters }: { filters?: Array<any> }) => {
+            return function ({ store }: { store: Array<any> }) {
+                return store
             }
         },
     }
@@ -90,41 +104,51 @@ export const styles = {}
 
 export const libs = {}
 
-export const utils = {
-    defineUtility: ({ methods }) => {
-        return methods
-    },
+export const utils = () => {
+    return {
+        defineUtility: ({ name, method }) => {
+            return { name, method }
+        }
+    }
 }
 
 export const configs = () => {
     return {
-        defineDatabaseConfiguration: async ({ params, init }) => {
-            return {
-                params,
-                initStore: await init(params)
+        defineDatabaseConfiguration: ({ params, init, ...rest }) => {
+            return async function () {
+                return {
+                    rest,
+                    params,
+                    init: await init(params)
+                }
             }
-        },
+        }
+    }
+}
 
+
+export const pages = () => {
+    return {
+        createPage: ({ store, id }) => {
+            return {
+                id,
+                version: Date.now(),
+                layout: store?.layout ?? null,
+                data: store[id]?.data ?? null,
+                pages: store[id]?.pages ?? null
+            };
+        },
 
     }
 }
 
-export const pages = {
-    createPage: ({ store, id }) => {
-        return {
-            id: crypto.randomUUID(),
-            version: Date.now(),
-            layout: store?.layout,
-            data: store[id]?.data,
-        };
-    },
-
-}
 
 export const services = () => {
     return {
         defineService: ({ methods }) => {
-            return { methods }
+            return function () {
+                return { methods }
+            }
         }
     }
 }

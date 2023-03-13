@@ -1,48 +1,46 @@
 import { NotionService } from "@services/notion"
-import { models as BlackprintModels } from "@utils/blackprint"
-import { metaCollection, portfolioCollection } from "@db/index"
+import { configs as BlackprintConfigs } from "@utils/blackprint"
+import { metaCollection, writingsCollection } from "@db/index"
 
+const { defineDatabaseConfiguration } = BlackprintConfigs()
 
-export const notionCMS = () => {
+export const notionCMS = defineDatabaseConfiguration({
+    keys: {
+        title: "🪪Title",
+        favicon: "Favicon",
+        featured: "🌟Featured",
+        obfuscator: "🗝️Obfuscator",
+        heading: "#️⃣Heading",
+        portfolio: "💼Portfolio",
+        copyright: "📜Copyright",
+        phone: "📞Phone",
+        email: "📧Email"
+    },
+    params: {
+        collections: {
+            meta: metaCollection,
+            portfolio: metaCollection,
+            writings: writingsCollection,
+        },
+    },
 
-    const { defineDatabaseConfiguration } = BlackprintModels().configs()
+    init: async (params) => {
 
-    return (
-        defineDatabaseConfiguration({
-            keys: {
-                title: "🪪Title",
-                favicon: "Favicon",
-                featured: "🌟Featured",
-                obfuscator: "🗝️Obfuscator",
-                heading: "#️⃣Heading",
-                portfolio: "💼Portfolio",
-                copyright: "📜Copyright",
-                phone: "📞Phone",
-                email: "📧Email"
-            },
-            params: {
-                
-                collections: {
-                    meta: metaCollection,
-                    portfolio: portfolioCollection
-                },
-            },
+        const { getNotionPages } = NotionService().methods
 
-            init: async (params) => {
-
-                const { getNotionPages } = NotionService().methods
-
-                const pageIds = Object.keys(params.collections).map((param) => (
-                    {
-                        id: params.collections[param]().meta.notionPageId,
-                        name: param
-                    }
-                ))
-
-                return await getNotionPages({ pageIds })
-
+        const pageIds = Object.keys(params.collections).map((param) => (
+            {
+                id: params.collections[param]().meta.notionPageId,
+                name: param
             }
-        })
-    )
-}
+        ))
+
+        return await getNotionPages({ pageIds })
+    }
+})
+
+
+
+
+
 

@@ -8,6 +8,9 @@
       "@views/*": [
         "views/*"
       ],
+      "@blackprint/*": [
+        "controllers/libs/blackprint/*"
+      ],
       "@models/*": [
         "models/*"
       ],

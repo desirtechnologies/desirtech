@@ -1,17 +1,15 @@
-import { NotionService } from "@services/notion"
-import { configs } from "@controllers/utils/blackprint";
 import { notionCMS } from "@configs/index";
+import { db as BlackprintDatabase } from "@controllers/utils/blackprint";
 
-export async function get({ params, request }) {
+export async function get() {
 
+  const { defineDatabase } = BlackprintDatabase()
 
-  const { initStore } = await notionCMS()
+  const { store } = await defineDatabase(notionCMS)
 
   return {
     body: JSON.stringify({
-      blackprintTest: {
-        initStore
-      }
+      store
     }),
   };
 }

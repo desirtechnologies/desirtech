@@ -2,28 +2,32 @@
 import Application from "@layouts/Application.astro";
 
 import Hero from "@components/dynamic/Hero";
-import SummarySection from "@components/dynamic/SummarySection";
-import FeaturedGrid from "@components/static/FeaturedGrid/FeaturedGrid.astro";
-import PricingTable from "@components/static/PricingTable/PricingTable.astro";
-import FeaturedSection from "@components/static/FeaturedSection/FeaturedSection.astro";
-import StatsGrid from "@components/dynamic/StatsGrid";
-import ContentRow from "@components/static/ContentRow/ContentRow.astro";
-import ContentGrid from "@components/static/ContentGrid/ContentGrid.astro";
 import SimpleForm from "@components/dynamic/SimpleForm";
+import StatsGrid from "@components/dynamic/StatsGrid";
+import SummarySection from "@components/dynamic/SummarySection";
+import ContentGrid from "@components/static/ContentGrid/ContentGrid.astro";
+import ContentRow from "@components/static/ContentRow/ContentRow.astro";
+import FeaturedGrid from "@components/static/FeaturedGrid/FeaturedGrid.astro";
+import FeaturedSection from "@components/static/FeaturedSection/FeaturedSection.astro";
+import PricingTable from "@components/static/PricingTable/PricingTable.astro";
 import StepsSection from "@components/static/StepsSection/StepsSection.astro";
 
+import { PageService } from "@services/page";
 
+const { getPage } = PageService().methods;
+
+const { data, layout } = await getPage("home");
 ---
 
-<Application>
-  <Hero />
-  <FeaturedGrid />
-  <FeaturedSection />
-  <StepsSection />
-  <StatsGrid />
-  <ContentRow />
-  <SimpleForm />
-  <ContentGrid />
-  <PricingTable />
-  <SummarySection />
+<Application {...layout}>
+  <Hero {...data.hero} />
+  <FeaturedGrid {...data.featuredGrid} />
+  <FeaturedSection {...data.featuredSection} />
+  <StepsSection {...data.stepsSection} />
+  <StatsGrid {...data.statsGrid} />
+  <ContentRow {...data.ContentRow} />
+  <SimpleForm {...data.simpleForm} />
+  <ContentGrid {...data.ContentGrid} />
+  <PricingTable {...data.pricingTable} />
+  <SummarySection {...data.summarySection} />
 </Application>

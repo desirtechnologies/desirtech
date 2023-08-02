@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { VT323 } from "next/font/google";
 
-import Header from "@includes/Header";
-import Footer from "@includes/Footer";
+import Header from "@includes/Header"
+import Footer from "@includes/Footer"
 
-import Navigator from "@/views/includes/Navigator/Navigator";
+
 import "./globals.css";
 
 const vt323 = VT323({ weight: "400", subsets: ["latin"] });
@@ -25,7 +25,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <Navigator />
       </body>
     </html>
   );

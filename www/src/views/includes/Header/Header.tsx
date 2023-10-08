@@ -35,7 +35,7 @@ export default function Header(props: any): any {
     return (
       <div className="w-auto">
         <div className="flex flex-wrap items-center">
-          <div className="w-auto hidden lg:block">
+          <div className="hidden w-auto lg:block">
             <ul className="flex items-center justify-center">
               {links?.map((link, index) => (
                 <li key={index} className="mr-9">
@@ -53,7 +53,7 @@ export default function Header(props: any): any {
                       className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"
                       href="#"
                     >
-                      "{link?.name}"
+                     
                     </a>
                   </li>
                 ))}
@@ -92,9 +92,9 @@ export default function Header(props: any): any {
       <div className="w-auto">
         <div className="flex flex-wrap items-center">
           {cta ? (
-            <div className="w-auto hidden lg:block">
+            <div className="hidden w-auto lg:block">
               <div className="flex flex-wrap -m-2">
-                <div className="w-full md:w-auto p-2">
+                <div className="w-full p-2 md:w-auto">
                   <a
                     className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold hover:bg-gray-900 focus:ring-4 focus:ring-gray-500 border border-gray-800 rounded-full"
                     href={cta?.primary?.url}
@@ -102,7 +102,7 @@ export default function Header(props: any): any {
                     {cta?.primary?.name}
                   </a>
                 </div>
-                <div className="w-full md:w-auto p-2">
+                <div className="w-full p-2 md:w-auto">
                   <a
                     className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-green-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
                     href={cta?.secondary?.url}
@@ -120,8 +120,8 @@ export default function Header(props: any): any {
   };
 
   return (
-    <section className="py-6 fixed top-0 w-full z-50 font-mono">
-      <div className="container mx-auto px-4">
+    <section className="fixed top-0 z-50 w-full py-6 font-mono">
+      <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between px-6 py-3.5 backdrop-blur-lg border-2 border-opacity-25 hover:border-opacity-50 cursor-pointer hover:shadow-xl shadow-white duration-500 will-change-scroll ease-in-out border-white rounded-full">
           <Favicon />
           <Links />

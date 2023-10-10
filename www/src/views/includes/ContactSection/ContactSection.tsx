@@ -204,7 +204,7 @@ export default function ContactSection() {
                                             <textarea
                                                 className="appearance-none px-6 py-5 w-full text-lg text-gray-500 font-bold bg-white placeholder-gray-500 outline-none focus:ring-4 focus:ring-blue-200 rounded-3xl"
                                                 id="contactLightReverseInput4-5"
-                                                type="text"
+                                          
                                                 rows={8}
                                                 placeholder="Enter your message"
                                                 defaultValue={""}

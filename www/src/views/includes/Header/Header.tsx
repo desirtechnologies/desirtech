@@ -37,7 +37,7 @@ export default function Header(props: any): any {
         <div className="flex flex-wrap items-center">
           <div className="hidden w-auto lg:block">
             <ul className="flex items-center justify-center">
-              {links?.map((link, index) => (
+              {links?.map((link: any, index: any) => (
                 <li key={index} className="mr-9">
                   <a
                     className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300"

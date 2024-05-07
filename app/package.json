@@ -12,8 +12,8 @@
     "url": "https://github.com/jackyzha0/quartz.git"
   },
   "scripts": {
-    "dev": "./quartz/bootstrap-cli.mjs",
-    "build": "npx quartz build -d docs",
+    "dev": "npx quartz build --serve",
+    "build": "npx quartz build",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",

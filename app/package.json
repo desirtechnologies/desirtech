@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "npx quartz build --serve",
-    "build": "npx quartz build --unsafe-perm",
+    "build": "npx quartz build -d content -v --unsafe-perm",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",

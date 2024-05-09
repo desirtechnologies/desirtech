@@ -1,10 +1,16 @@
-# Exported from Render on 2024-05-03T03:44:31Z
+# Exported from Render on 2024-05-08T14:35:25Z
 services:
   - type: web
     name: desirtech
     runtime: static
     repo: https://github.com/desirtechnologies/desirtech
-    buildCommand: npm install --force; npm run build
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        sync: false
+    buildCommand: chmod +x node_modules/.bin/quartz; npm run build
     staticPublishPath: public
+    domains:
+      - www.desirtech.pro
+      - desirtech.pro
     rootDir: app
 version: "1"

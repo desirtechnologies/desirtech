@@ -7,10 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "readme:g": "npx @appnest/readme generate --config=docs.config.json && copy README.md lib",
-
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app:build": "cd app && npm run build",
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json && copy README.md lib"
   },
   "author": "Jeffrey Desir",
-  "license": "ISC"
+  "license": "LGPL-3.0-or-later"
 }

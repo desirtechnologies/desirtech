@@ -1,5 +1,10 @@
 ---
-title:  Desir Tech
+title:  Desir Technologies
 ---
 
-# Knowledge Determine Destiny 
+# Welcome to my Techomancy Re
+
+
+
+
+## Software 

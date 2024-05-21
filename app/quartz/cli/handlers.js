@@ -152,7 +152,7 @@ export async function handleCreate(argv) {
     }
   } else if (setupStrategy === "new") {
     await fs.promises.writeFile(
-      path.join(contentFolder, "index.md"),
+      path.join(contentFolder, "writings.md"),
       `---
 title: Welcome to Quartz
 ---

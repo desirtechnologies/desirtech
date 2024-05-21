@@ -1,0 +1,6 @@
+---
+title: Writings
+---
+
+
+# Desir Tech

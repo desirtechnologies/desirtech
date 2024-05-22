@@ -8,9 +8,12 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/desirtechnologies/desirtech",
+      Gitlab: "https://github.com/desirtechnologies/desirtech",
+      Bitbucket: "https://github.com/desirtechnologies/bitbucket",
+      ORACID: "",
       Hashnode: "",
       "Dev.to": "https://dev.to/desirtechnologies",
-      "Discord": "https://discord.gg/cRFFHYye7t",
+      Discord: "https://discord.gg/cRFFHYye7t",
     },
   }),
 }

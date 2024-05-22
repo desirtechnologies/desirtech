@@ -2,6 +2,17 @@
 @use "./syntax.scss";
 @use "./callouts.scss";
 
+
+.internal {
+  font-size: 1rem;
+  border: #4e4e4e dashed 1px;
+  padding: 1.5rem;
+
+  & :hover {
+    border: #000000 dashed 2px;
+  }
+
+}
 html {
   scroll-behavior: smooth;
   text-size-adjust: none;

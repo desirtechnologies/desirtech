@@ -8,6 +8,7 @@
   },
   "scripts": {
     "app:build": "cd app && npm run build",
+
     "readme:g": "npx @appnest/readme generate --config=docs.config.json && copy README.md lib"
   },
   "author": "Jeffrey Desir",

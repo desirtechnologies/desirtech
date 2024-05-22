@@ -1,3 +1,3 @@
 ---
-title: Resources
+tags: ["sector"]
 ---

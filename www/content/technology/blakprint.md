@@ -1,6 +1,6 @@
 ---
 title: Blakprint
-tags: ["software", "in-progress"]
+tags: ["technology", "in-progress"]
 ---
 
 

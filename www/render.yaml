@@ -12,5 +12,5 @@ services:
     domains:
       - www.desirtech.pro
       - desirtech.pro
-    rootDir: app
+    rootDir: www
 version: "1"

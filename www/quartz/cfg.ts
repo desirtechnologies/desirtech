@@ -33,7 +33,7 @@ export type Analytics =
 
 export interface GlobalConfiguration {
   pageTitle: string
-  /** Whether to enable single-page-app style rendering. this prevents flashes of unstyled content and improves smoothness of Quartz */
+  /** Whether to enable single-page-www style rendering. this prevents flashes of unstyled content and improves smoothness of Quartz */
   enableSPA: boolean
   /** Whether to display Wikipedia-style popovers when hovering over links */
   enablePopovers: boolean
